@@ -1,0 +1,35 @@
+<div class="box">
+	<div class="box-head">
+		<h2 class="left">Users</h2>
+		<div class="right">
+		</div>
+	</div>
+</div>
+
+<div class="indexlist">
+<% link_to 'Create New role', new_user_path %>
+<table>
+  <tr>
+    <th><%= link_to image_tag("add.png", :border => 0, :title => 'Create'), new_user_path %> Users </th>
+    <th>Log-In</th>
+		<th>e-mail address</th>
+    <th colspan=3>Control</th>
+  </tr>
+
+<% @users.each do |user| %>
+  <tr>
+    <td><%=h user.name %></td>
+		<td><%=h user.login %></td>
+		<td><%=h user.email %></td>
+		<td width=10px><%= link_to image_tag("document.png", :border => 0, :title => 'Show'), :action => 'show', :id => user %></td>
+    <td width=10px><%= link_to image_tag("edit.png", :border => 0, :title => 'Edit'), :action => 'edit', :id => user %></td>
+    <td width=10px><%= link_to image_tag("delete.png", :border => 0, :title => 'Delete'), user, :confirm => "Are you sure you want to delete '#{user.name}'?", :method => :delete %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+
+
+</div>

@@ -1,0 +1,38 @@
+<p>
+  <b>Company:</b>
+  <%=h @address.company %>
+</p>
+
+<p>
+  <b>Web:</b>
+  <%=h @address.web %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%=h @address.address %>
+</p>
+
+<p>
+  <b>Fax:</b>
+  <%=h @address.fax %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%=h @address.phone %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @address.email %>
+</p>
+
+<p>
+  <b>Notes:</b>
+  <%=h @address.notes %>
+</p>
+
+
+<%= link_to 'Edit', edit_address_path(@address) %> |
+<%= link_to 'Back', addresses_path %>

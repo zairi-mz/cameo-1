@@ -1,0 +1,51 @@
+<div class='formtable'>
+<table>
+	<tr>
+    <td class=leftcol><%=t ('component.component_code') %>:</td>
+    <td><%=h @component.component_code %>  <%=h @component.name %></td>
+  </tr>
+	<tr>
+    <td class=leftcol><%=t ('component.parent_id') %>:</td>
+    <td><%=h @component.parent_id.blank? ? "-" : @component.parent.component_code_and_name %></td>
+  </tr>
+	<tr>
+    <td class=leftcol><%=t ('component.location_id') %>:</td>
+    <td><%=h @component.location_id.blank? ? "-" : @component.location_id %></td>
+  </tr>
+	<tr>
+    <td class=leftcol><%=t ('component.type_no') %>:</td>
+    <td><%=h @component.type_no %></td>
+  </tr>
+	<tr>
+    <td class=leftcol><%=t ('component.serial_no') %>:</td>
+    <td><%=h @component.serial_no %></td>
+  </tr>
+	<tr>
+    <td class=leftcol><%=t ('component.installed_on') %>:</td>
+    <td><%=h @component.installed_on %></td>
+  </tr>
+	<tr>
+    <td class=leftcol><%=t ('component.location_id') %>:</td>
+    <td><%=h @component.manufacturer_id.blank? ? "-" : @component.manufacturedby.company %></td>
+  </tr>
+	<tr>
+    <td class=leftcol><%=t ('component.supplier_id') %>:</td>
+    <td><%=h @component.supplier_id.blank? ? "-" : @component.suppliedby.company %></td>
+  </tr>
+	<tr>
+    <td class=leftcol><%=t ('component.tech_description') %>:</td>
+    <td><%=h @component.tech_description %></td>
+  </tr>
+	<tr>
+    <td class=leftcol><%=t ('component.location_id') %>:</td>
+    <td><%=h @component.counter_id.blank? ? "-" : @component.counter_id %></td>
+  </tr>
+	<tr>
+    <td class=leftcol>Last Edited By:</td>
+    <td><%=h @component.created_by.blank? ? "-" : @component.editor.name %> On <%=h @component.updated_at %></td>
+  </tr>
+</table>
+</div>
+
+<%= link_to 'Edit', edit_component_path(@component) %> |
+<%= link_to 'Back', components_path %>

@@ -1,0 +1,33 @@
+<div class="box">
+	<div class="box-head">
+		<h2 class="left">List of <%= t ('tools.tool') %></h2>
+		<div class="right">
+		</div>
+	</div>
+</div>
+
+<div class="indexlist">
+<table>
+  <tr>
+    <th><%= link_to image_tag("add.png", :border => 0, :title => 'Create'), new_tool_path %> <%=t ('tools.tool') %> </th>
+		<th><%=t ('tools.tool_code') %></th>
+    <th><%=t ('tools.tool_no') %></th>
+    <th><%=t ('tools.name') %></th>
+    <th colspan=3>Control</th>
+  </tr>
+
+	<% @tools.each do |tool| %>
+	  <tr>
+	    <td><%=h tool.tool_code %></td>
+	    <td><%=h tool.tool_no %></td>
+	    <td><%=h tool.name %></td>
+		<td width=10px><%= link_to image_tag("document.png", :border => 0, :title => 'Show'), :action => 'show', :id => tool %></td>
+    <td width=10px><%= link_to image_tag("edit.png", :border => 0, :title => 'Edit'), :action => 'edit', :id => tool %></td>
+    <td width=10px><%= link_to image_tag("delete.png", :border => 0, :title => 'Delete'), tool, :confirm => 'Are you sure?', :method => :delete %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New tool', new_tool_path %>

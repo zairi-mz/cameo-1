@@ -1,0 +1,18 @@
+<p>
+  <b>Doc code:</b>
+  <%=h @document.doc_code %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%=h @document.title %>
+</p>
+
+<p>
+  <b>Publisher:</b>
+  <%=h @document.publisher %>
+</p>
+
+
+<%= link_to 'Edit', edit_document_path(@document) %> |
+<%= link_to 'Back', documents_path %>

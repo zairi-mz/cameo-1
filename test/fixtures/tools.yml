@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  tool_code: MyString
+  name: MyString
+  tool_no: MyString
+  supplier_id: 1
+  manufacturer_id: 1
+  price: 9.99
+  location_id: 1
+  notes: MyText
+
+two:
+  tool_code: MyString
+  name: MyString
+  tool_no: MyString
+  supplier_id: 1
+  manufacturer_id: 1
+  price: 9.99
+  location_id: 1
+  notes: MyText

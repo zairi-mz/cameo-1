@@ -1,0 +1,48 @@
+<p>
+  <b>Code:</b>
+  <%=h @maintenance.code %>
+</p>
+
+<p>
+  <b>Component:</b>
+  <%=h @maintenance.component_id %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @maintenance.description %>
+</p>
+
+<p>
+  <b>Frequency:</b>
+  <%=h @maintenance.frequency %>
+</p>
+
+<p>
+  <b>Frequency unit:</b>
+  <%=h @maintenance.frequency_unit %>
+</p>
+
+<p>
+  <b>Level:</b>
+  <%=h @maintenance.level %>
+</p>
+
+<p>
+  <b>Action group:</b>
+  <%=h @maintenance.action_group_id %>
+</p>
+
+<p>
+  <b>First date:</b>
+  <%=h @maintenance.first_date %>
+</p>
+
+<p>
+  <b>Priority:</b>
+  <%=h @maintenance.priority %>
+</p>
+
+
+<%= link_to 'Edit', edit_maintenance_path(@maintenance) %> |
+<%= link_to 'Back', maintenances_path %>

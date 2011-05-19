@@ -1,0 +1,49 @@
+<div class='formtable'>
+<table>
+	<tr>
+		<th colspan=2>Edit <%= t ('maintenance.maint') %></th>
+	</tr>
+  <tr>
+    <td class=leftcol><%= f.label t ('maintenance.component_id') %>:</td>
+    <td><%= f.collection_select :component_id, Component.find(:all), :id, :component_code_and_name, :include_blank => true %></td>
+  </tr>
+  <tr>
+    <td class=leftcol><%= f.label t ('maintenance.code') %>:</td>
+    <td><%= f.text_field :code, :size => 15 %></td>
+  </tr>
+  <tr>
+    <td class=leftcol><%= f.label t ('maintenance.description') %>:</td>
+    <td><%= f.text_field :description, :size => 60  %></td>
+  </tr>
+  <tr>
+    <td class=leftcol><%= f.label t ('maintenance.frequency') %>:</td>
+    <td><%= f.select :frequency, options_for_select([1,2,3,4,5,6,7,8,9,10,11,12], @maintenance.frequency) %>
+				<%= f.select :frequency_unit, 
+				                 Maintenance::FREQ_UNIT,
+				                 :prompt => "Select"  %></td>
+  </tr>
+  <tr>
+    <td class=leftcol><%= f.label t ('maintenance.level') %>:</td>
+    <td><%= f.select :level, 
+		                 Maintenance::MAINT_LEVEL,
+		                 :prompt => "Select"  %></td>
+  </tr>
+  <tr>
+    <td class=leftcol><%= f.label t ('maintenance.action_group_id') %>:</td>
+    <td><%= f.text_field :action_group_id %></td>
+  </tr>
+  <tr>
+    <td class=leftcol><%= f.label t ('maintenance.first_date') %>:</td>
+    <td><%= f.date_select :first_date, :include_blank => :true %></td>
+  </tr>
+  <tr>
+    <td class=leftcol><%= f.label t ('maintenance.next_date') %>:</td>
+    <td><%= h @maintenance.next_date %></td>
+  </tr>
+  <tr>
+    <td class=leftcol><%= f.label t ('maintenance.priority') %>:</td>
+    <td><%= f.select :priority, options_for_select([1,2,3,4,5], @maintenance.priority) %></td>
+  </tr>
+</table>
+</div>
+

@@ -1,0 +1,43 @@
+<p>
+  <b>Tool code:</b>
+  <%=h @part.part_code %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%=h @part.name %>
+</p>
+
+<p>
+  <b>Tool no:</b>
+  <%=h @part.part_no %>
+</p>
+
+<p>
+  <b>Supplier:</b>
+  <%=h @part.supplier_id %>
+</p>
+
+<p>
+  <b>Manufacturer:</b>
+  <%=h @part.manufacturer_id %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%=h @part.price %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%=h @part.location_id %>
+</p>
+
+<p>
+  <b>Notes:</b>
+  <%=h @part.notes %>
+</p>
+
+
+<%= link_to 'Edit', edit_part_path(@part) %> |
+<%= link_to 'Back', parts_path %>

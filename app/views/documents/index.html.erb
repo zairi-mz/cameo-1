@@ -1,0 +1,32 @@
+<div class="box">
+	<div class="box-head">
+		<h2 class="left"><%= t ('documents.doc') %></h2>
+		<div class="right">
+		</div>
+	</div>
+</div>
+
+<div class="indexlist">
+<table>
+  <tr>
+    <th><%= link_to image_tag("add.png", :border => 0, :title => 'Create'), new_document_path %> <%= t ('documents.doc_code') %></th>
+		<th><%= t ('documents.title') %></th>
+    <th><%= t ('documents.publisher') %></th>
+    <th colspan=3>Control</th>
+  </tr>
+
+<% @documents.each do |document| %>
+	  <tr>
+	    <td><%=h document.doc_code %></td>
+	    <td><%=h document.title %></td>
+	    <td><%=h document.publisher %></td>
+		<td width=10px><%= link_to image_tag("document.png", :border => 0, :title => 'Show'), :action => 'show', :id => document %></td>
+    <td width=10px><%= link_to image_tag("edit.png", :border => 0, :title => 'Edit'), :action => 'edit', :id => document %></td>
+    <td width=10px><%= link_to image_tag("delete.png", :border => 0, :title => 'Delete'), document, :confirm => 'Are you sure?', :method => :delete %>
+  </tr>
+<% end %>
+</table>
+
+<br>
+
+<%= link_to 'New document', new_document_path %>

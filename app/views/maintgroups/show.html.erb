@@ -1,0 +1,23 @@
+<p>
+  <b>Short name:</b>
+  <%=h @maintgroup.short_name %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%=h @maintgroup.name %>
+</p>
+
+<p>
+  <b>Quantity:</b>
+  <%=h @maintgroup.quantity %>
+</p>
+
+<p>
+  <b>Rate:</b>
+  <%=h @maintgroup.rate %>
+</p>
+
+
+<%= link_to 'Edit', edit_maintgroup_path(@maintgroup) %> |
+<%= link_to 'Back', maintgroups_path %>

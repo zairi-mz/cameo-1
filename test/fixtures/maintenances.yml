@@ -1,0 +1,23 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  code: MyString
+  component_id: 1
+  description: MyString
+  frequency: 1
+  frequency_unit: 1
+  level: 1
+  action_group_id: 1
+  first_date: 2011-04-25
+  priority: 1
+
+two:
+  code: MyString
+  component_id: 1
+  description: MyString
+  frequency: 1
+  frequency_unit: 1
+  level: 1
+  action_group_id: 1
+  first_date: 2011-04-25
+  priority: 1

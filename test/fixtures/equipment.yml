@@ -1,0 +1,31 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  component_code: MyString
+  parent_id: 1
+  name: MyString
+  location_id: 1
+  type_no: MyString
+  serial_no: MyString
+  installed_on: 2011-04-20
+  manufacturer_id: 1
+  supplier_id: 1
+  tech_description: MyText
+  counter_id: 1
+  unit_id: 1
+  created_by: 1
+
+two:
+  component_code: MyString
+  parent_id: 1
+  name: MyString
+  location_id: 1
+  type_no: MyString
+  serial_no: MyString
+  installed_on: 2011-04-20
+  manufacturer_id: 1
+  supplier_id: 1
+  tech_description: MyText
+  counter_id: 1
+  unit_id: 1
+  created_by: 1

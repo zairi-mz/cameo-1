@@ -1,0 +1,15 @@
+<div class='formtable'>
+
+<% form_for(@role) do |f| %>
+<%= f.error_messages %>
+
+
+<%= render :partial => 'form', :locals => {:f => f}   %>
+
+<%= f.submit 'Update' %>
+
+<% end %>
+</div>
+
+<%= link_to 'Show', @role %> |
+<%= link_to 'Back', roles_path %>

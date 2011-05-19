@@ -1,0 +1,41 @@
+<div class='formtable'>
+<table>
+	<tr>
+		<th colspan=2>Edit <%= t ('parts.tool') %></th>
+	</tr>
+	<tr>
+    <td class=leftcol><%= f.label t ('parts.tool_code') %>:</td>
+    <td><%= f.text_field :tool_code %></td>
+  </tr>
+	<tr>
+    <td class=leftcol><%= f.label t ('parts.name') %>:</td>
+    <td><%= f.text_field :name %></td>
+  </tr>
+  <tr>
+    <td class=leftcol><%= f.label t ('parts.tool_no') %>:</td>
+    <td><%= f.text_field :tool_no %></td>
+  </tr>
+	<tr>
+    <td class=leftcol><%= f.label t ('supplier') %>:</td>
+    <td><%= f.collection_select :supplier_id, Address.find(:all), :id, :company, :include_blank => true %></td>
+  </tr>
+	<tr>
+    <td class=leftcol><%= f.label t ('manufacturer') %>:</td>
+    <td><%= f.collection_select :manufacturer_id, Address.find(:all), :id, :company, :include_blank => true %></td>
+  </tr>
+	<tr>
+    <td class=leftcol><%= f.label t ('price') %>:</td>
+    <td><%= f.text_field :price %></td>
+  </tr>
+	<tr>
+    <td class=leftcol><%= f.label t ('parts.location_id') %>:</td>
+    <td><% f.text_field :location_id %></td>
+  </tr>
+	<tr>
+    <td class=leftcol><%= f.label t ('parts.notes') %>:</td>
+    <td><%= f.text_area :notes, :size => '35x6' %></td>
+  </tr>
+
+
+</table>
+</div>

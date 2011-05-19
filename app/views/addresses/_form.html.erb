@@ -1,0 +1,35 @@
+<div class='formtable'>
+<table>
+	<tr>
+		<th colspan=2><%= t ('addresses.companies') %></th>
+	</tr>
+	<tr>
+    <td class=leftcol><%= f.label t ('addresses.company') %>:</td>
+    <td><%= f.text_field :company %></td>
+  </tr>
+	<tr>
+    <td class=leftcol><%= f.label t ('addresses.phone') %>:</td>
+    <td><%= f.text_field :phone %></td>
+  </tr>
+	<tr>
+    <td class=leftcol><%= f.label t ('addresses.fax') %>:</td>
+    <td><%= f.text_field :fax %></td>
+  </tr>
+	<tr>
+    <td class=leftcol><%= f.label t ('addresses.address') %>:</td>
+    <td><%= f.text_area :address, :size => '35x7' %></td>
+  </tr>
+	<tr>
+    <td class=leftcol><%= f.label t ('addresses.email') %>:</td>
+    <td><%= f.text_field :email %></td>
+  </tr>
+	<tr>
+    <td class=leftcol><%= f.label t ('addresses.web') %>:</td>
+    <td><%= f.text_field :web %></td>
+  </tr>
+	<tr>
+    <td class=leftcol><%= f.label t ('addresses.notes') %>:</td>
+    <td><%= f.text_area :notes, :size => '35x7' %></td>
+  </tr>
+</table>
+</div>

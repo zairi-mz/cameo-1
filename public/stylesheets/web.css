@@ -1,0 +1,363 @@
+/*
+  Skeleton CSS
+  by maxcobmara
+
+*/
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+h1 {color: #000;
+	  font-family: sans-serif;
+    font-size: 16; 
+    font-weight: bold;
+    padding: 5px;
+	}
+
+body{
+	font: 75% Tahoma, Helvetica, Verdana, Arial, Sans-Serif;
+	padding: 5;
+}
+
+p {
+		font: 12 Tahoma, Helvetica, Verdana, Arial, Sans-Serif;
+		padding: 5;
+		}
+
+input {font-family: courier, serif;
+	     font-size: 14px;  
+	     
+}
+input#search {
+	      font-family: monospace;  font-size: 12px;
+				width: 15em; padding: 3px ;
+				-webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px;
+        
+}
+
+select {font-family: courier,serif;
+	   font-size: 14px;  
+}
+
+#pagewrapper {
+    width: 95%;
+    margin: 10px auto;
+    padding: 0;
+    border: 1px solid #999;
+}
+
+#pigola ul li{
+	font: 12 Tahoma, Helvetica, Verdana, Arial, Sans-Serif;
+	padding: 5px;
+	margin: 0px 21px;
+}
+
+#top-menu {
+	background: #2C4056; 
+	color: #fff; 
+	height:1.8em; 
+	font-size: 0.8em; 
+	padding: 2px 2px 0px 6px;
+	}
+  #top-menu ul li{
+		margin: 0;  
+		padding: 0;
+	  float:left;
+	  list-style-type:none;
+	  margin: 0px 0px 0px 0px;
+	  padding: 0px 0px 0px 0px;
+	  white-space:nowrap;
+  }
+	#top-menu a {
+		color: #fff; 
+		margin-right: 8px; 
+		font-weight: bold;
+	}
+	
+	#account {float:right;}
+	
+#header {
+   background-color: #3B5998;
+   margin: 8; padding: 8;	
+   height: 5em;
+}
+  #header p {
+		font-size: 2em;
+	  color: #fff;
+	  margin-left: 8px; 
+	}
+  #header img {
+	  margin: 0px 0px 0px 0px;
+  }
+
+  .locale {
+		float:right;
+		padding-top: 0.2em;
+	}
+	
+	/* Navigation Bar */
+
+/*
+	#navbar ul li { 
+	    display: inline;
+	    color: White;
+	    float: left;
+	    border-right: 1px solid #333;
+	    font-family: arial, helvetica, sans-serif;
+	}
+	#navbar ul li a {
+	    padding: 0.2em 0.7em;
+	    background-color: #999; 
+	    color: White;
+	    
+	    float:left;
+	}
+	#navbar ul li a:hover {
+	    background-color: #333;
+	    color: #fff;
+	}
+	
+	#navbar #current a {
+		background-color: #333;
+    color: #fff;
+	}
+*/	
+/* Menu System */
+/* 
+	LEVEL ONE
+*/
+#navbar ul {
+	    /*padding: 0;
+	    margin: 0; 
+	    */
+	    width: 100%;
+	    float: left;
+	    background: #999;
+	    
+	    font-weight: bold;
+	    
+	    border-bottom: 2px solid #333;
+	}
+
+
+ul.dropdown                  { position: relative; width: 100%; background-color: #999; }
+ul.dropdown li               { font-weight: bold; float: left; zoom: 1;  list-style: none; font-size: 13px;}
+ul.dropdown a:hover		       { color: #000; }
+ul.dropdown a:active         { color: #ffa500; }
+ul.dropdown li a             { display: block; padding: 4px 40px 4px 8px; border-right: 1px solid #333; color: White; text-decoration: none;}
+ul.dropdown li:last-child a  { border-right: none; } /* Doesn't work in IE */
+ul.dropdown li.hover,        
+ul.dropdown li:hover         { background: #F3D673; color: black; position: relative; }
+ul.dropdown li.hover a       { color: black; }
+
+
+/* 
+	LEVEL TWO
+*/
+ul.dropdown ul 							 { width: 300px; visibility: hidden; position: absolute; top: 100%; left: 0; }
+ul.dropdown ul li 					 { font-weight: normal; background: #f6f6f6; color: #000; border-bottom: 1px solid #ccc; float: none; }
+                                    /* IE 6 & 7 Needs Inline Block */
+ul.dropdown ul li a					 { border-right: none; width: 100%; display: inline-block; color: #000;} 
+
+/* 
+	LEVEL THREE
+*/
+ul.dropdown ul ul 					 { left: 100%; top: 0; }
+ul.dropdown li:hover > ul 	 { visibility: visible; }
+
+
+
+
+
+
+/*  Menu System End */
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+#content {
+	   padding: 20px 10px;
+}
+	
+#footer {
+	    background-color: #999;
+	    padding-top: 6px;
+	    padding-bottom: 6px;
+	    clear:both;
+	    border-top: 2px solid #333;
+	    text-align: center;
+	}
+	#footer p, #footer a {
+	    text-align: center;
+	    color: white;
+	    margin: 0;
+	    padding: 2px;
+	}
+	
+	.fieldWithErrors {
+	  padding: 2px;
+	  background-color: red;
+	  display: table;
+	}
+
+	#errorExplanation {
+	  width: 400px;
+	  border: 2px solid red;
+	  padding: 7px;
+	  padding-bottom: 12px;
+	  margin-bottom: 20px;
+	  background-color: #f0f0f0;
+	}
+
+	#errorExplanation h2 {
+	  text-align: left;
+	  font-weight: bold;
+	  padding: 5px 5px 5px 15px;
+	  font-size: 12px;
+	  margin: -7px;
+	  background-color: #c00;
+	  color: #fff;
+	}
+
+	#errorExplanation p {
+	  color: #333;
+	  margin-bottom: 0;
+	  padding: 5px;
+	}
+
+	#errorExplanation ul li {
+	  font-size: 12px;
+	  list-style: square;
+	}
+
+/*  styles for flash messages */
+div.flash {margin-top: 8px;}
+
+div.flash.error, #errorExplanation {
+	background: url(../images/exclamation.png) 8px 50% no-repeat;
+	background-color: #ffe3e3;
+	border-color: #dd0000;
+	color: #880000;
+}
+div.flash.notice {
+  background: url(../images/true.png) 8px 5px no-repeat;
+	background-color: #dfffdf;
+	border-color: #9fcf9f;
+	color: #005f00;
+}
+
+
+
+/*  styles for index pages */
+
+.box { 
+	background:#fbfcfc; 
+	height:100%; 
+	padding:1px; 
+	margin: 10px 40px 10px 0; 
+	}
+.box-head { 
+	background:#EEE; 
+	height:32px; color:#333; 
+	padding: 10px 10px; line-height:16px; 
+	white-space:nowrap; 
+	border-bottom:solid 1px #fff; 
+	-webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;
+	}
+	
+	
+.box-head .right{ 
+	padding-top:5px; 
+	line-height:13px; 
+	float:right;
+	}
+
+.left, .alignleft { float:left; display:inline; }	
+.right, .alignright { float:right; display:inline; font-size: 11px;}
+.ac { text-align: center !important; }
+
+.indexlist {}
+.indexlist table {
+	width:90%; border: 0; cellpadding: 0; cellspacing: 0;
+}
+.indexlist th{ 
+		background:#fffdfa; 
+		color:#818181; 
+		text-align: left; 
+		padding:3px 3px; 
+		border-bottom:solid 1px #d2d1cb;
+}
+.indexlist td{ 
+		background:#fbfcfc;  
+		border-bottom:solid 1px #e0e0e0; 
+		padding:4px 3px 7px 5px;
+		font-size: 11px; 
+}
+.indexlist tr:hover td{ 
+		background:#fff9e1; 
+}
+
+
+
+/* form tables */
+.photo {
+	float:right;
+	display: block;
+}
+
+.formtable  {
+	border-collapse:collapse;
+	border: 3px white;
+	text-align:left;
+	padding:5px;
+}
+
+.formtable table {
+	width:80%; border: 0; cellpadding: 0; cellspacing: 0;
+}
+
+.formtable tr:hover td{ 
+	background:#fff9e1; 
+}
+
+.formtable th {
+	/*border-collapse:collapse;*/
+	font-family: tahoma, sans-serif;
+	font-size: 12px;    
+	font-style: bold;
+    text-align: left;
+    background-color: #DDD;
+    border-top:solid 14px #FFF;
+    border-bottom:solid 1px #d2d1cb;
+	padding: 5px;
+	margin: 12px;
+	height:25px
+}
+
+.formtable td {
+   vertical-align: top;
+   border-bottom:solid 1px #F5F9FF;
+   padding: 8px 25px 5px 5px;
+   border-bottom:solid 1px #F0F0F0; 
+}
+
+.leftcol {
+    font-weight: bold;
+    font-family: tahoma, sans-serif;
+    font-style: bold;
+    width: 150px;
+		vertical-align: top;
+}
