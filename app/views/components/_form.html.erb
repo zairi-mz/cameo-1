@@ -50,6 +50,22 @@
   </tr>
 </table>
 
+
+	<table>
+		<tr>
+			<th colspan=5>Parts  </th>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<% f.fields_for :compparts do |builder| %>
+		<%= render 'comppart_fields', :f => builder %>
+    
+		<% end %>
+		<tr><td><p><%= link_to_add_fields image_tag("add.png", :border => 0, :title => 'Add Parts'), f, :compparts %></p></td></tr>
+	</table>
+
+
 <p>
   <% f.label :unit_id %><br />
   <% f.text_field :unit_id %>

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110519060845) do
+ActiveRecord::Schema.define(:version => 20110519152005) do
 
   create_table "addresses", :force => true do |t|
     t.string   "company"
@@ -43,6 +43,15 @@ ActiveRecord::Schema.define(:version => 20110519060845) do
   end
 
   add_index "components", ["ancestry"], :name => "index_components_on_ancestry"
+
+  create_table "compparts", :force => true do |t|
+    t.integer  "component_id"
+    t.integer  "part_id"
+    t.integer  "quantity"
+    t.integer  "updated_by"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "documents", :force => true do |t|
     t.string   "doc_code"

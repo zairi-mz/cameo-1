@@ -5,12 +5,19 @@ class Component < ActiveRecord::Base
   
   #Relationships
   has_ancestry
+  
+  
   #has_many    :subcomponent,    :class_name => 'Component', :foreign_key => 'parent_id'
   #belongs_to  :parent,          :class_name => 'Component', :foreign_key => 'parent_id'
   belongs_to  :manufacturedby,  :class_name => 'Address', :foreign_key => 'manufacturer_id'
   belongs_to  :suppliedby,      :class_name => 'Address', :foreign_key => 'supplier_id'
   has_many    :maintenances
   belongs_to  :editor,          :class_name => 'User',     :foreign_key => 'created_by'
+  has_many    :compparts
+  has_many    :parts, :through => :compparts
+  accepts_nested_attributes_for :compparts, :reject_if => lambda { |a| a[:part_id].blank? }, :allow_destroy => true 
+  
+  
   
   #Validations
   validates_uniqueness_of :component_code

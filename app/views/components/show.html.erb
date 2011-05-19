@@ -45,6 +45,11 @@
     <td><%=h @component.created_by.blank? ? "-" : @component.editor.name %> On <%=h @component.updated_at %></td>
   </tr>
 </table>
+
+<% for comppart in @component.compparts %>
+	<p><%=h comppart.id %></p>
+	<p><%=h comppart.quantity %></p>
+<% end %>
 </div>
 
 <%= link_to 'Edit', edit_component_path(@component) %> |
