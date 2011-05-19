@@ -15330,3 +15330,966 @@ ActionController::RoutingError (No route matches "/javascripts/jquery.js" with {
   
 
 Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#index (for 127.0.0.1 at 2011-05-19 17:38:35) [GET]
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.8ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;35;1mComponent Load (1.7ms)[0m   [0mSELECT * FROM "components" ORDER BY component_code[0m
+Rendering template within layouts/application
+Rendering components/index
+Completed in 145ms (View: 58, DB: 4) | 200 OK [http://0.0.0.0/components]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-05-19 17:38:35) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#index (for 127.0.0.1 at 2011-05-19 17:38:55) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (1.0ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;35;1mComponent Load (1.7ms)[0m   [0mSELECT * FROM "components" ORDER BY component_code[0m
+Rendering template within layouts/application
+Rendering components/index
+Completed in 115ms (View: 28, DB: 4) | 200 OK [http://0.0.0.0/components]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-05-19 17:38:56) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#index (for 127.0.0.1 at 2011-05-19 17:39:45) [GET]
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (1.7ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;35;1mComponent Load (1.4ms)[0m   [0mSELECT * FROM "components" ORDER BY component_code[0m
+Rendering template within layouts/application
+Rendering components/index
+Completed in 128ms (View: 27, DB: 5) | 200 OK [http://0.0.0.0/components]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-05-19 17:39:46) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PagesController#home (for 127.0.0.1 at 2011-05-19 17:39:48) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/home
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 48ms (View: 34, DB: 1) | 200 OK [http://0.0.0.0/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-05-19 17:39:48) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PagesController#home (for 127.0.0.1 at 2011-05-19 17:39:59) [GET]
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/home
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 24ms (View: 9, DB: 2) | 200 OK [http://0.0.0.0/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-05-19 17:40:00) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PagesController#home (for 127.0.0.1 at 2011-05-19 17:40:15) [GET]
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/home
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 81ms (View: 13, DB: 1) | 200 OK [http://0.0.0.0/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-05-19 17:40:15) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#index (for 127.0.0.1 at 2011-05-19 17:41:32) [GET]
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.9ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;35;1mComponent Load (1.5ms)[0m   [0mSELECT * FROM "components" ORDER BY component_code[0m
+Rendering template within layouts/application
+Rendering components/index
+Completed in 135ms (View: 47, DB: 4) | 200 OK [http://0.0.0.0/components]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-05-19 17:41:33) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#index (for 127.0.0.1 at 2011-05-19 18:10:53) [GET]
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (1.1ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;35;1mComponent Load (1.5ms)[0m   [0mSELECT * FROM "components" ORDER BY component_code[0m
+Rendering template within layouts/application
+Rendering components/index
+Completed in 154ms (View: 120, DB: 4) | 200 OK [http://0.0.0.0/components]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-05-19 18:10:54) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing MaintenancesController#index (for 127.0.0.1 at 2011-05-19 18:10:55) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.8ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;35;1mMaintenance Load (7.6ms)[0m   [0mSELECT * FROM "maintenances" [0m
+Rendering template within layouts/application
+Rendering maintenances/index
+Completed in 137ms (View: 24, DB: 10) | 200 OK [http://0.0.0.0/maintenances]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-05-19 18:10:55) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing MaintenancesController#index (for 127.0.0.1 at 2011-05-19 18:10:58) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.8ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;35;1mMaintenance Load (0.8ms)[0m   [0mSELECT * FROM "maintenances" [0m
+Rendering template within layouts/application
+Rendering maintenances/index
+Completed in 36ms (View: 8, DB: 3) | 200 OK [http://0.0.0.0/maintenances]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-05-19 18:10:59) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing MaintenancesController#new (for 127.0.0.1 at 2011-05-19 18:11:00) [GET]
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (1.0ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+Rendering template within layouts/application
+Rendering maintenances/new
+  [4;35;1mComponent Load (1.1ms)[0m   [0mSELECT * FROM "components" [0m
+Rendered maintenances/_form (24.7ms)
+Completed in 123ms (View: 38, DB: 4) | 200 OK [http://0.0.0.0/maintenances/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-05-19 18:11:00) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#index (for 127.0.0.1 at 2011-05-19 22:24:51) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (1.0ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;35;1mComponent Load (1.5ms)[0m   [0mSELECT * FROM "components" ORDER BY component_code[0m
+Rendering template within layouts/application
+Rendering components/index
+Completed in 136ms (View: 93, DB: 4) | 200 OK [http://0.0.0.0/components]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-05-19 22:24:51) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#index (for 127.0.0.1 at 2011-05-19 22:26:55) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (1.1ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;35;1mComponent Load (1.4ms)[0m   [0mSELECT * FROM "components" ORDER BY component_code[0m
+Rendering template within layouts/application
+Rendering components/index
+Completed in 60ms (View: 24, DB: 4) | 200 OK [http://0.0.0.0/components]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-05-19 22:26:55) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing MaintenancesController#index (for 127.0.0.1 at 2011-05-19 22:27:01) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (1.1ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;35;1mMaintenance Load (0.8ms)[0m   [0mSELECT * FROM "maintenances" [0m
+Rendering template within layouts/application
+Rendering maintenances/index
+Completed in 106ms (View: 22, DB: 3) | 200 OK [http://0.0.0.0/maintenances]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-05-19 22:27:01) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#index (for 127.0.0.1 at 2011-05-19 22:27:04) [GET]
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (1.0ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;35;1mComponent Load (1.5ms)[0m   [0mSELECT * FROM "components" ORDER BY component_code[0m
+Rendering template within layouts/application
+Rendering components/index
+Completed in 112ms (View: 77, DB: 4) | 200 OK [http://0.0.0.0/components]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-05-19 22:27:04) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#index (for 127.0.0.1 at 2011-05-19 22:45:42) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.9ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;35;1mComponent Load (1.5ms)[0m   [0mSELECT * FROM "components" ORDER BY component_code[0m
+Rendering template within layouts/application
+Rendering components/index
+Completed in 130ms (View: 95, DB: 4) | 200 OK [http://0.0.0.0/components]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-05-19 22:45:42) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing MaintenancesController#new (for 127.0.0.1 at 2011-05-19 22:45:47) [GET]
+  Parameters: {"component_id"=>"3"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (1.0ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+
+ActiveRecord::UnknownAttributeError (unknown attribute: parent_id):
+  app/controllers/maintenances_controller.rb:30:in `new'
+  app/controllers/maintenances_controller.rb:30:in `new'
+
+Rendered rescues/_trace (76.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#index (for 127.0.0.1 at 2011-05-19 22:46:21) [GET]
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.9ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;36;1mComponent Load (1.4ms)[0m   [0;1mSELECT * FROM "components" ORDER BY component_code[0m
+Rendering template within layouts/application
+Rendering components/index
+Completed in 59ms (View: 25, DB: 4) | 200 OK [http://0.0.0.0/components]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing MaintenancesController#new (for 127.0.0.1 at 2011-05-19 22:46:23) [GET]
+  Parameters: {"component_id"=>"3"}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (1.2ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+
+ActiveRecord::UnknownAttributeError (unknown attribute: parent_id):
+  app/controllers/maintenances_controller.rb:30:in `new'
+  app/controllers/maintenances_controller.rb:30:in `new'
+
+Rendered rescues/_trace (25.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#index (for 127.0.0.1 at 2011-05-19 22:46:26) [GET]
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.8ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;35;1mComponent Load (1.9ms)[0m   [0mSELECT * FROM "components" ORDER BY component_code[0m
+Rendering template within layouts/application
+Rendering components/index
+Completed in 118ms (View: 28, DB: 4) | 200 OK [http://0.0.0.0/components]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#index (for 127.0.0.1 at 2011-05-19 22:47:39) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (1.0ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;35;1mComponent Load (1.5ms)[0m   [0mSELECT * FROM "components" ORDER BY component_code[0m
+Rendering template within layouts/application
+Rendering components/index
+Completed in 63ms (View: 28, DB: 4) | 200 OK [http://0.0.0.0/components]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-05-19 22:47:39) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing MaintenancesController#new (for 127.0.0.1 at 2011-05-19 22:47:40) [GET]
+  Parameters: {"component_id"=>"3"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.9ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+Rendering template within layouts/application
+Rendering maintenances/new
+Rendered maintenances/_form (10.0ms)
+Completed in 49ms (View: 19, DB: 2) | 200 OK [http://0.0.0.0/maintenances/new?component_id=3]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-05-19 22:47:40) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing MaintenancesController#create (for 127.0.0.1 at 2011-05-19 22:48:03) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"T/z5vf4xrvLP5f5fjyl5e6urXVW9vXoK6yYpOiX79cU=", "maintenance"=>{"code"=>"1234", "priority"=>"1", "action_group_id"=>"", "level"=>"3", "first_date(1i)"=>"", "first_date(2i)"=>"", "first_date(3i)"=>"", "frequency"=>"1", "description"=>"Paint Ship", "frequency_unit"=>"365", "component_id"=>"3"}}
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.8ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (58.7ms)[0m   [0mINSERT INTO "maintenances" ("created_at", "code", "updated_at", "level", "action_group_id", "next_date", "priority", "description", "frequency", "component_id", "frequency_unit", "first_date") VALUES('2011-05-19 14:48:03.892978', E'1234', '2011-05-19 14:48:03.892978', 3, NULL, NULL, 1, E'Paint Ship', 1, 3, 365, NULL) RETURNING "id"[0m
+  [4;36;1mSQL (28.6ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/maintenances/1
+Completed in 140ms (DB: 90) | 302 Found [http://0.0.0.0/maintenances]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing MaintenancesController#show (for 127.0.0.1 at 2011-05-19 22:48:04) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mMaintenance Load (0.9ms)[0m   [0;1mSELECT * FROM "maintenances" WHERE ("maintenances"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (1.0ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "maintenances" WHERE ("maintenances"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering maintenances/show
+Completed in 55ms (View: 23, DB: 3) | 200 OK [http://0.0.0.0/maintenances/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-05-19 22:48:04) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing MaintenancesController#index (for 127.0.0.1 at 2011-05-19 22:48:12) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (1.4ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;35;1mMaintenance Load (0.9ms)[0m   [0mSELECT * FROM "maintenances" [0m
+  [4;36;1mComponent Load (0.0ms)[0m   [0;1mPGError: ERROR: column "component_code_and_name" does not exist
+LINE 1: SELECT component_code_and_name FROM "components" WHERE ("com...
+ ^
+: SELECT component_code_and_name FROM "components" WHERE ("components"."id" = 3) [0m
+
+ActiveRecord::StatementInvalid (PGError: ERROR:  column "component_code_and_name" does not exist
+LINE 1: SELECT component_code_and_name FROM "components" WHERE ("com...
+               ^
+: SELECT component_code_and_name FROM "components" WHERE ("components"."id" = 3) ):
+  app/models/maintenance.rb:8:in `isorter'
+  app/controllers/maintenances_controller.rb:8:in `index'
+  app/controllers/maintenances_controller.rb:8:in `index'
+
+Rendered rescues/_trace (80.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing MaintenancesController#index (for 127.0.0.1 at 2011-05-19 22:51:05) [GET]
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.9ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;36;1mMaintenance Load (0.9ms)[0m   [0;1mSELECT * FROM "maintenances" [0m
+  [4;35;1mComponent Load (0.8ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering maintenances/index
+Completed in 52ms (View: 12, DB: 4) | 200 OK [http://0.0.0.0/maintenances]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-05-19 22:51:06) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing MaintenancesController#index (for 127.0.0.1 at 2011-05-19 22:52:29) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.9ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;35;1mMaintenance Load (0.8ms)[0m   [0mSELECT * FROM "maintenances" [0m
+  [4;36;1mComponent Load (0.9ms)[0m   [0;1mSELECT id FROM "components" WHERE ("components"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering maintenances/index
+Completed in 92ms (View: 52, DB: 4) | 200 OK [http://0.0.0.0/maintenances]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-05-19 22:52:29) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing MaintenancesController#index (for 127.0.0.1 at 2011-05-19 22:53:49) [GET]
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.9ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;36;1mMaintenance Load (0.8ms)[0m   [0;1mSELECT * FROM "maintenances" [0m
+  [4;35;1mComponent Load (1.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 3) ORDER BY id[0m
+Rendering template within layouts/application
+Rendering maintenances/index
+
+ActionView::TemplateError (undefined local variable or method `name' for #<ActionView::Base:0x1035e2320>) on line #25 of app/views/maintenances/index.html.erb:
+22:   </tr>
+23: 
+24: <% @maintenance_equipment.each do |isorter, maintenances| %>
+25: <tr><td colspan=11><BR><b>Equipment <%= isorter %><%= name %></b></td></tr>
+26: <% for maintenance in maintenances %>
+27: 
+28:   <tr>
+
+    app/views/maintenances/index.html.erb:25
+    app/views/maintenances/index.html.erb:24
+    app/controllers/maintenances_controller.rb:10:in `index'
+
+Rendered rescues/_trace (84.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing MaintenancesController#index (for 127.0.0.1 at 2011-05-19 22:54:15) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.9ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;35;1mMaintenance Load (0.9ms)[0m   [0mSELECT * FROM "maintenances" [0m
+  [4;36;1mComponent Load (1.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 3) ORDER BY id[0m
+Rendering template within layouts/application
+Rendering maintenances/index
+
+ActionView::TemplateError (undefined local variable or method `maintenance_equipment' for #<ActionView::Base:0x10346fe20>) on line #25 of app/views/maintenances/index.html.erb:
+22:   </tr>
+23: 
+24: <% @maintenance_equipment.each do |isorter, maintenances| %>
+25: <tr><td colspan=11><BR><b>Equipment <%= isorter %><%= maintenance_equipment.name %></b></td></tr>
+26: <% for maintenance in maintenances %>
+27: 
+28:   <tr>
+
+    app/views/maintenances/index.html.erb:25
+    app/views/maintenances/index.html.erb:24
+    app/controllers/maintenances_controller.rb:10:in `index'
+
+Rendered rescues/_trace (33.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing MaintenancesController#index (for 127.0.0.1 at 2011-05-19 22:54:29) [GET]
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.9ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;36;1mMaintenance Load (0.9ms)[0m   [0;1mSELECT * FROM "maintenances" [0m
+  [4;35;1mComponent Load (1.1ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 3) ORDER BY id[0m
+Rendering template within layouts/application
+Rendering maintenances/index
+
+ActionView::TemplateError (undefined local variable or method `component' for #<ActionView::Base:0x1033600c0>) on line #25 of app/views/maintenances/index.html.erb:
+22:   </tr>
+23: 
+24: <% @maintenance_equipment.each do |isorter, maintenances| %>
+25: <tr><td colspan=11><BR><b>Equipment <%= isorter %><%= component.name %></b></td></tr>
+26: <% for maintenance in maintenances %>
+27: 
+28:   <tr>
+
+    app/views/maintenances/index.html.erb:25
+    app/views/maintenances/index.html.erb:24
+    app/controllers/maintenances_controller.rb:10:in `index'
+
+Rendered rescues/_trace (33.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing MaintenancesController#index (for 127.0.0.1 at 2011-05-19 22:56:04) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.9ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;35;1mMaintenance Load (0.9ms)[0m   [0mSELECT * FROM "maintenances" [0m
+  [4;36;1mComponent Load (0.9ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 3) ORDER BY id[0m
+Rendering template within layouts/application
+Rendering maintenances/index
+Completed in 111ms (View: 14, DB: 4) | 200 OK [http://0.0.0.0/maintenances]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-05-19 22:56:04) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing MaintenancesController#index (for 127.0.0.1 at 2011-05-19 22:57:31) [GET]
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (1.0ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;36;1mMaintenance Load (0.8ms)[0m   [0;1mSELECT * FROM "maintenances" [0m
+  [4;35;1mComponent Load (1.1ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 3) ORDER BY id[0m
+  [4;36;1mComponent Load (0.4ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 3) ORDER BY id[0m
+
+NameError (undefined local variable or method `component_code' for #<Maintenance:0x1037a2d18>):
+  app/models/maintenance.rb:10:in `isorter'
+  app/controllers/maintenances_controller.rb:8:in `index'
+  app/controllers/maintenances_controller.rb:8:in `index'
+
+Rendered rescues/_trace (25.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing MaintenancesController#index (for 127.0.0.1 at 2011-05-19 22:58:38) [GET]
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (1.0ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;36;1mMaintenance Load (0.8ms)[0m   [0;1mSELECT * FROM "maintenances" [0m
+  [4;35;1mComponent Load (1.3ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 3) ORDER BY id[0m
+  [4;36;1mComponent Load (0.6ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 3) ORDER BY id[0m
+Rendering template within layouts/application
+Rendering maintenances/index
+Completed in 135ms (View: 40, DB: 5) | 200 OK [http://0.0.0.0/maintenances]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-05-19 22:58:38) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing MaintenancesController#index (for 127.0.0.1 at 2011-05-19 22:59:16) [GET]
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.8ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;36;1mMaintenance Load (0.9ms)[0m   [0;1mSELECT * FROM "maintenances" [0m
+  [4;35;1mComponent Load (1.1ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 3) ORDER BY id[0m
+  [4;36;1mComponent Load (0.5ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 3) ORDER BY id[0m
+Rendering template within layouts/application
+Rendering maintenances/index
+Completed in 106ms (View: 15, DB: 5) | 200 OK [http://0.0.0.0/maintenances]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-05-19 22:59:17) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing MaintenancesController#index (for 127.0.0.1 at 2011-05-19 23:00:02) [GET]
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (1.0ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;36;1mMaintenance Load (0.9ms)[0m   [0;1mSELECT * FROM "maintenances" [0m
+  [4;35;1mComponent Load (1.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 3) ORDER BY id[0m
+  [4;36;1mComponent Load (0.8ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 3) ORDER BY id[0m
+Rendering template within layouts/application
+Rendering maintenances/index
+Completed in 108ms (View: 15, DB: 5) | 200 OK [http://0.0.0.0/maintenances]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-05-19 23:00:02) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing MaintenancesController#index (for 127.0.0.1 at 2011-05-19 23:05:30) [GET]
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.8ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;36;1mMaintenance Load (0.8ms)[0m   [0;1mSELECT * FROM "maintenances" [0m
+  [4;35;1mComponent Load (1.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 3) ORDER BY id[0m
+  [4;36;1mComponent Load (0.7ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 3) ORDER BY id[0m
+Rendering template within layouts/application
+Rendering maintenances/index
+
+ActionView::TemplateError (undefined local variable or method `maintenance' for #<Maintenance:0x10336c370>) on line #29 of app/views/maintenances/index.html.erb:
+26:   <tr>
+27:     <td><%=h maintenance.code %></td>
+28:     <td><%=h maintenance.description %></td>
+29:     <td><%=h maintenance.frequency %> <%=h maintenance.periodicity %></td>
+30:     <td><%=h maintenance.level %></td>
+31:     <td><%=h maintenance.action_group_id %></td>
+32:     <td><%=h maintenance.first_date %></td>
+
+    app/models/maintenance.rb:14:in `periodicity'
+    app/models/maintenance.rb:14:in `each'
+    app/models/maintenance.rb:14:in `find_all'
+    app/models/maintenance.rb:14:in `periodicity'
+    app/views/maintenances/index.html.erb:29
+    app/views/maintenances/index.html.erb:24:in `each'
+    app/views/maintenances/index.html.erb:24
+    app/views/maintenances/index.html.erb:22
+    app/controllers/maintenances_controller.rb:10:in `index'
+
+Rendered rescues/_trace (37.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing MaintenancesController#index (for 127.0.0.1 at 2011-05-19 23:06:11) [GET]
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (1.1ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;36;1mMaintenance Load (0.8ms)[0m   [0;1mSELECT * FROM "maintenances" [0m
+  [4;35;1mComponent Load (1.3ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 3) ORDER BY id[0m
+  [4;36;1mComponent Load (0.6ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 3) ORDER BY id[0m
+Rendering template within layouts/application
+Rendering maintenances/index
+Completed in 110ms (View: 11, DB: 5) | 200 OK [http://0.0.0.0/maintenances]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-05-19 23:06:11) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing MaintenancesController#index (for 127.0.0.1 at 2011-05-19 23:07:59) [GET]
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (1.0ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;36;1mMaintenance Load (0.9ms)[0m   [0;1mSELECT * FROM "maintenances" [0m
+  [4;35;1mComponent Load (1.1ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 3) ORDER BY id[0m
+  [4;36;1mComponent Load (0.5ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 3) ORDER BY id[0m
+Rendering template within layouts/application
+Rendering maintenances/index
+Completed in 109ms (View: 14, DB: 5) | 200 OK [http://0.0.0.0/maintenances]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-05-19 23:08:00) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing MaintenancesController#index (for 127.0.0.1 at 2011-05-19 23:08:43) [GET]
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.9ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;36;1mMaintenance Load (1.0ms)[0m   [0;1mSELECT * FROM "maintenances" [0m
+  [4;35;1mComponent Load (1.1ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 3) ORDER BY id[0m
+  [4;36;1mComponent Load (0.5ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 3) ORDER BY id[0m
+Rendering template within layouts/application
+Rendering maintenances/index
+Completed in 108ms (View: 15, DB: 5) | 200 OK [http://0.0.0.0/maintenances]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-05-19 23:08:43) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing MaintenancesController#index (for 127.0.0.1 at 2011-05-19 23:09:03) [GET]
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (1.3ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;36;1mMaintenance Load (0.9ms)[0m   [0;1mSELECT * FROM "maintenances" [0m
+  [4;35;1mComponent Load (1.1ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 3) ORDER BY id[0m
+  [4;36;1mComponent Load (0.5ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 3) ORDER BY id[0m
+Rendering template within layouts/application
+Rendering maintenances/index
+Completed in 186ms (View: 15, DB: 5) | 200 OK [http://0.0.0.0/maintenances]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-05-19 23:09:04) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing MaintenancesController#index (for 127.0.0.1 at 2011-05-19 23:09:37) [GET]
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (1.0ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;36;1mMaintenance Load (0.8ms)[0m   [0;1mSELECT * FROM "maintenances" [0m
+  [4;35;1mComponent Load (1.1ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 3) ORDER BY id[0m
+  [4;36;1mComponent Load (0.7ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 3) ORDER BY id[0m
+Rendering template within layouts/application
+Rendering maintenances/index
+Completed in 105ms (View: 11, DB: 5) | 200 OK [http://0.0.0.0/maintenances]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-05-19 23:09:37) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing MaintenancesController#index (for 127.0.0.1 at 2011-05-19 23:10:12) [GET]
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.9ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;36;1mMaintenance Load (1.3ms)[0m   [0;1mSELECT * FROM "maintenances" [0m
+  [4;35;1mComponent Load (1.1ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 3) ORDER BY id[0m
+  [4;36;1mComponent Load (0.5ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 3) ORDER BY id[0m
+Rendering template within layouts/application
+Rendering maintenances/index
+Completed in 108ms (View: 15, DB: 5) | 200 OK [http://0.0.0.0/maintenances]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-05-19 23:10:12) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#index (for 127.0.0.1 at 2011-05-19 23:10:14) [GET]
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.9ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;36;1mComponent Load (1.5ms)[0m   [0;1mSELECT * FROM "components" ORDER BY component_code[0m
+Rendering template within layouts/application
+Rendering components/index
+Completed in 129ms (View: 41, DB: 4) | 200 OK [http://0.0.0.0/components]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-05-19 23:10:14) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)

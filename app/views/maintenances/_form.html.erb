@@ -1,11 +1,12 @@
 <div class='formtable'>
+	<%= f.hidden_field :component_id %>
 <table>
 	<tr>
 		<th colspan=2>Edit <%= t ('maintenance.maint') %></th>
 	</tr>
   <tr>
     <td class=leftcol><%= f.label t ('maintenance.component_id') %>:</td>
-    <td><%= f.collection_select :component_id, Component.find(:all), :id, :component_code_and_name, :include_blank => true %></td>
+    <td><#%= f.collection_select :component_id, Component.find(:all), :id, :component_code_and_name, :include_blank => true %></td>
   </tr>
   <tr>
     <td class=leftcol><%= f.label t ('maintenance.code') %>:</td>

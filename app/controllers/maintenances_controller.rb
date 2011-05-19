@@ -27,7 +27,7 @@ class MaintenancesController < ApplicationController
   # GET /maintenances/new
   # GET /maintenances/new.xml
   def new
-    @maintenance = Maintenance.new
+    @maintenance = Maintenance.new(:component_id => params[:component_id])
 
     respond_to do |format|
       format.html # new.html.erb

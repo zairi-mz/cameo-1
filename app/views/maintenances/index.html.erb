@@ -10,10 +10,9 @@
 <% link_to 'Create New role', new_maintenance_path %>
 <table>
   <tr>
-    <th><%= link_to image_tag("add.png", :border => 0, :title => 'Create'), new_maintenance_path %> Maintenance</th>
+	  <th>Maint Code</th>
     <th>Description</th>
     <th>Frequency</th>
-    <th>Frequency unit</th>
     <th>Level</th>
     <th>Action group</th>
     <th>First date</th>
@@ -22,16 +21,14 @@
   </tr>
 
 <% @maintenance_equipment.each do |isorter, maintenances| %>
-<tr><td colspan=11><BR><b>Equipment <%= isorter %></b></td></tr>
+<tr><td colspan=11><BR><b><%= isorter %></b></td></tr>
 <% for maintenance in maintenances %>
 
   <tr>
-	  <td><%=h maintenance.component_id %></td>
     <td><%=h maintenance.code %></td>
     <td><%=h maintenance.description %></td>
-    <td><%=h maintenance.frequency %></td>
-    <td><%=h maintenance.frequency_unit %></td>
-    <td><%=h maintenance.level %></td>
+    <td><%=h maintenance.frequency %> <%=h maintenance.periodicity %></td>
+    <td><%=h maintenance.maint_team %></td>
     <td><%=h maintenance.action_group_id %></td>
     <td><%=h maintenance.first_date %></td>
     <td><%=h maintenance.priority %></td>
@@ -46,4 +43,4 @@
 <br />
 </div>
 
-<%= link_to 'New maintenance', new_maintenance_path %>
+<% link_to 'New maintenance', new_maintenance_path %>

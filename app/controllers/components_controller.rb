@@ -26,7 +26,7 @@ class ComponentsController < ApplicationController
   # GET /components/new
   # GET /components/new.xml
   def new
-    @component = Component.new(:parent_id => params[:parent_id])
+    @component = Component.new(:component_id => params[:component_id])
 
     respond_to do |format|
       format.html # new.html.erb

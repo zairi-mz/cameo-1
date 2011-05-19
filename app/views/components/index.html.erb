@@ -21,7 +21,7 @@
     <th>Type no</th>
     <th>Serial no</th>
     <th>Installed on</th>
-    <th colspan=3>Control</th>
+    <th colspan=4>Control</th>
   </tr>
 
 	<% @components.each do |component| %>
@@ -34,6 +34,7 @@
 	    <td><%=h component.type_no %></td>
 	    <td><%=h component.serial_no %></td>
 	    <td><%=h component.installed_on %></td>
+	  <td width=10px><%= link_to image_tag("table-gear-icon.png", :border => 0, :title => 'Add Maintenance'), new_maintenance_path(:component_id => component)%></td>
 		<td width=10px><%= link_to image_tag("document.png", :border => 0, :title => 'Show'), :action => 'show', :id => component %></td>
     <td width=10px><%= link_to image_tag("edit.png", :border => 0, :title => 'Edit'), :action => 'edit', :id => component %></td>
     <td width=10px><%= link_to image_tag("delete.png", :border => 0, :title => 'Delete'), component, :confirm => 'Are you sure?', :method => :delete %>
