@@ -1,5 +1,6 @@
 <div class='formtable'>
 <table>
+	<th colspan=2>Equipment</th>
 	<tr>
     <td class=leftcol><%=t ('component.component_code') %>:</td>
     <td><%=h @component.component_code %>  <%=h @component.name %></td>
@@ -46,10 +47,18 @@
   </tr>
 </table>
 
+<table width=300px>
+	<tr>
+		<th colspan=3>Parts</th>
+	</tr>
 <% for comppart in @component.compparts %>
-	<p><%=h comppart.id %></p>
-	<p><%=h comppart.quantity %></p>
+	<tr>
+		<td>|  Part No : <%=h comppart.part.part_code %></td>
+		<td>|  Name :  <%=h comppart.part.name %></td>
+		<td>|  Quantity : <%=h comppart.quantity %></td>
+	</tr>
 <% end %>
+</table>
 </div>
 
 <%= link_to 'Edit', edit_component_path(@component) %> |
