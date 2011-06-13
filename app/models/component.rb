@@ -39,7 +39,19 @@ class Component < ActiveRecord::Base
     if search
       find(:all, :conditions => ['component_code ILIKE ? or name ILIKE ?', "%#{search}%","%#{search}%"], :order => :component_code)
     else
-      find(:all, :order => :component_code)
+      find(:all)
     end
   end
+  
+  
+  def tree_gelas
+     if is_root?
+       gls = ""
+     else
+       gls = "class=\"child-of-node-#{parent_id}\""
+     end
+     gls
+  end
+
+
 end

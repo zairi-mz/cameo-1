@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :locations
+
   map.resources :maintgroups
 
   map.resources :maintenances
@@ -11,13 +13,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :tools
 
-  map.resources :components
-
-  map.resources :equipment
-
-  map.resources :equipment
-
-  map.resources :equipment
+  map.resources :components, :collection => { :indextree => :get }
 
   map.resources :roles
 

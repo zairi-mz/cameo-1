@@ -1,6 +1,6 @@
 class ComponentsController < ApplicationController
   
-  filter_resource_access
+  filter_access_to :all
   # GET /components
   # GET /components.xml
   def index
@@ -85,4 +85,9 @@ class ComponentsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def indextree
+    @components = Component.search(params[:search])
+  end
+  
 end

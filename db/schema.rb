@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110519152005) do
+ActiveRecord::Schema.define(:version => 20110613053335) do
 
   create_table "addresses", :force => true do |t|
     t.string   "company"
@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(:version => 20110519152005) do
 
   create_table "components", :force => true do |t|
     t.string   "component_code"
-    t.integer  "parent_id"
     t.string   "name"
     t.integer  "location_id"
     t.string   "type_no"
@@ -63,6 +62,15 @@ ActiveRecord::Schema.define(:version => 20110519152005) do
     t.string   "file_content_type"
     t.integer  "file_file_size"
     t.datetime "file_updated_at"
+  end
+
+  create_table "locations", :force => true do |t|
+    t.string   "code"
+    t.string   "name"
+    t.string   "department_id"
+    t.string   "ancestry"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "maintenances", :force => true do |t|

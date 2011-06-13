@@ -142,11 +142,11 @@ select {font-family: courier,serif;
 	}
 
 
-ul.dropdown                  { position: relative; width: 100%; background-color: #999; }
+ul.dropdown                  { position: relative; width: 100%; background-color: #999; z-index:99; }
 ul.dropdown li               { font-weight: bold; float: left; zoom: 1;  list-style: none; font-size: 13px;}
 ul.dropdown a:hover		       { color: #000; }
 ul.dropdown a:active         { color: #ffa500; }
-ul.dropdown li a             { display: block; padding: 4px 40px 4px 8px; border-right: 1px solid #333; color: White; text-decoration: none;}
+ul.dropdown li a             { display: block; padding: 4px 40px 4px 8px; border-right: 1px solid #333; color: white; text-decoration: none;}
 ul.dropdown li:last-child a  { border-right: none; } /* Doesn't work in IE */
 ul.dropdown li.hover,        
 ul.dropdown li:hover         { background: #F3D673; color: black; position: relative; }
@@ -156,7 +156,7 @@ ul.dropdown li.hover a       { color: black; }
 /* 
 	LEVEL TWO
 */
-ul.dropdown ul 							 { width: 300px; visibility: hidden; position: absolute; top: 100%; left: 0; }
+ul.dropdown ul 							 { width: 220px; visibility: hidden; position: absolute; top: 100%; left: 0; margin: 0 20px 0 0; }
 ul.dropdown ul li 					 { font-weight: normal; background: #f6f6f6; color: #000; border-bottom: 1px solid #ccc; float: none; }
                                     /* IE 6 & 7 Needs Inline Block */
 ul.dropdown ul li a					 { border-right: none; width: 100%; display: inline-block; color: #000;} 
@@ -291,8 +291,7 @@ div.flash.notice {
 
 .indexlist {}
 .indexlist table {
-	width:90%; border: 0; cellpadding: 0; cellspacing: 0;
-}
+	width:90%; border: 0; cellpadding: 0; cellspacing: 0;}
 .indexlist th{ 
 		background:#fffdfa; 
 		color:#818181; 
@@ -361,3 +360,13 @@ div.flash.notice {
     width: 150px;
 		vertical-align: top;
 }
+
+
+#notice { background-color: #A4E7A0; border: 1px solid #26722D; }
+#error { background-color: #F0A8A8; border: 1px solid #900; }
+#notice, #error { width: 90%; margin: 0 auto 10px auto; padding: 5px; }
+#notice p, #error p { margin-left: 20px; padding: 0; font-size: .75em; color: #000; }
+#notice a, #error a { text-decoration: none; padding: 0 3px; }
+#notice a { border: 1px solid #26722D; color: #26722D; }
+#error a { border: 1px solid #900; color: #900; }
+#notice a:hover, #error a:hover { color: #333; border: 1px solid #333; }
