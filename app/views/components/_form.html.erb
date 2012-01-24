@@ -13,6 +13,8 @@
   </tr>
 	<tr>
     <td class=leftcol><%= f.label t ('component.location_id') %>:</td>
+		<td><%= f.collection_select :location_id, Location.find(:all, :order => :name), :id, :name, :include_blank => true %></td>
+    
     <td><% f.text_field :location_id %></td>
   </tr>
   <tr>

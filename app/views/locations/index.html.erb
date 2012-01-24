@@ -1,0 +1,41 @@
+<script type="text/javascript">
+
+$j(document).ready(function()  {
+  $j("#tree").treeTable();
+});
+
+</script>
+
+<div class="box">
+	<div class="box-head">
+		<h2 class="left">Locations</h2>
+		<div class="right">
+		</div>
+	</div>
+</div>
+
+<div class="indextree">
+<table id="tree">
+  <tr>
+    <!--<th>Code</th>-->
+    <th>Name</th>
+		<th colspan=4>Control</th>
+  </tr>
+
+<% @locations.each do |location| %>
+  <tr id="node-<%= (location.id) %>" <%= location.tree_gelas %>>
+    <td><%=h location.name %></td>
+		<td width=10px><%= link_to image_tag("brick_add.png", :border => 0, :title => 'Add Sublocation'), new_location_path(:parent_id => location) %></td>
+		<td width=10px><%= link_to image_tag("document.png", :border => 0, :title => 'Show'), :action => 'show', :id => location %></td>
+  	<td width=10px><%= link_to image_tag("edit.png", :border => 0, :title => 'Edit'), :action => 'edit', :id => location %></td>
+  	<td width=10px><%= link_to image_tag("delete.png", :border => 0, :title => 'Delete'), location, :confirm => 'Are you sure?', :method => :delete %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<% link_to 'New location', new_location_path %>
+<BR>
+
+</div>

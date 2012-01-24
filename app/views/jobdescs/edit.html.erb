@@ -1,0 +1,14 @@
+<div class='webform'>
+<H2><%= t ('action.edit') %> <%= t ('jobdesc.job') %></H2>
+
+<% form_for(@jobdesc) do |f| %>
+  <%= f.error_messages %>
+
+<%= render :partial => 'form', :locals => {:f => f}   %>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @jobdesc %> |
+<%= link_to 'Back', jobdescs_path %>

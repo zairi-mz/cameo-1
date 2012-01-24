@@ -1,0 +1,41 @@
+<script type="text/javascript">
+
+$j(document).ready(function()  {
+  $j("#tree").treeTable();
+});
+
+</script>
+
+<div class="box">
+	<div class="box-head">
+		<h2 class="left">Organisation Chart</h2>
+		<div class="right">
+		</div>
+	</div>
+</div>
+
+<div class="indextree">
+<table id="tree">
+  <tr>
+    <!--<th>Code</th>-->
+    <th>Name</th>
+		<th colspan=4>Control</th>
+  </tr>
+
+<% @orgcharts.each do |orgchart| %>
+  <tr id="node-<%= (orgchart.id) %>" <%= orgchart.tree_gelas %>>
+    <td><%=h orgchart.name %></td>
+		<td width=10px><%= link_to image_tag("brick_add.png", :border => 0, :title => 'Add Child'), new_orgchart_path(:parent_id => orgchart) %></td>
+		<td width=10px><%= link_to image_tag("document.png", :border => 0, :title => 'Show'), :action => 'show', :id => orgchart %></td>
+  	<td width=10px><%= link_to image_tag("edit.png", :border => 0, :title => 'Edit'), :action => 'edit', :id => orgchart %></td>
+  	<td width=10px><%= link_to image_tag("delete.png", :border => 0, :title => 'Delete'), orgchart, :confirm => 'Are you sure?', :method => :delete %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<% link_to 'Position', new_orgchart_path %>
+<BR>
+
+</div>

@@ -5,6 +5,9 @@ class Part < ActiveRecord::Base
   has_many    :compparts
   has_many    :components, :through => :compparts
   
+  has_many    :maintparts
+  has_many    :maintenance, :through => :maintparts
+  
   
   def part_code_name
      "#{part_code}    | #{name}"

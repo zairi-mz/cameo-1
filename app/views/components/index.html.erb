@@ -42,7 +42,9 @@
 <br />
 
 <%= link_to "See Tree View", indextree_components_path %> | 
-<% link_to 'New Unit', new_component_path %>
+<% permitted_to? :manage, :components do %>
+<%= link_to 'New Root Component', new_component_path %>
+<% end %>
 <br>
 </div>
 

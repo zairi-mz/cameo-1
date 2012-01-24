@@ -11,6 +11,7 @@ class Component < ActiveRecord::Base
   #belongs_to  :parent,          :class_name => 'Component', :foreign_key => 'parent_id'
   belongs_to  :manufacturedby,  :class_name => 'Address', :foreign_key => 'manufacturer_id'
   belongs_to  :suppliedby,      :class_name => 'Address', :foreign_key => 'supplier_id'
+  belongs_to  :location
   has_many    :maintenances
   belongs_to  :editor,          :class_name => 'User',     :foreign_key => 'created_by'
   has_many    :compparts
@@ -39,7 +40,7 @@ class Component < ActiveRecord::Base
     if search
       find(:all, :conditions => ['component_code ILIKE ? or name ILIKE ?', "%#{search}%","%#{search}%"], :order => :component_code)
     else
-      find(:all)
+      find(:all, :order => :component_code)
     end
   end
   

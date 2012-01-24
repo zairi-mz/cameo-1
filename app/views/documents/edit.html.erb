@@ -1,5 +1,5 @@
-<h1>Editing document</h1>
-
+<div class='webform'>
+<h2>Edit <%= t ('documents.doc') %></h2>
 <% form_for(@document) do |f| %>
   <%= f.error_messages %>
 
@@ -8,6 +8,7 @@
     <%= f.submit 'Update' %>
   </p>
 <% end %>
+</div>
 
 <%= link_to 'Show', @document %> |
 <%= link_to 'Back', documents_path %>

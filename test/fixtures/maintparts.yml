@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  maintenance_id: 1
+  part_id: 1
+  quantity: 1
+  updated_by: 1
+
+two:
+  maintenance_id: 1
+  part_id: 1
+  quantity: 1
+  updated_by: 1

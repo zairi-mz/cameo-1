@@ -1,0 +1,36 @@
+<ul class="dropdown">
+	<li><%= link_to t('home'),   		{:controller => 'pages', 				:action => 'home'} %></li>
+	<li><a href="#">Equipment</a>
+			<ul class="sub_menu">
+				<li><%= link_to 'Equipment List', 	components_path %></li>
+				<li><%= link_to 'Equipment Tree', 		{:controller => 'components', 	:action => 'indextree'} %></li>
+			</ul>
+	</li>	
+	<li><a href="#">Maintenance</a>
+			<ul class="sub_menu">
+				<li><%= link_to 'Maintenance', 	{:controller => 'maintenances', :action => 'index'} %></li>
+				<li><%= link_to 'Job Method', 	{:controller => 'jobdescs', :action => 'index'} %></li>
+			</ul>
+	</li>
+	<li><a href="#">Inventory</a>
+			<ul class="sub_menu">
+				<li><%= link_to 'Parts',   	 		{:controller => 'parts', 				:action => 'index'} %></li>
+				<li><%= link_to 'Tools',   	 		{:controller => 'tools', 				:action => 'index'} %></li>
+				<li><%= link_to 'Locations', 		locations_path %></li>
+				<li><%= link_to 'Documents', 		{:controller => 'documents', 		:action => 'index'} %></li>
+			</ul>
+	</li>
+	<li><a href="#">People</a>
+			<ul class="sub_menu">
+				<li><%= link_to 'Organisation', orgcharts_path %>	</li>
+				<li><%= link_to 'Group', 				{:controller => 'maintgroups', 	:action => 'index'} %>	</li>
+				<li><%= link_to 'Addresses', 		{:controller => 'addresses', 	:action => 'index'} %>	</li>
+			</ul>
+	</li>
+	
+	<li><a href="#">System</a>
+			<ul class="sub_menu">
+				<li><%= link_to 'Users', {:controller => 'users', :action => 'index'} %>							</li>
+				<li><%= link_to 'Roles', {:controller => 'roles', :action => 'index'} %>							</li>
+			</ul>
+</ul>

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110613053335) do
+ActiveRecord::Schema.define(:version => 20120122102619) do
 
   create_table "addresses", :force => true do |t|
     t.string   "company"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(:version => 20110613053335) do
 
   create_table "components", :force => true do |t|
     t.string   "component_code"
+    t.integer  "parent_id"
     t.string   "name"
     t.integer  "location_id"
     t.string   "type_no"
@@ -64,10 +65,18 @@ ActiveRecord::Schema.define(:version => 20110613053335) do
     t.datetime "file_updated_at"
   end
 
+  create_table "jobdescs", :force => true do |t|
+    t.integer  "job_code"
+    t.string   "description"
+    t.text     "method"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "locations", :force => true do |t|
     t.string   "code"
     t.string   "name"
-    t.string   "department_id"
+    t.string   "orgchart_id"
     t.string   "ancestry"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -86,6 +95,7 @@ ActiveRecord::Schema.define(:version => 20110613053335) do
     t.integer  "priority"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "Jobdesc_id"
   end
 
   create_table "maintgroups", :force => true do |t|
@@ -93,6 +103,40 @@ ActiveRecord::Schema.define(:version => 20110613053335) do
     t.string   "name"
     t.integer  "quantity"
     t.decimal  "rate"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "mainthours", :force => true do |t|
+    t.integer  "maintenance_id"
+    t.integer  "maintgroup_id"
+    t.decimal  "hours"
+    t.integer  "updated_by"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "maintparts", :force => true do |t|
+    t.integer  "maintenance_id"
+    t.integer  "part_id"
+    t.integer  "quantity"
+    t.integer  "updated_by"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "mainttools", :force => true do |t|
+    t.integer  "maintenance_id"
+    t.integer  "tool_id"
+    t.integer  "updated_by"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "orgcharts", :force => true do |t|
+    t.string   "code"
+    t.string   "name"
+    t.string   "ancestry"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

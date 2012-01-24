@@ -11,6 +11,10 @@ en:
   manufacturer: Manufacturer
   price: Price
   
+  action :
+    create: Create New
+    edit : Edit
+  
   component:
     component_code: Equipment Code
     parent_id: Parent
@@ -45,6 +49,7 @@ en:
     title: Title
     doc_code: "Document Code"
     publisher: "Published By"
+    file : "Upload File"
     
   maintenance:
     maint: Maintenance
@@ -57,6 +62,12 @@ en:
     first_date: Initial Maintenance Date
     next_date: Next Maintenance On
     priority: Priority
+    
+  jobdesc:
+    job: "Job Description"
+    job_code: "Job Code"
+    description: Description
+    method: Method
     
     
   addresses:

@@ -1,12 +1,10 @@
-<div class='formtable'>
+<div class='webform'>
 	<%= f.hidden_field :component_id %>
-<table>
-	<tr>
-		<th colspan=2>Edit <%= t ('maintenance.maint') %></th>
-	</tr>
+<H2>Edit <%= t ('maintenance.maint') %></H2>
+<table width=80%>
   <tr>
     <td class=leftcol><%= f.label t ('maintenance.component_id') %>:</td>
-    <td><#%= f.collection_select :component_id, Component.find(:all), :id, :component_code_and_name, :include_blank => true %></td>
+    <td><%=h @maintenance.component.component_code %>&nbsp; &nbsp;<%=h @maintenance.component.name %></td>
   </tr>
   <tr>
     <td class=leftcol><%= f.label t ('maintenance.code') %>:</td>
@@ -14,7 +12,7 @@
   </tr>
   <tr>
     <td class=leftcol><%= f.label t ('maintenance.description') %>:</td>
-    <td><%= f.text_field :description, :size => 60  %></td>
+    <td><%= f.text_field :description, :size => 100  %></td>
   </tr>
   <tr>
     <td class=leftcol><%= f.label t ('maintenance.frequency') %>:</td>
@@ -31,7 +29,7 @@
   </tr>
   <tr>
     <td class=leftcol><%= f.label t ('maintenance.action_group_id') %>:</td>
-    <td><%= f.text_field :action_group_id %></td>
+		<td><%= f.collection_select :action_group_id, Maintgroup.find(:all), :id, :short_name %></td>
   </tr>
   <tr>
     <td class=leftcol><%= f.label t ('maintenance.first_date') %>:</td>
@@ -46,5 +44,22 @@
     <td><%= f.select :priority, options_for_select([1,2,3,4,5], @maintenance.priority) %></td>
   </tr>
 </table>
+<H3>Parts</H3>
+		<% f.fields_for :maintparts do |builder| %>
+			<%= render 'maintpart_fields', :f => builder %>
+		<% end %>
+		<p><%= link_to_add_fields image_tag("add.png", :border => 0, :title => 'Add Parts'), f, :maintparts %></p>
+		
+<H3>Tools</H3>
+		<% f.fields_for :mainttools do |builder| %>
+			<%= render 'mainttool_fields', :f => builder %>
+		<% end %>
+		<p><%= link_to_add_fields image_tag("add.png", :border => 0, :title => 'Add Tools'), f, :mainttools %></p>
+
+<H3>Man Hour Types & Groups</H3>
+		<% f.fields_for :mainthours do |builder| %>
+			<%= render 'mainthour_fields', :f => builder %>
+		<% end %>
+		<p><%= link_to_add_fields image_tag("add.png", :border => 0, :title => 'Add Tools'), f, :mainthours %></p>	
 </div>
 

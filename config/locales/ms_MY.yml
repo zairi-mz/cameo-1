@@ -1,37 +1,61 @@
 
 
 ms_MY: 
-    skeleton: "Kerangka"
-    home: "Rumah"
-    role: "Peranan Pengguna"
-    user: "Pengurusan Pengguna"
-    login: "Sila Daftar Masuk"
-    
-    date:
-        formats:
-          # Use the strftime parameters for formats.
-          # When no format has been given, it uses default.
-          # You can provide other formats here if you like!
-          default: "%d-%m-%Y"
-          short: "%b %d"
-          long: "%B %d, %Y"
+  skeleton: "Kerangka"
+  home: "Rumah"
+  role: "Peranan Pengguna"
+  user: "Pengurusan Pengguna"
+  login: "Sila Daftar Masuk"
+  
+  action :
+    create: Cipta
+    edit : Menyunting
+  
+  component:
+    component_code: Kod Perkakas
+    parent_id: Ibu Perkakas
+    name: Nama Perkakas
+    location_id: Lokasi
+    type_no: Type No
+    serial_no: Serial No
+    installed_on: Installed On
+    manufacturer_id: Manufacturer
+    supplier_id: Supplier
+    tech_description: Technical Description
+    counter_id: Running Hours Counter
+  
+  documents:
+    doc: "Dokumen, BR's & Lukisan"
+    title: Tajuk
+    doc_code: "Kod Dokumen"
+    publisher: "Terbitan"
+    file : "Muatnaik Fail"
+      
+  date:
+      formats:
+        # Use the strftime parameters for formats.
+        # When no format has been given, it uses default.
+        # You can provide other formats here if you like!
+        default: "%d-%m-%Y"
+        short: "%b %d"
+        long: "%B %d, %Y"
 
-        day_names: [Ahad, Isnin, Selasa, Rabu, Khamis, Jumaat, Sabtu]
-        abbr_day_names: [Ahd, Is, Sel, Rab, Kha, Jum, Sab]
+      day_names: [Ahad, Isnin, Selasa, Rabu, Khamis, Jumaat, Sabtu]
+      abbr_day_names: [Ahd, Is, Sel, Rab, Kha, Jum, Sab]
 
-        # Don't forget the nil at the beginning; there's no such thing as a 0th month
-        month_names: [~, Januari, Febuari, Mac, April, Mei, Jun, Julai, Ogos, September, Oktober, November, Disember]
-        abbr_month_names: [~, Jan, Feb, Mac, Apr, Mei, Jun, Jul, Ogo, Sep, Okt, Nov, Dis]
-        # Used in date_select and datime_select.
-        order:
-          - :day
-          - :month
-          - :year
+      # Don't forget the nil at the beginning; there's no such thing as a 0th month
+      month_names: [~, Januari, Febuari, Mac, April, Mei, Jun, Julai, Ogos, September, Oktober, November, Disember]
+      abbr_month_names: [~, Jan, Feb, Mac, Apr, Mei, Jun, Jul, Ogo, Sep, Okt, Nov, Dis]
+      # Used in date_select and datime_select.
+      order:
+        - :day
+        - :month
+        - :year
 
-    #time:
-      #formats:
-        #default: "%a, %d %b %Y %H:%M:%S %z"
-        #short: "%d %b %H:%M"
-        #long: "%B %d, %Y %H:%M"
-      #am: "am"
-      #pm: "pm"
+  #time:
+    #formats:
+      #default: "%a, %d %b %Y %H:%M:%S %z"
+      #short: "%d %b %H:%M"
+      #long: "%B %d, %Y %H:%M"
+    #am: "am"
+    #pm: "pm"

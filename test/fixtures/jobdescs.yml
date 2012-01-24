@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  job_code: 1
+  description: MyString
+  method: MyText
+
+two:
+  job_code: 1
+  description: MyString
+  method: MyText

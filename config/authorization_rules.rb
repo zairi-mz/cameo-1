@@ -12,7 +12,7 @@ authorization do
   end
     
   role :equipment_editor do
-    has_permission_on :components,  :to => [:index, :show, :new, :create, :edit, :update, :destroy]
+    has_permission_on :components,  :to => [:manage, :indextree]
   end
   
   role :maintenance_editor do

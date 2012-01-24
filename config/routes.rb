@@ -1,4 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :jobdescs
+
+  map.resources :orgcharts
+
   map.resources :locations
 
   map.resources :maintgroups

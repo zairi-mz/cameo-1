@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  maintenance_id: 1
+  maintgroup_id: 1
+  hours: 9.99
+  updated_by: 1
+
+two:
+  maintenance_id: 1
+  maintgroup_id: 1
+  hours: 9.99
+  updated_by: 1

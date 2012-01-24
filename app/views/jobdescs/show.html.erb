@@ -1,0 +1,18 @@
+<p>
+  <b>Job code:</b>
+  <%=h @jobdesc.job_code %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @jobdesc.description %>
+</p>
+
+<p>
+  <b>Method:</b>
+  <%=h @jobdesc.method %>
+</p>
+
+
+<%= link_to 'Edit', edit_jobdesc_path(@jobdesc) %> |
+<%= link_to 'Back', jobdescs_path %>

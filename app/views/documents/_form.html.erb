@@ -1,15 +1,11 @@
-<div class='formtable'>
 <table>
-	<tr>
-		<th colspan=2>Edit <%= t ('documents.doc') %></th>
-	</tr>
   <tr>
     <td class=leftcol><%= f.label t ('documents.doc_code') %>:</td>
     <td><%= f.text_field :doc_code %></td>
   </tr>
   <tr>
     <td class=leftcol><%= f.label t ('documents.title') %>:</td>
-    <td><%= f.text_field :title %></td>
+    <td><%= f.text_field :title, :size => 75 %></td>
   </tr>
   <tr>
     <td class=leftcol><%= f.label t ('documents.publisher') %>:</td>
@@ -20,4 +16,3 @@
     <td><%= f.file_field :file %></td>
   </tr>
 </table>
-</div>
