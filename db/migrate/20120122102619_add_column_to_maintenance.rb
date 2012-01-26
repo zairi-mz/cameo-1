@@ -1,6 +1,6 @@
 class AddColumnToMaintenance < ActiveRecord::Migration
   def self.up
-    add_column :maintenances, :Jobdesc_id, :integer
+    add_column :maintenances, :jobdesc_id, :integer
   end
 
   def self.down

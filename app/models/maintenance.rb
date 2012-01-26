@@ -2,6 +2,7 @@ class Maintenance < ActiveRecord::Base
   belongs_to  :component
   
   has_many    :maintparts
+  belongs_to  :jobdesc
   has_many    :parts, :through => :maintparts
   accepts_nested_attributes_for :maintparts, :reject_if => lambda { |a| a[:part_id].blank? }, :allow_destroy => true 
   

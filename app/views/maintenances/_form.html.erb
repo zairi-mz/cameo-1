@@ -43,6 +43,10 @@
     <td class=leftcol><%= f.label t ('maintenance.priority') %>:</td>
     <td><%= f.select :priority, options_for_select([1,2,3,4,5], @maintenance.priority) %></td>
   </tr>
+  <tr>
+    <td class=leftcol><%= f.label t ('jobdesc.job') %>:</td>
+    <td><%= f.collection_select :jobdesc_id, Jobdesc.find(:all), :id, :job_listing, :include_blank => :true %></td>
+  </tr>
 </table>
 <H3>Parts</H3>
 		<% f.fields_for :maintparts do |builder| %>

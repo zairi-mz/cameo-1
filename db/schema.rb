@@ -95,7 +95,7 @@ ActiveRecord::Schema.define(:version => 20120122102619) do
     t.integer  "priority"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "Jobdesc_id"
+    t.integer  "jobdesc_id"
   end
 
   create_table "maintgroups", :force => true do |t|

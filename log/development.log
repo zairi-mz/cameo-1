@@ -33882,3 +33882,1259 @@ Rendering documents/edit
 Rendered documents/_form (4.4ms)
 Rendered pages/_navbar (2.2ms)
 Completed in 150ms (View: 22, DB: 4) | 200 OK [http://0.0.0.0/documents/2/edit]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing JobdescsController#index (for 127.0.0.1 at 2012-01-25 10:00:50) [GET]
+  [4;36;1mUser Load (47.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mJobdesc Load (1.1ms)[0m   [0mSELECT * FROM "jobdescs" [0m
+Rendering template within layouts/application
+Rendering jobdescs/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered pages/_navbar (3.0ms)
+Completed in 502ms (View: 210, DB: 49) | 200 OK [http://0.0.0.0/jobdescs]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing LocationsController#index (for 127.0.0.1 at 2012-01-25 10:39:05) [GET]
+  [4;35;1mUser Load (20.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mLocation Load (42.8ms)[0m   [0;1mSELECT * FROM "locations" ORDER BY code[0m
+Rendering template within layouts/application
+Rendering locations/index
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered pages/_navbar (3.2ms)
+Completed in 819ms (View: 426, DB: 63) | 200 OK [http://0.0.0.0/locations]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#indextree (for 127.0.0.1 at 2012-01-25 10:39:19) [GET]
+  [4;36;1mUser Load (1.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (1.3ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;35;1mComponent Load (79.5ms)[0m   [0mSELECT * FROM "components" ORDER BY component_code[0m
+Rendering template within layouts/application
+Rendering components/indextree
+Rendered pages/_navbar (1.7ms)
+Completed in 678ms (View: 490, DB: 83) | 200 OK [http://0.0.0.0/components/indextree]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing MaintenancesController#index (for 127.0.0.1 at 2012-01-25 10:39:25) [GET]
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.9ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;35;1mMaintenance Load (46.3ms)[0m   [0mSELECT * FROM "maintenances" [0m
+  [4;36;1mComponent Load (1.4ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 1) ORDER BY component_code[0m
+  [4;35;1mComponent Load (0.8ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 1) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 1) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 1) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 1) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 1) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 1) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 1) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 1) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 1) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 1) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 1) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 1) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 1) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 1) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 1) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 1) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 1) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 1) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 1) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 1) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 1) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 1) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 1) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 1) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 1) ORDER BY component_code[0m
+  [4;36;1mComponent Load (0.6ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;35;1mComponent Load (0.5ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;36;1mComponent Load (0.7ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 6) ORDER BY component_code[0m
+  [4;35;1mComponent Load (0.5ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 6) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;36;1mComponent Load (0.7ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 3) ORDER BY component_code[0m
+  [4;35;1mComponent Load (0.3ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 3) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 3) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 3) ORDER BY component_code[0m
+  [4;36;1mComponent Load (0.5ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 4) ORDER BY component_code[0m
+  [4;35;1mComponent Load (0.5ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 4) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 4) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 4) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 4) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 4) ORDER BY component_code[0m
+  [4;36;1mComponent Load (0.4ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 5) ORDER BY component_code[0m
+  [4;35;1mComponent Load (0.3ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 5) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 5) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 5) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 6) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 6) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 6) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 6) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 6) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 6) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 6) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 6) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 6) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 6) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 6) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 6) ORDER BY component_code[0m
+  [4;36;1mComponent Load (0.3ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 7) ORDER BY component_code[0m
+  [4;35;1mComponent Load (0.3ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 7) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 7) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 7) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 7) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 7) ORDER BY component_code[0m
+  [4;36;1mComponent Load (0.5ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;35;1mComponent Load (0.3ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;36;1mComponent Load (0.6ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 9) ORDER BY component_code[0m
+  [4;35;1mComponent Load (0.3ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 9) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 9) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 9) ORDER BY component_code[0m
+  [4;36;1mComponent Load (0.5ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 10) ORDER BY component_code[0m
+  [4;35;1mComponent Load (0.3ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 10) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 10) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 10) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 10) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 10) ORDER BY component_code[0m
+  [4;36;1mComponent Load (0.3ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 11) ORDER BY component_code[0m
+  [4;35;1mComponent Load (0.3ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 11) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 11) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 11) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 11) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 11) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 11) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 11) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 11) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 11) ORDER BY component_code[0m
+  [4;36;1mComponent Load (0.5ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 12) ORDER BY component_code[0m
+  [4;35;1mComponent Load (0.3ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 12) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 12) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 12) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 12) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 12) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 12) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 12) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 12) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 12) ORDER BY component_code[0m
+  [4;36;1mComponent Load (0.4ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 13) ORDER BY component_code[0m
+  [4;35;1mComponent Load (0.3ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 13) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 13) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 13) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 13) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 13) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 13) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 13) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 13) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 13) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 13) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 13) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 13) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 13) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 13) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 13) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 13) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 13) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 7) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 7) ORDER BY component_code[0m
+  [4;36;1mComponent Load (0.6ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 14) ORDER BY component_code[0m
+  [4;35;1mComponent Load (0.4ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 14) ORDER BY component_code[0m
+  [4;36;1mComponent Load (0.4ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 15) ORDER BY component_code[0m
+  [4;35;1mComponent Load (0.3ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 15) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 15) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 15) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 15) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 15) ORDER BY component_code[0m
+  [4;36;1mComponent Load (0.3ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 18) ORDER BY component_code[0m
+  [4;35;1mComponent Load (0.3ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 18) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 18) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 18) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 18) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 18) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 18) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 18) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 18) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 18) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 18) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 18) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 18) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 18) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 18) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 18) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 18) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 18) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 18) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 18) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 18) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 18) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 18) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 18) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 18) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 18) ORDER BY component_code[0m
+  [4;36;1mComponent Load (0.5ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 19) ORDER BY component_code[0m
+  [4;35;1mComponent Load (0.3ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 19) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 19) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 19) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 19) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 19) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 19) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 19) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 19) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 19) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 19) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 19) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 19) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 19) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 19) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 19) ORDER BY component_code[0m
+  [4;36;1mComponent Load (0.3ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;35;1mComponent Load (0.3ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;36;1mComponent Load (0.5ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 24) ORDER BY component_code[0m
+  [4;35;1mComponent Load (0.3ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 24) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 24) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 24) ORDER BY component_code[0m
+  [4;36;1mComponent Load (0.3ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 25) ORDER BY component_code[0m
+  [4;35;1mComponent Load (0.3ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 25) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 25) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 25) ORDER BY component_code[0m
+  [4;36;1mComponent Load (0.3ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 27) ORDER BY component_code[0m
+  [4;35;1mComponent Load (0.3ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 27) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 27) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 27) ORDER BY component_code[0m
+  [4;36;1mComponent Load (0.3ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;35;1mComponent Load (0.2ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;36;1mComponent Load (0.6ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 29) ORDER BY component_code[0m
+  [4;35;1mComponent Load (0.3ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 29) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 29) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 29) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 29) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 29) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 29) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 29) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 29) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 29) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 29) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 29) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 29) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 29) ORDER BY component_code[0m
+  [4;36;1mComponent Load (0.7ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 20) ORDER BY component_code[0m
+  [4;35;1mComponent Load (0.5ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 20) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 20) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 20) ORDER BY component_code[0m
+  [4;36;1mComponent Load (0.3ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 22) ORDER BY component_code[0m
+  [4;35;1mComponent Load (0.2ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 22) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 22) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 22) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 22) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 22) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 22) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 22) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 22) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 22) ORDER BY component_code[0m
+  [4;36;1mComponent Load (0.5ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mComponent Load (0.4ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+Rendering template within layouts/application
+Rendering maintenances/index
+Rendered pages/_navbar (2.0ms)
+Completed in 1587ms (View: 1028, DB: 70) | 200 OK [http://0.0.0.0/maintenances]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing JobdescsController#index (for 127.0.0.1 at 2012-01-25 13:49:53) [GET]
+  [4;36;1mUser Load (16.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mJobdesc Load (41.1ms)[0m   [0mSELECT * FROM "jobdescs" [0m
+Rendering template within layouts/application
+Rendering jobdescs/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered pages/_navbar (2.8ms)
+Completed in 464ms (View: 198, DB: 58) | 200 OK [http://0.0.0.0/jobdescs]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing MaintenancesController#index (for 127.0.0.1 at 2012-01-25 13:49:55) [GET]
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (17.1ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;36;1mMaintenance Load (4.2ms)[0m   [0;1mSELECT * FROM "maintenances" [0m
+  [4;35;1mComponent Load (2.5ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 1) ORDER BY component_code[0m
+  [4;36;1mComponent Load (0.5ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 1) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 1) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 1) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 1) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 1) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 1) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 1) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 1) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 1) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 1) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 1) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 1) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 1) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 1) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 1) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 1) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 1) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 1) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 1) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 1) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 1) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 1) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 1) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 1) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 1) ORDER BY component_code[0m
+  [4;35;1mComponent Load (0.6ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;36;1mComponent Load (0.3ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;35;1mComponent Load (0.6ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 6) ORDER BY component_code[0m
+  [4;36;1mComponent Load (0.4ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 6) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 2) ORDER BY component_code[0m
+  [4;35;1mComponent Load (0.4ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 3) ORDER BY component_code[0m
+  [4;36;1mComponent Load (0.6ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 3) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 3) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 3) ORDER BY component_code[0m
+  [4;35;1mComponent Load (0.4ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 4) ORDER BY component_code[0m
+  [4;36;1mComponent Load (0.3ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 4) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 4) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 4) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 4) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 4) ORDER BY component_code[0m
+  [4;35;1mComponent Load (0.4ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 5) ORDER BY component_code[0m
+  [4;36;1mComponent Load (0.3ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 5) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 5) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 5) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 6) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 6) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 6) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 6) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 6) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 6) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 6) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 6) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 6) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 6) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 6) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 6) ORDER BY component_code[0m
+  [4;35;1mComponent Load (0.5ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 7) ORDER BY component_code[0m
+  [4;36;1mComponent Load (0.3ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 7) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 7) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 7) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 7) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 7) ORDER BY component_code[0m
+  [4;35;1mComponent Load (0.4ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;36;1mComponent Load (0.3ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 8) ORDER BY component_code[0m
+  [4;35;1mComponent Load (0.6ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 9) ORDER BY component_code[0m
+  [4;36;1mComponent Load (0.5ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 9) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 9) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 9) ORDER BY component_code[0m
+  [4;35;1mComponent Load (0.5ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 10) ORDER BY component_code[0m
+  [4;36;1mComponent Load (0.4ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 10) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 10) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 10) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 10) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 10) ORDER BY component_code[0m
+  [4;35;1mComponent Load (0.4ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 11) ORDER BY component_code[0m
+  [4;36;1mComponent Load (0.4ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 11) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 11) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 11) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 11) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 11) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 11) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 11) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 11) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 11) ORDER BY component_code[0m
+  [4;35;1mComponent Load (0.4ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 12) ORDER BY component_code[0m
+  [4;36;1mComponent Load (0.3ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 12) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 12) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 12) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 12) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 12) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 12) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 12) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 12) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 12) ORDER BY component_code[0m
+  [4;35;1mComponent Load (0.5ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 13) ORDER BY component_code[0m
+  [4;36;1mComponent Load (0.3ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 13) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 13) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 13) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 13) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 13) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 13) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 13) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 13) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 13) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 13) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 13) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 13) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 13) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 13) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 13) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 13) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 13) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 7) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 7) ORDER BY component_code[0m
+  [4;35;1mComponent Load (0.5ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 14) ORDER BY component_code[0m
+  [4;36;1mComponent Load (0.3ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 14) ORDER BY component_code[0m
+  [4;35;1mComponent Load (0.4ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 15) ORDER BY component_code[0m
+  [4;36;1mComponent Load (0.6ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 15) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 15) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 15) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 15) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 15) ORDER BY component_code[0m
+  [4;35;1mComponent Load (0.5ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 18) ORDER BY component_code[0m
+  [4;36;1mComponent Load (0.3ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 18) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 18) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 18) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 18) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 18) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 18) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 18) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 18) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 18) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 18) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 18) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 18) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 18) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 18) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 18) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 18) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 18) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 18) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 18) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 18) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 18) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 18) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 18) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 18) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 18) ORDER BY component_code[0m
+  [4;35;1mComponent Load (0.5ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 19) ORDER BY component_code[0m
+  [4;36;1mComponent Load (0.3ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 19) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 19) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 19) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 19) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 19) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 19) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 19) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 19) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 19) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 19) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 19) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 19) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 19) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 19) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 19) ORDER BY component_code[0m
+  [4;35;1mComponent Load (0.6ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;36;1mComponent Load (0.4ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 23) ORDER BY component_code[0m
+  [4;35;1mComponent Load (0.6ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 24) ORDER BY component_code[0m
+  [4;36;1mComponent Load (0.5ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 24) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 24) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 24) ORDER BY component_code[0m
+  [4;35;1mComponent Load (0.6ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 25) ORDER BY component_code[0m
+  [4;36;1mComponent Load (0.5ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 25) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 25) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 25) ORDER BY component_code[0m
+  [4;35;1mComponent Load (0.6ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 27) ORDER BY component_code[0m
+  [4;36;1mComponent Load (0.8ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 27) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 27) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 27) ORDER BY component_code[0m
+  [4;35;1mComponent Load (0.6ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;36;1mComponent Load (0.5ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 28) ORDER BY component_code[0m
+  [4;35;1mComponent Load (0.5ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 29) ORDER BY component_code[0m
+  [4;36;1mComponent Load (0.3ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 29) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 29) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 29) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 29) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 29) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 29) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 29) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 29) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 29) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 29) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 29) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 29) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 29) ORDER BY component_code[0m
+  [4;35;1mComponent Load (0.5ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 20) ORDER BY component_code[0m
+  [4;36;1mComponent Load (0.3ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 20) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 20) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 20) ORDER BY component_code[0m
+  [4;35;1mComponent Load (0.4ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 22) ORDER BY component_code[0m
+  [4;36;1mComponent Load (0.3ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 22) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 22) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 22) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 22) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 22) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 22) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 22) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 22) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 22) ORDER BY component_code[0m
+  [4;35;1mComponent Load (0.5ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mComponent Load (0.3ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT name FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT component_code FROM "components" WHERE ("components"."id" = 26) ORDER BY component_code[0m
+Rendering template within layouts/application
+Rendering maintenances/index
+Rendered pages/_navbar (2.5ms)
+Completed in 1741ms (View: 1273, DB: 48) | 200 OK [http://0.0.0.0/maintenances]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing MaintenancesController#edit (for 127.0.0.1 at 2012-01-25 13:49:59) [GET]
+  Parameters: {"id"=>"179"}
+  [4;35;1mUser Load (1.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mMaintenance Load (0.9ms)[0m   [0;1mSELECT * FROM "maintenances" WHERE ("maintenances"."id" = 179) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.9ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "maintenances" WHERE ("maintenances"."id" = 179) [0m
+Rendering template within layouts/application
+Rendering maintenances/edit
+  [4;36;1mComponent Load (1.0ms)[0m   [0;1mSELECT * FROM "components" WHERE ("components"."id" = 22) [0m
+  [4;35;1mMaintgroup Load (23.6ms)[0m   [0mSELECT * FROM "maintgroups" [0m
+  [4;36;1mMaintpart Load (19.8ms)[0m   [0;1mSELECT * FROM "maintparts" WHERE ("maintparts".maintenance_id = 179) [0m
+  [4;35;1mPart Load (130.6ms)[0m   [0mSELECT * FROM "parts" ORDER BY name[0m
+Rendered maintenances/_maintpart_fields (309.1ms)
+  [4;36;1mMainttool Load (1.1ms)[0m   [0;1mSELECT * FROM "mainttools" WHERE ("mainttools".maintenance_id = 179) [0m
+  [4;35;1mTool Load (2.2ms)[0m   [0mSELECT * FROM "tools" ORDER BY name[0m
+Rendered maintenances/_mainttool_fields (84.4ms)
+  [4;36;1mMainthour Load (1.1ms)[0m   [0;1mSELECT * FROM "mainthours" WHERE ("mainthours".maintenance_id = 179) [0m
+  [4;35;1mMaintgroup Load (1.9ms)[0m   [0mSELECT * FROM "maintgroups" ORDER BY name[0m
+Rendered maintenances/_mainthour_fields (18.8ms)
+Rendered maintenances/_form (876.9ms)
+Rendered pages/_navbar (2.7ms)
+Completed in 939ms (View: 708, DB: 185) | 200 OK [http://0.0.0.0/maintenances/179/edit]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing MaintenancesController#edit (for 127.0.0.1 at 2012-01-25 13:54:31) [GET]
+  Parameters: {"id"=>"179"}
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mMaintenance Load (1.2ms)[0m   [0mSELECT * FROM "maintenances" WHERE ("maintenances"."id" = 179) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (1.2ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "maintenances" WHERE ("maintenances"."id" = 179) [0m
+Rendering template within layouts/application
+Rendering maintenances/edit
+  [4;35;1mComponent Load (1.3ms)[0m   [0mSELECT * FROM "components" WHERE ("components"."id" = 22) [0m
+  [4;36;1mMaintgroup Load (2.6ms)[0m   [0;1mSELECT * FROM "maintgroups" [0m
+  [4;35;1mJobdesc Load (0.8ms)[0m   [0mSELECT * FROM "jobdescs" [0m
+
+ActionView::TemplateError (undefined method `jobdesc_id' for #<Maintenance:0x1030016e0>) on line #44 of app/views/maintenances/_form.html.erb:
+41:   </tr>
+42:   <tr>
+43:     <td class=leftcol><%= f.label t ('maintenance.priority') %>:</td>
+44:     <td><%= f.collection_select :jobdesc_id, Jobdesc.find(:all), :id, :job_code %></td>
+45:   </tr>
+46:   <tr>
+47:     <td class=leftcol><%= f.label t ('jobdesc.job') %>:</td>
+
+    app/views/maintenances/_form.html.erb:44
+    app/views/maintenances/edit.html.erb:4
+    app/views/maintenances/edit.html.erb:1
+
+Rendered rescues/_trace (64.8ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing MaintenancesController#edit (for 127.0.0.1 at 2012-01-25 13:57:04) [GET]
+  Parameters: {"id"=>"179"}
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mMaintenance Load (0.8ms)[0m   [0mSELECT * FROM "maintenances" WHERE ("maintenances"."id" = 179) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.9ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "maintenances" WHERE ("maintenances"."id" = 179) [0m
+Rendering template within layouts/application
+Rendering maintenances/edit
+  [4;35;1mComponent Load (1.2ms)[0m   [0mSELECT * FROM "components" WHERE ("components"."id" = 22) [0m
+  [4;36;1mMaintgroup Load (2.5ms)[0m   [0;1mSELECT * FROM "maintgroups" [0m
+  [4;35;1mJobdesc Load (1.1ms)[0m   [0mSELECT * FROM "jobdescs" [0m
+
+ActionView::TemplateError (undefined method `jobdesc_id' for #<Maintenance:0x1035a6960>) on line #48 of app/views/maintenances/_form.html.erb:
+45:   </tr>
+46:   <tr>
+47:     <td class=leftcol><%= f.label t ('jobdesc.job') %>:</td>
+48:     <td><%= f.collection_select :jobdesc_id, Jobdesc.find(:all), :id, :job_code %></td>
+49:   </tr>
+50: </table>
+51: <H3>Parts</H3>
+
+    app/views/maintenances/_form.html.erb:48
+    app/views/maintenances/edit.html.erb:4
+    app/views/maintenances/edit.html.erb:1
+
+Rendered rescues/_trace (48.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (44.5ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to AddColumnToMaintenance (20120122102619)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (85.9ms)[0m   [0mALTER TABLE "maintenances" DROP "Jobdesc_id"[0m
+  [4;36;1mSQL (2.7ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20120122102619'[0m
+  [4;35;1mSQL (51.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20110329175439)
+Migrating to CreateRoles (20110415085753)
+Migrating to RoleUserJoin (20110418074151)
+Migrating to CreateComponents (20110420081822)
+Migrating to AddColumnToRoles (20110420090001)
+Migrating to CreateTools (20110421051102)
+Migrating to CreateAddresses (20110421071436)
+Migrating to CreateParts (20110422055211)
+Migrating to CreateDocuments (20110422073955)
+Migrating to AddAttachmentsFileToDocument (20110422074706)
+Migrating to CreateMaintenances (20110425090152)
+Migrating to CreateMaintgroups (20110428034743)
+Migrating to AddAncestryToComponents (20110519060845)
+Migrating to CreateCompparts (20110519152005)
+Migrating to CreateLocations (20110613053335)
+Migrating to CreateOrgcharts (20110615060048)
+Migrating to RenameDepartmentIdToOrgchartIdInLocation (20110615060515)
+Migrating to CreateMaintparts (20120122043314)
+Migrating to CreateMainttools (20120122051032)
+Migrating to CreateMainthours (20120122073847)
+Migrating to CreateJobdescs (20120122102418)
+Migrating to AddColumnToMaintenance (20120122102619)
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (40.9ms)[0m   [0;1mALTER TABLE "maintenances" ADD COLUMN "jobdesc_id" integer[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120122102619')[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing MaintenancesController#edit (for 127.0.0.1 at 2012-01-25 13:59:36) [GET]
+  Parameters: {"id"=>"179"}
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mMaintenance Load (1.0ms)[0m   [0mSELECT * FROM "maintenances" WHERE ("maintenances"."id" = 179) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.9ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "maintenances" WHERE ("maintenances"."id" = 179) [0m
+Rendering template within layouts/application
+Rendering maintenances/edit
+  [4;35;1mComponent Load (0.7ms)[0m   [0mSELECT * FROM "components" WHERE ("components"."id" = 22) [0m
+  [4;36;1mMaintgroup Load (2.4ms)[0m   [0;1mSELECT * FROM "maintgroups" [0m
+  [4;35;1mJobdesc Load (0.9ms)[0m   [0mSELECT * FROM "jobdescs" [0m
+  [4;36;1mMaintpart Load (0.7ms)[0m   [0;1mSELECT * FROM "maintparts" WHERE ("maintparts".maintenance_id = 179) [0m
+  [4;35;1mPart Load (2.1ms)[0m   [0mSELECT * FROM "parts" ORDER BY name[0m
+Rendered maintenances/_maintpart_fields (45.2ms)
+  [4;36;1mMainttool Load (0.9ms)[0m   [0;1mSELECT * FROM "mainttools" WHERE ("mainttools".maintenance_id = 179) [0m
+  [4;35;1mTool Load (1.5ms)[0m   [0mSELECT * FROM "tools" ORDER BY name[0m
+Rendered maintenances/_mainttool_fields (43.1ms)
+  [4;36;1mMainthour Load (0.8ms)[0m   [0;1mSELECT * FROM "mainthours" WHERE ("mainthours".maintenance_id = 179) [0m
+  [4;35;1mMaintgroup Load (1.6ms)[0m   [0mSELECT * FROM "maintgroups" ORDER BY name[0m
+Rendered maintenances/_mainthour_fields (19.5ms)
+Rendered maintenances/_form (390.4ms)
+Rendered pages/_navbar (3.1ms)
+Completed in 538ms (View: 469, DB: 15) | 200 OK [http://0.0.0.0/maintenances/179/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing MaintenancesController#edit (for 127.0.0.1 at 2012-01-25 14:00:13) [GET]
+  Parameters: {"id"=>"179"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mMaintenance Load (0.7ms)[0m   [0mSELECT * FROM "maintenances" WHERE ("maintenances"."id" = 179) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (1.2ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "maintenances" WHERE ("maintenances"."id" = 179) [0m
+Rendering template within layouts/application
+Rendering maintenances/edit
+  [4;35;1mComponent Load (1.1ms)[0m   [0mSELECT * FROM "components" WHERE ("components"."id" = 22) [0m
+  [4;36;1mMaintgroup Load (1.8ms)[0m   [0;1mSELECT * FROM "maintgroups" [0m
+  [4;35;1mJobdesc Load (0.9ms)[0m   [0mSELECT * FROM "jobdescs" [0m
+  [4;36;1mMaintpart Load (0.9ms)[0m   [0;1mSELECT * FROM "maintparts" WHERE ("maintparts".maintenance_id = 179) [0m
+  [4;35;1mPart Load (1.9ms)[0m   [0mSELECT * FROM "parts" ORDER BY name[0m
+Rendered maintenances/_maintpart_fields (26.5ms)
+  [4;36;1mMainttool Load (0.7ms)[0m   [0;1mSELECT * FROM "mainttools" WHERE ("mainttools".maintenance_id = 179) [0m
+  [4;35;1mTool Load (1.8ms)[0m   [0mSELECT * FROM "tools" ORDER BY name[0m
+Rendered maintenances/_mainttool_fields (82.0ms)
+  [4;36;1mMainthour Load (0.9ms)[0m   [0;1mSELECT * FROM "mainthours" WHERE ("mainthours".maintenance_id = 179) [0m
+  [4;35;1mMaintgroup Load (2.1ms)[0m   [0mSELECT * FROM "maintgroups" ORDER BY name[0m
+Rendered maintenances/_mainthour_fields (20.4ms)
+Rendered maintenances/_form (426.3ms)
+Rendered pages/_navbar (2.5ms)
+Completed in 509ms (View: 456, DB: 15) | 200 OK [http://0.0.0.0/maintenances/179/edit]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing MaintenancesController#edit (for 127.0.0.1 at 2012-01-25 14:01:52) [GET]
+  Parameters: {"id"=>"179"}
+  [4;36;1mUser Load (2.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mMaintenance Load (1.0ms)[0m   [0mSELECT * FROM "maintenances" WHERE ("maintenances"."id" = 179) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (1.0ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "maintenances" WHERE ("maintenances"."id" = 179) [0m
+Rendering template within layouts/application
+Rendering maintenances/edit
+  [4;35;1mComponent Load (1.1ms)[0m   [0mSELECT * FROM "components" WHERE ("components"."id" = 22) [0m
+  [4;36;1mMaintgroup Load (1.8ms)[0m   [0;1mSELECT * FROM "maintgroups" [0m
+  [4;35;1mJobdesc Load (1.5ms)[0m   [0mSELECT * FROM "jobdescs" [0m
+  [4;36;1mMaintpart Load (1.2ms)[0m   [0;1mSELECT * FROM "maintparts" WHERE ("maintparts".maintenance_id = 179) [0m
+  [4;35;1mPart Load (2.8ms)[0m   [0mSELECT * FROM "parts" ORDER BY name[0m
+Rendered maintenances/_maintpart_fields (96.9ms)
+  [4;36;1mMainttool Load (1.1ms)[0m   [0;1mSELECT * FROM "mainttools" WHERE ("mainttools".maintenance_id = 179) [0m
+  [4;35;1mTool Load (1.8ms)[0m   [0mSELECT * FROM "tools" ORDER BY name[0m
+Rendered maintenances/_mainttool_fields (26.2ms)
+  [4;36;1mMainthour Load (0.8ms)[0m   [0;1mSELECT * FROM "mainthours" WHERE ("mainthours".maintenance_id = 179) [0m
+  [4;35;1mMaintgroup Load (1.7ms)[0m   [0mSELECT * FROM "maintgroups" ORDER BY name[0m
+Rendered maintenances/_mainthour_fields (17.7ms)
+Rendered maintenances/_form (460.9ms)
+Rendered pages/_navbar (2.6ms)
+Completed in 647ms (View: 479, DB: 19) | 200 OK [http://0.0.0.0/maintenances/179/edit]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing MaintenancesController#edit (for 127.0.0.1 at 2012-01-25 14:03:56) [GET]
+  Parameters: {"id"=>"179"}
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mMaintenance Load (1.0ms)[0m   [0mSELECT * FROM "maintenances" WHERE ("maintenances"."id" = 179) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (1.2ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "maintenances" WHERE ("maintenances"."id" = 179) [0m
+Rendering template within layouts/application
+Rendering maintenances/edit
+  [4;35;1mComponent Load (0.9ms)[0m   [0mSELECT * FROM "components" WHERE ("components"."id" = 22) [0m
+  [4;36;1mMaintgroup Load (2.1ms)[0m   [0;1mSELECT * FROM "maintgroups" [0m
+  [4;35;1mJobdesc Load (0.9ms)[0m   [0mSELECT * FROM "jobdescs" [0m
+  [4;36;1mMaintpart Load (0.8ms)[0m   [0;1mSELECT * FROM "maintparts" WHERE ("maintparts".maintenance_id = 179) [0m
+  [4;35;1mPart Load (2.0ms)[0m   [0mSELECT * FROM "parts" ORDER BY name[0m
+Rendered maintenances/_maintpart_fields (30.5ms)
+  [4;36;1mMainttool Load (0.9ms)[0m   [0;1mSELECT * FROM "mainttools" WHERE ("mainttools".maintenance_id = 179) [0m
+  [4;35;1mTool Load (1.6ms)[0m   [0mSELECT * FROM "tools" ORDER BY name[0m
+Rendered maintenances/_mainttool_fields (91.1ms)
+  [4;36;1mMainthour Load (1.1ms)[0m   [0;1mSELECT * FROM "mainthours" WHERE ("mainthours".maintenance_id = 179) [0m
+  [4;35;1mMaintgroup Load (2.3ms)[0m   [0mSELECT * FROM "maintgroups" ORDER BY name[0m
+Rendered maintenances/_mainthour_fields (19.1ms)
+Rendered maintenances/_form (629.6ms)
+Rendered pages/_navbar (2.8ms)
+Completed in 713ms (View: 646, DB: 16) | 200 OK [http://0.0.0.0/maintenances/179/edit]
