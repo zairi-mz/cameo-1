@@ -66,11 +66,11 @@ ActiveRecord::Schema.define(:version => 20120122102619) do
   end
 
   create_table "jobdescs", :force => true do |t|
-    t.integer  "job_code"
     t.string   "description"
     t.text     "method"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "job_code",    :limit => 20
   end
 
   create_table "locations", :force => true do |t|

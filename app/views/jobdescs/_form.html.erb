@@ -7,6 +7,10 @@
     <td class=leftcol><%= f.label t ('jobdesc.description') %>:</td>
     <td><%= f.text_field :description %></td>
   </tr>
+<tr>
+    <td class=leftcol><%= f.label ('safety') %>:</td>
+    <td><%= f.text_area :safety, :size => "100x20"  %></td>
+</tr>
   <tr>
     <td class=leftcol><%= f.label t ('jobdesc.method') %>:</td>
     <td><%= f.text_area :method, :size => "100x20"  %></td>

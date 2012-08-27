@@ -21,14 +21,15 @@ class MaintenancesController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @maintenance }
+      format.pdf { render :layout => false }
     end
   end
-
+  
   # GET /maintenances/new
   # GET /maintenances/new.xml
   def new
     @maintenance = Maintenance.new(:component_id => params[:component_id])
-
+   
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @maintenance }

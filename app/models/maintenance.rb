@@ -1,7 +1,7 @@
 class Maintenance < ActiveRecord::Base
   belongs_to  :component
   
-  has_many    :maintparts
+  has_many    :maintparts, :dependent => :destroy
   belongs_to  :jobdesc
   has_many    :parts, :through => :maintparts
   accepts_nested_attributes_for :maintparts, :reject_if => lambda { |a| a[:part_id].blank? }, :allow_destroy => true 
@@ -13,9 +13,6 @@ class Maintenance < ActiveRecord::Base
   has_many    :mainthours
   has_many    :maintgroups, :through => :mainthours
   accepts_nested_attributes_for :mainthours, :reject_if => lambda { |a| a[:maintgroup_id].blank? }, :allow_destroy => true
-  
-  
-  
   
   def isorter
     coid = component_id
@@ -32,11 +29,6 @@ class Maintenance < ActiveRecord::Base
     (Maintenance::MAINT_LEVEL.find_all{|disp, value| value == level }).map {|disp, value| disp}
   end
     
-    
-  
-  
-  
-  
   FREQ_UNIT = [
        #  Displayed       stored in db
        [ "Days",    1  ],
