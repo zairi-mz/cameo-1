@@ -16,10 +16,10 @@ function add_fields(link, association, content) {
 
 
 
-jQuery(document).ready(function() {
+$(document).ready(function() {
   
 //Dropdown Start
-$j(function(){
+$(function(){
 
     $("ul.dropdown li").hover(function(){
     

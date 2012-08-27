@@ -45,4 +45,6 @@
 
 
 <%= link_to 'Edit', edit_maintenance_path(@maintenance) %> |
+<%= link_to "PDF", maintenance_path(@maintenance, :format => 'pdf')%> |
+<%= link_to "PDF", maintenance_path(@maintenance, :format => 'pdf_mpp')%> |
 <%= link_to 'Back', maintenances_path %>
