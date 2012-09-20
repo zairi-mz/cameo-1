@@ -55,7 +55,7 @@ class MaintenancesController < ApplicationController
       format.xml  { render :xml => @maintenance }
     end
   end
-
+  
   # GET /maintenances/1/edit
   def edit
     @maintenance = Maintenance.find(params[:id])
@@ -97,6 +97,11 @@ class MaintenancesController < ApplicationController
     end
   end
 
+ def update_last_date
+   @maintenance = Maintenance.find(params[:id])
+   @maintenance.update_attribute(:last_date, "30.09.2012")
+ end
+
   # DELETE /maintenances/1
   # DELETE /maintenances/1.xml
   def destroy
@@ -108,5 +113,5 @@ class MaintenancesController < ApplicationController
       format.xml  { head :ok }
     end
   end
-  
+
 end

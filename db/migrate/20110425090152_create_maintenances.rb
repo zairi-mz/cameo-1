@@ -8,8 +8,12 @@ class CreateMaintenances < ActiveRecord::Migration
       t.integer :frequency_unit
       t.integer :level
       t.integer :action_group_id
+      t.integer :jobdesc_id
       t.date :first_date
+      t.date :last_date
       t.date :next_date
+      t.integer :last_hour
+      t.integer :next_hour
       t.integer :priority
 
       t.timestamps
