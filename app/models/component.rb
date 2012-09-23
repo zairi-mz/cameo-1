@@ -15,6 +15,7 @@ class Component < ActiveRecord::Base
   has_many    :maintenances
   belongs_to  :editor,          :class_name => 'User',     :foreign_key => 'created_by'
   has_many    :compparts
+  
   has_many    :parts, :through => :compparts
   accepts_nested_attributes_for :compparts, :reject_if => lambda { |a| a[:part_id].blank? }, :allow_destroy => true 
   
