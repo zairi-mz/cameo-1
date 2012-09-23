@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(:version => 20120923202348) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "ancestry"
+    t.integer  "edited_by"
   end
 
   add_index "components", ["ancestry"], :name => "index_components_on_ancestry"

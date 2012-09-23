@@ -38862,3 +38862,1234 @@ Migrating to RemoveParentIdFromComponents (20120923202348)
   [4;36;1mSQL (14.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20120923202348')[0m
   [4;35;1mSQL (1.1ms)[0m   [0mCOMMIT[0m
   [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PagesController#home (for 127.0.0.1 at 2012-09-24 04:28:29) [GET]
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/home
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered pages/_navbar (6.2ms)
+Completed in 76ms (View: 60, DB: 1) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#indextree (for 127.0.0.1 at 2012-09-24 04:28:31) [GET]
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.5ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;35;1mComponent Load (1.0ms)[0m   [0mSELECT * FROM "components" ORDER BY component_code[0m
+Rendering template within layouts/application
+Rendering components/indextree
+Rendered pages/_navbar (1.4ms)
+Completed in 209ms (View: 181, DB: 2) | 200 OK [http://0.0.0.0/components/indextree]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#destroy (for 127.0.0.1 at 2012-09-24 04:28:36) [DELETE]
+  Parameters: {"id"=>"46", "authenticity_token"=>"sjmx+USGts71d8hZ6kmZcxyC8kuYo9jniAvwS2M2+Sg="}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.5ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;36;1mComponent Load (0.4ms)[0m   [0;1mSELECT * FROM "components" WHERE ("components"."id" = 46) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mComponent Load (0.9ms)[0m   [0;1mSELECT * FROM "components" WHERE (components.ancestry like '46/%' or components.ancestry = '46') [0m
+  [4;35;1mComponent Destroy (0.2ms)[0m   [0mDELETE FROM "components" WHERE "id" = 46[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/components
+Completed in 30ms (DB: 4) | 302 Found [http://0.0.0.0/components/46]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#index (for 127.0.0.1 at 2012-09-24 04:28:36) [GET]
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.6ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;35;1mComponent Load (1.1ms)[0m   [0mSELECT * FROM "components" ORDER BY component_code[0m
+Rendering template within layouts/application
+Rendering components/index
+Rendered pages/_navbar (1.5ms)
+Completed in 215ms (View: 146, DB: 3) | 200 OK [http://0.0.0.0/components]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#indextree (for 127.0.0.1 at 2012-09-24 04:28:40) [GET]
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.6ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;36;1mComponent Load (1.0ms)[0m   [0;1mSELECT * FROM "components" ORDER BY component_code[0m
+Rendering template within layouts/application
+Rendering components/indextree
+Rendered pages/_navbar (1.4ms)
+Completed in 196ms (View: 172, DB: 3) | 200 OK [http://0.0.0.0/components/indextree]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#new (for 127.0.0.1 at 2012-09-24 04:28:45) [GET]
+  Parameters: {"parent_id"=>"37"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.6ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;35;1mComponent Load (0.5ms)[0m   [0mSELECT * FROM "components" WHERE ("components"."id" = 37) [0m
+Rendering template within layouts/application
+Rendering components/new
+  [4;36;1mLocation Load (0.9ms)[0m   [0;1mSELECT * FROM "locations" ORDER BY name[0m
+  [4;35;1mAddress Load (0.6ms)[0m   [0mSELECT * FROM "addresses" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "addresses" [0m
+  [4;35;1mPart Load (0.9ms)[0m   [0mSELECT * FROM "parts" [0m
+Rendered components/_comppart_fields (47.2ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "parts" [0m
+Rendered components/_comppart_fields (3.4ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "parts" [0m
+Rendered components/_comppart_fields (3.4ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "parts" [0m
+Rendered components/_comppart_fields (3.8ms)
+Rendered components/_form (158.2ms)
+Rendered pages/_navbar (1.4ms)
+Completed in 199ms (View: 168, DB: 4) | 200 OK [http://0.0.0.0/components/new?parent_id=37]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#create (for 127.0.0.1 at 2012-09-24 04:28:55) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"sjmx+USGts71d8hZ6kmZcxyC8kuYo9jniAvwS2M2+Sg=", "component"=>{"installed_on(1i)"=>"", "installed_on(2i)"=>"", "installed_on(3i)"=>"", "name"=>"Just a test", "compparts_attributes"=>{"0"=>{"_destroy"=>"", "part_id"=>"", "quantity"=>""}, "1"=>{"_destroy"=>"", "part_id"=>"", "quantity"=>""}, "2"=>{"_destroy"=>"", "part_id"=>"", "quantity"=>""}}, "manufacturer_id"=>"", "serial_no"=>"", "location_id"=>"", "supplier_id"=>"", "parent_id"=>"37", "tech_description"=>"", "type_no"=>"", "component_code"=>"2600"}}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.4ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;35;1mComponent Load (0.5ms)[0m   [0mSELECT * FROM "components" WHERE ("components"."id" = 37) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mComponent Load (0.4ms)[0m   [0mSELECT "components".id FROM "components" WHERE ("components"."component_code" = '2600') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+Rendering template within layouts/application
+Rendering components/new
+  [4;35;1mLocation Load (0.7ms)[0m   [0mSELECT * FROM "locations" ORDER BY name[0m
+  [4;36;1mAddress Load (0.6ms)[0m   [0;1mSELECT * FROM "addresses" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "addresses" [0m
+  [4;36;1mPart Load (0.8ms)[0m   [0;1mSELECT * FROM "parts" [0m
+Rendered components/_comppart_fields (50.4ms)
+Rendered components/_form (102.7ms)
+Rendered pages/_navbar (1.3ms)
+Completed in 197ms (View: 112, DB: 4) | 200 OK [http://0.0.0.0/components]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2012-09-24 04:28:55) [GET]
+
+ActionController::RoutingError (No route matches "/images/exclamation.png" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#create (for 127.0.0.1 at 2012-09-24 04:29:01) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"sjmx+USGts71d8hZ6kmZcxyC8kuYo9jniAvwS2M2+Sg=", "component"=>{"installed_on(1i)"=>"", "installed_on(2i)"=>"", "installed_on(3i)"=>"", "name"=>"Just a test", "manufacturer_id"=>"", "serial_no"=>"", "location_id"=>"", "supplier_id"=>"", "parent_id"=>"37", "tech_description"=>"", "type_no"=>"", "component_code"=>"2300"}}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.5ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;36;1mComponent Load (0.6ms)[0m   [0;1mSELECT * FROM "components" WHERE ("components"."id" = 37) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mComponent Load (0.5ms)[0m   [0;1mSELECT "components".id FROM "components" WHERE ("components"."component_code" = '2300') LIMIT 1[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO "components" ("name", "counter_id", "serial_no", "installed_on", "manufacturer_id", "location_id", "ancestry", "supplier_id", "created_by", "type_no", "tech_description", "unit_id", "created_at", "component_code", "updated_at") VALUES('Just a test', NULL, '', NULL, NULL, NULL, '37', NULL, 1, '', '', NULL, '2012-09-23 20:29:01.533335', '2300', '2012-09-23 20:29:01.533335') RETURNING "id"[0m
+  [4;36;1mSQL (23.7ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/components/47
+Completed in 57ms (DB: 27) | 302 Found [http://0.0.0.0/components]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#show (for 127.0.0.1 at 2012-09-24 04:29:01) [GET]
+  Parameters: {"id"=>"47"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.6ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;35;1mComponent Load (0.7ms)[0m   [0mSELECT * FROM "components" WHERE ("components"."id" = 47) [0m
+Rendering template within layouts/application
+Rendering components/show
+  [4;36;1mComponent Load (0.4ms)[0m   [0;1mSELECT * FROM "components" WHERE ("components"."id" = 37) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mComppart Load (0.5ms)[0m   [0;1mSELECT * FROM "compparts" WHERE ("compparts".component_id = 47) [0m
+Rendered pages/_navbar (1.3ms)
+Completed in 86ms (View: 61, DB: 3) | 200 OK [http://0.0.0.0/components/47]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#index (for 127.0.0.1 at 2012-09-24 04:29:03) [GET]
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.5ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;35;1mComponent Load (1.0ms)[0m   [0mSELECT * FROM "components" ORDER BY component_code[0m
+Rendering template within layouts/application
+Rendering components/index
+Rendered pages/_navbar (1.3ms)
+Completed in 211ms (View: 187, DB: 2) | 200 OK [http://0.0.0.0/components]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#indextree (for 127.0.0.1 at 2012-09-24 04:29:06) [GET]
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.5ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;36;1mComponent Load (1.1ms)[0m   [0;1mSELECT * FROM "components" ORDER BY component_code[0m
+Rendering template within layouts/application
+Rendering components/indextree
+Rendered pages/_navbar (1.2ms)
+Completed in 205ms (View: 135, DB: 3) | 200 OK [http://0.0.0.0/components/indextree]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#show (for 127.0.0.1 at 2012-09-24 04:35:26) [GET]
+  Parameters: {"id"=>"36"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.6ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;35;1mComponent Load (0.5ms)[0m   [0mSELECT * FROM "components" WHERE ("components"."id" = 36) [0m
+Rendering template within layouts/application
+Rendering components/show
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mComppart Load (0.4ms)[0m   [0mSELECT * FROM "compparts" WHERE ("compparts".component_id = 36) [0m
+Rendered pages/_navbar (1.4ms)
+Completed in 40ms (View: 15, DB: 3) | 200 OK [http://0.0.0.0/components/36]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#show (for 127.0.0.1 at 2012-09-24 04:42:57) [GET]
+  Parameters: {"id"=>"36"}
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.6ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;36;1mComponent Load (0.5ms)[0m   [0;1mSELECT * FROM "components" WHERE ("components"."id" = 36) [0m
+Rendering template within layouts/application
+Rendering components/show
+Rendered pages/_navbar (1.3ms)
+Completed in 79ms (View: 15, DB: 2) | 200 OK [http://0.0.0.0/components/36]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#show (for 127.0.0.1 at 2012-09-24 04:43:12) [GET]
+  Parameters: {"id"=>"36"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.5ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;35;1mComponent Load (0.5ms)[0m   [0mSELECT * FROM "components" WHERE ("components"."id" = 36) [0m
+Rendering template within layouts/application
+Rendering components/show
+Rendered pages/_navbar (1.4ms)
+Completed in 80ms (View: 15, DB: 2) | 200 OK [http://0.0.0.0/components/36]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#show (for 127.0.0.1 at 2012-09-24 04:46:44) [GET]
+  Parameters: {"id"=>"36"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.6ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;36;1mComponent Load (0.6ms)[0m   [0;1mSELECT * FROM "components" WHERE ("components"."id" = 36) [0m
+Rendering template within layouts/application
+Rendering components/show
+Rendered pages/_navbar (1.4ms)
+Completed in 81ms (View: 15, DB: 2) | 200 OK [http://0.0.0.0/components/36]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PagesController#home (for 127.0.0.1 at 2012-09-24 04:48:33) [GET]
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/home
+Rendered pages/_navbar (3.7ms)
+Completed in 22ms (View: 8, DB: 1) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#index (for 127.0.0.1 at 2012-09-24 04:48:37) [GET]
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Permission denied: No matching rules found for index for #<Authorization::AnonymousUser:0x10a8e8d10 @role_symbols=[:guest]> (roles [:guest], privileges [:manage, :approve, :core, :read, :index], context :components).
+Redirected to http://0.0.0.0:3000/
+Filter chain halted as [:filter_access_filter] rendered_or_redirected.
+Completed in 9ms (DB: 1) | 302 Found [http://0.0.0.0/components]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing PagesController#home (for 127.0.0.1 at 2012-09-24 04:48:37) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/home
+Rendered pages/_navbar (42.1ms)
+Completed in 59ms (View: 49, DB: 1) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2012-09-24 04:48:39) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered pages/_navbar (1.3ms)
+Completed in 21ms (View: 9, DB: 1) | 200 OK [http://0.0.0.0/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2012-09-24 04:48:44) [POST]
+  Parameters: {"commit"=>"Log in", "login"=>"admin", "authenticity_token"=>"JdwM4zJceNM6gK/HdCBOoydC2q+G4Ia5xgQFS+llfd4=", "password"=>"password"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'admin') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/
+Completed in 14ms (DB: 2) | 302 Found [http://0.0.0.0/session]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing PagesController#home (for 127.0.0.1 at 2012-09-24 04:48:44) [GET]
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/home
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered pages/_navbar (4.0ms)
+Completed in 20ms (View: 9, DB: 1) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#index (for 127.0.0.1 at 2012-09-24 04:48:46) [GET]
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.5ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;35;1mComponent Load (1.1ms)[0m   [0mSELECT * FROM "components" ORDER BY component_code[0m
+Rendering template within layouts/application
+Rendering components/index
+Rendered pages/_navbar (1.3ms)
+Completed in 211ms (View: 187, DB: 2) | 200 OK [http://0.0.0.0/components]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#show (for 127.0.0.1 at 2012-09-24 04:48:49) [GET]
+  Parameters: {"id"=>"36"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.5ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;36;1mComponent Load (0.4ms)[0m   [0;1mSELECT * FROM "components" WHERE ("components"."id" = 36) [0m
+Rendering template within layouts/application
+Rendering components/show
+Rendered pages/_navbar (1.3ms)
+Completed in 83ms (View: 15, DB: 2) | 200 OK [http://0.0.0.0/components/36]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#show (for 127.0.0.1 at 2012-09-24 04:49:22) [GET]
+  Parameters: {"id"=>"36"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.5ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;35;1mComponent Load (0.4ms)[0m   [0mSELECT * FROM "components" WHERE ("components"."id" = 36) [0m
+Rendering template within layouts/application
+Rendering components/show
+Rendered pages/_navbar (1.4ms)
+Completed in 79ms (View: 56, DB: 2) | 200 OK [http://0.0.0.0/components/36]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#edit (for 127.0.0.1 at 2012-09-24 04:49:30) [GET]
+  Parameters: {"id"=>"36"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.5ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;36;1mComponent Load (0.5ms)[0m   [0;1mSELECT * FROM "components" WHERE ("components"."id" = 36) [0m
+Rendering template within layouts/application
+Rendering components/edit
+  [4;35;1mLocation Load (0.9ms)[0m   [0mSELECT * FROM "locations" ORDER BY name[0m
+  [4;36;1mAddress Load (0.7ms)[0m   [0;1mSELECT * FROM "addresses" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "addresses" [0m
+  [4;36;1mComppart Load (0.5ms)[0m   [0;1mSELECT * FROM "compparts" WHERE ("compparts".component_id = 36) [0m
+  [4;35;1mPart Load (1.1ms)[0m   [0mSELECT * FROM "parts" [0m
+Rendered components/_comppart_fields (50.1ms)
+Rendered components/_form (109.1ms)
+Rendered pages/_navbar (1.4ms)
+Completed in 223ms (View: 156, DB: 5) | 200 OK [http://0.0.0.0/components/36/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#update (for 127.0.0.1 at 2012-09-24 04:50:23) [PUT]
+  Parameters: {"id"=>"36", "commit"=>"Update", "authenticity_token"=>"JdwM4zJceNM6gK/HdCBOoydC2q+G4Ia5xgQFS+llfd4=", "component"=>{"installed_on(1i)"=>"2012", "installed_on(2i)"=>"1", "installed_on(3i)"=>"7", "name"=>"Main Propulsion System", "compparts_attributes"=>{"1348433411742"=>{"_destroy"=>"", "part_id"=>"4", "quantity"=>"1"}, "1348433417987"=>{"_destroy"=>"", "part_id"=>"6", "quantity"=>"1"}, "1348433414628"=>{"_destroy"=>"", "part_id"=>"5", "quantity"=>"1"}}, "manufacturer_id"=>"3", "serial_no"=>"ABCD1234", "location_id"=>"1", "supplier_id"=>"4", "parent_id"=>"", "tech_description"=>"Technical Description", "type_no"=>"1466", "component_code"=>"1"}}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.6ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;36;1mComponent Load (0.4ms)[0m   [0;1mSELECT * FROM "components" WHERE ("components"."id" = 36) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mComponent Load (0.6ms)[0m   [0;1mSELECT "components".id FROM "components" WHERE ("components"."component_code" = '1' AND "components".id <> 36) LIMIT 1[0m
+  [4;35;1mComponent Update (0.4ms)[0m   [0mUPDATE "components" SET "location_id" = 1, "serial_no" = 'ABCD1234', "type_no" = '1466', "updated_at" = '2012-09-23 20:50:23.894734', "tech_description" = 'Technical Description', "manufacturer_id" = 3, "supplier_id" = 4, "installed_on" = '2012-01-07' WHERE "id" = 36[0m
+  [4;36;1mSQL (39.9ms)[0m   [0;1mINSERT INTO "compparts" ("part_id", "component_id", "updated_by", "quantity", "created_at", "updated_at") VALUES(4, 36, NULL, 1, '2012-09-23 20:50:23.896329', '2012-09-23 20:50:23.896329') RETURNING "id"[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO "compparts" ("part_id", "component_id", "updated_by", "quantity", "created_at", "updated_at") VALUES(5, 36, NULL, 1, '2012-09-23 20:50:23.940164', '2012-09-23 20:50:23.940164') RETURNING "id"[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mINSERT INTO "compparts" ("part_id", "component_id", "updated_by", "quantity", "created_at", "updated_at") VALUES(6, 36, NULL, 1, '2012-09-23 20:50:23.942338', '2012-09-23 20:50:23.942338') RETURNING "id"[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/components/36
+Completed in 133ms (DB: 45) | 302 Found [http://0.0.0.0/components/36]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#show (for 127.0.0.1 at 2012-09-24 04:50:23) [GET]
+  Parameters: {"id"=>"36"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.6ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;36;1mComponent Load (0.5ms)[0m   [0;1mSELECT * FROM "components" WHERE ("components"."id" = 36) [0m
+Rendering template within layouts/application
+Rendering components/show
+Rendered pages/_navbar (1.3ms)
+Completed in 36ms (View: 12, DB: 2) | 200 OK [http://0.0.0.0/components/36]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#show (for 127.0.0.1 at 2012-09-24 04:54:59) [GET]
+  Parameters: {"id"=>"36"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.6ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;35;1mComponent Load (0.5ms)[0m   [0mSELECT * FROM "components" WHERE ("components"."id" = 36) [0m
+Rendering template within layouts/application
+Rendering components/show
+  [4;36;1mLocation Load (0.4ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+Rendered pages/_navbar (1.3ms)
+Completed in 47ms (View: 21, DB: 2) | 200 OK [http://0.0.0.0/components/36]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#show (for 127.0.0.1 at 2012-09-24 04:56:15) [GET]
+  Parameters: {"id"=>"36"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.6ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;35;1mComponent Load (0.5ms)[0m   [0mSELECT * FROM "components" WHERE ("components"."id" = 36) [0m
+Rendering template within layouts/application
+Rendering components/show
+  [4;36;1mLocation Load (0.4ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+Rendered pages/_navbar (1.3ms)
+Completed in 45ms (View: 21, DB: 2) | 200 OK [http://0.0.0.0/components/36]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#show (for 127.0.0.1 at 2012-09-24 04:58:23) [GET]
+  Parameters: {"id"=>"36"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.6ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;35;1mComponent Load (0.5ms)[0m   [0mSELECT * FROM "components" WHERE ("components"."id" = 36) [0m
+Rendering template within layouts/application
+Rendering components/show
+  [4;36;1mLocation Load (0.5ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+Rendered pages/_navbar (1.3ms)
+Completed in 81ms (View: 57, DB: 2) | 200 OK [http://0.0.0.0/components/36]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#show (for 127.0.0.1 at 2012-09-24 04:58:32) [GET]
+  Parameters: {"id"=>"36"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.6ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;35;1mComponent Load (0.4ms)[0m   [0mSELECT * FROM "components" WHERE ("components"."id" = 36) [0m
+Rendering template within layouts/application
+Rendering components/show
+  [4;36;1mLocation Load (0.4ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+Rendered pages/_navbar (1.3ms)
+Completed in 86ms (View: 23, DB: 2) | 200 OK [http://0.0.0.0/components/36]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#show (for 127.0.0.1 at 2012-09-24 04:59:34) [GET]
+  Parameters: {"id"=>"36"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.6ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;35;1mComponent Load (0.5ms)[0m   [0mSELECT * FROM "components" WHERE ("components"."id" = 36) [0m
+Rendering template within layouts/application
+Rendering components/show
+  [4;36;1mLocation Load (0.4ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+Rendered pages/_navbar (1.4ms)
+Completed in 91ms (View: 23, DB: 3) | 200 OK [http://0.0.0.0/components/36]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#show (for 127.0.0.1 at 2012-09-24 05:00:24) [GET]
+  Parameters: {"id"=>"36"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.6ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;35;1mComponent Load (0.5ms)[0m   [0mSELECT * FROM "components" WHERE ("components"."id" = 36) [0m
+Rendering template within layouts/application
+Rendering components/show
+  [4;36;1mLocation Load (0.4ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+Rendered pages/_navbar (1.4ms)
+Completed in 43ms (View: 18, DB: 3) | 200 OK [http://0.0.0.0/components/36]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#show (for 127.0.0.1 at 2012-09-24 05:00:26) [GET]
+  Parameters: {"id"=>"36"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.6ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;35;1mComponent Load (0.6ms)[0m   [0mSELECT * FROM "components" WHERE ("components"."id" = 36) [0m
+Rendering template within layouts/application
+Rendering components/show
+  [4;36;1mLocation Load (0.3ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+Rendered pages/_navbar (1.4ms)
+Completed in 43ms (View: 19, DB: 2) | 200 OK [http://0.0.0.0/components/36]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#show (for 127.0.0.1 at 2012-09-24 05:04:02) [GET]
+  Parameters: {"id"=>"36"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.6ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;35;1mComponent Load (0.5ms)[0m   [0mSELECT * FROM "components" WHERE ("components"."id" = 36) [0m
+Rendering template within layouts/application
+Rendering components/show
+  [4;36;1mLocation Load (0.4ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+Rendered pages/_navbar (1.4ms)
+Completed in 44ms (View: 19, DB: 2) | 200 OK [http://0.0.0.0/components/36]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#show (for 127.0.0.1 at 2012-09-24 05:05:08) [GET]
+  Parameters: {"id"=>"36"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.5ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;35;1mComponent Load (0.5ms)[0m   [0mSELECT * FROM "components" WHERE ("components"."id" = 36) [0m
+Rendering template within layouts/application
+Rendering components/show
+  [4;36;1mLocation Load (0.4ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;35;1mAddress Load (0.4ms)[0m   [0mSELECT * FROM "addresses" WHERE ("addresses"."id" = 3) [0m
+  [4;36;1mAddress Load (0.3ms)[0m   [0;1mSELECT * FROM "addresses" WHERE ("addresses"."id" = 4) [0m
+Rendered pages/_navbar (1.5ms)
+Completed in 95ms (View: 69, DB: 3) | 200 OK [http://0.0.0.0/components/36]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#show (for 127.0.0.1 at 2012-09-24 05:05:44) [GET]
+  Parameters: {"id"=>"36"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.6ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;35;1mComponent Load (0.5ms)[0m   [0mSELECT * FROM "components" WHERE ("components"."id" = 36) [0m
+Rendering template within layouts/application
+Rendering components/show
+  [4;36;1mLocation Load (0.4ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;35;1mAddress Load (0.4ms)[0m   [0mSELECT * FROM "addresses" WHERE ("addresses"."id" = 3) [0m
+  [4;36;1mAddress Load (0.2ms)[0m   [0;1mSELECT * FROM "addresses" WHERE ("addresses"."id" = 4) [0m
+Rendered pages/_navbar (1.3ms)
+Completed in 97ms (View: 30, DB: 3) | 200 OK [http://0.0.0.0/components/36]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#show (for 127.0.0.1 at 2012-09-24 05:06:32) [GET]
+  Parameters: {"id"=>"36"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.6ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;35;1mComponent Load (0.5ms)[0m   [0mSELECT * FROM "components" WHERE ("components"."id" = 36) [0m
+Rendering template within layouts/application
+Rendering components/show
+  [4;36;1mLocation Load (0.5ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;35;1mAddress Load (0.6ms)[0m   [0mSELECT * FROM "addresses" WHERE ("addresses"."id" = 3) [0m
+  [4;36;1mAddress Load (0.3ms)[0m   [0;1mSELECT * FROM "addresses" WHERE ("addresses"."id" = 4) [0m
+Rendered pages/_navbar (1.4ms)
+Completed in 55ms (View: 30, DB: 3) | 200 OK [http://0.0.0.0/components/36]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#show (for 127.0.0.1 at 2012-09-24 05:11:34) [GET]
+  Parameters: {"id"=>"36"}
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.6ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;35;1mComponent Load (0.5ms)[0m   [0mSELECT * FROM "components" WHERE ("components"."id" = 36) [0m
+Rendering template within layouts/application
+Rendering components/show
+  [4;36;1mLocation Load (0.4ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;35;1mAddress Load (0.4ms)[0m   [0mSELECT * FROM "addresses" WHERE ("addresses"."id" = 3) [0m
+  [4;36;1mAddress Load (0.3ms)[0m   [0;1mSELECT * FROM "addresses" WHERE ("addresses"."id" = 4) [0m
+Rendered pages/_navbar (1.3ms)
+Completed in 86ms (View: 61, DB: 3) | 200 OK [http://0.0.0.0/components/36]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#show (for 127.0.0.1 at 2012-09-24 05:13:18) [GET]
+  Parameters: {"id"=>"36"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.5ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;35;1mComponent Load (0.5ms)[0m   [0mSELECT * FROM "components" WHERE ("components"."id" = 36) [0m
+Rendering template within layouts/application
+Rendering components/show
+  [4;36;1mLocation Load (0.4ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;35;1mAddress Load (0.4ms)[0m   [0mSELECT * FROM "addresses" WHERE ("addresses"."id" = 3) [0m
+  [4;36;1mAddress Load (0.2ms)[0m   [0;1mSELECT * FROM "addresses" WHERE ("addresses"."id" = 4) [0m
+  [4;35;1mComppart Load (0.5ms)[0m   [0mSELECT * FROM "compparts" WHERE ("compparts".component_id = 36) [0m
+Rendered pages/_navbar (1.3ms)
+Completed in 101ms (View: 34, DB: 4) | 200 OK [http://0.0.0.0/components/36]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#show (for 127.0.0.1 at 2012-09-24 05:13:35) [GET]
+  Parameters: {"id"=>"36"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.6ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;36;1mComponent Load (0.5ms)[0m   [0;1mSELECT * FROM "components" WHERE ("components"."id" = 36) [0m
+Rendering template within layouts/application
+Rendering components/show
+  [4;35;1mLocation Load (0.4ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;36;1mAddress Load (0.4ms)[0m   [0;1mSELECT * FROM "addresses" WHERE ("addresses"."id" = 3) [0m
+  [4;35;1mAddress Load (0.3ms)[0m   [0mSELECT * FROM "addresses" WHERE ("addresses"."id" = 4) [0m
+  [4;36;1mComppart Load (0.5ms)[0m   [0;1mSELECT * FROM "compparts" WHERE ("compparts".component_id = 36) [0m
+  [4;35;1mPart Load (0.5ms)[0m   [0mSELECT * FROM "parts" WHERE ("parts"."id" = 4) [0m
+  [4;36;1mPart Load (0.3ms)[0m   [0;1mSELECT * FROM "parts" WHERE ("parts"."id" = 5) [0m
+  [4;35;1mPart Load (0.2ms)[0m   [0mSELECT * FROM "parts" WHERE ("parts"."id" = 6) [0m
+Rendered pages/_navbar (1.5ms)
+Completed in 104ms (View: 78, DB: 5) | 200 OK [http://0.0.0.0/components/36]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#show (for 127.0.0.1 at 2012-09-24 05:14:52) [GET]
+  Parameters: {"id"=>"36"}
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.6ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;36;1mComponent Load (0.5ms)[0m   [0;1mSELECT * FROM "components" WHERE ("components"."id" = 36) [0m
+Rendering template within layouts/application
+Rendering components/show
+  [4;35;1mLocation Load (0.4ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;36;1mAddress Load (0.4ms)[0m   [0;1mSELECT * FROM "addresses" WHERE ("addresses"."id" = 3) [0m
+  [4;35;1mAddress Load (0.3ms)[0m   [0mSELECT * FROM "addresses" WHERE ("addresses"."id" = 4) [0m
+  [4;36;1mComppart Load (0.5ms)[0m   [0;1mSELECT * FROM "compparts" WHERE ("compparts".component_id = 36) [0m
+  [4;35;1mPart Load (0.5ms)[0m   [0mSELECT * FROM "parts" WHERE ("parts"."id" = 4) [0m
+  [4;36;1mPart Load (0.3ms)[0m   [0;1mSELECT * FROM "parts" WHERE ("parts"."id" = 5) [0m
+  [4;35;1mPart Load (0.3ms)[0m   [0mSELECT * FROM "parts" WHERE ("parts"."id" = 6) [0m
+Rendered pages/_navbar (1.4ms)
+Completed in 114ms (View: 42, DB: 5) | 200 OK [http://0.0.0.0/components/36]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#show (for 127.0.0.1 at 2012-09-24 05:15:03) [GET]
+  Parameters: {"id"=>"36"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.5ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;36;1mComponent Load (0.5ms)[0m   [0;1mSELECT * FROM "components" WHERE ("components"."id" = 36) [0m
+Rendering template within layouts/application
+Rendering components/show
+  [4;35;1mLocation Load (0.4ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;36;1mAddress Load (0.4ms)[0m   [0;1mSELECT * FROM "addresses" WHERE ("addresses"."id" = 3) [0m
+  [4;35;1mAddress Load (0.3ms)[0m   [0mSELECT * FROM "addresses" WHERE ("addresses"."id" = 4) [0m
+  [4;36;1mComppart Load (0.4ms)[0m   [0;1mSELECT * FROM "compparts" WHERE ("compparts".component_id = 36) [0m
+  [4;35;1mPart Load (0.4ms)[0m   [0mSELECT * FROM "parts" WHERE ("parts"."id" = 4) [0m
+  [4;36;1mPart Load (0.3ms)[0m   [0;1mSELECT * FROM "parts" WHERE ("parts"."id" = 5) [0m
+  [4;35;1mPart Load (0.2ms)[0m   [0mSELECT * FROM "parts" WHERE ("parts"."id" = 6) [0m
+Rendered pages/_navbar (1.3ms)
+Completed in 104ms (View: 77, DB: 4) | 200 OK [http://0.0.0.0/components/36]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#show (for 127.0.0.1 at 2012-09-24 05:16:39) [GET]
+  Parameters: {"id"=>"36"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.6ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;36;1mComponent Load (0.4ms)[0m   [0;1mSELECT * FROM "components" WHERE ("components"."id" = 36) [0m
+Rendering template within layouts/application
+Rendering components/show
+  [4;35;1mLocation Load (0.4ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;36;1mAddress Load (0.5ms)[0m   [0;1mSELECT * FROM "addresses" WHERE ("addresses"."id" = 3) [0m
+  [4;35;1mAddress Load (0.3ms)[0m   [0mSELECT * FROM "addresses" WHERE ("addresses"."id" = 4) [0m
+  [4;36;1mComppart Load (0.5ms)[0m   [0;1mSELECT * FROM "compparts" WHERE ("compparts".component_id = 36) [0m
+  [4;35;1mPart Load (0.4ms)[0m   [0mSELECT * FROM "parts" WHERE ("parts"."id" = 4) [0m
+  [4;36;1mPart Load (0.3ms)[0m   [0;1mSELECT * FROM "parts" WHERE ("parts"."id" = 5) [0m
+  [4;35;1mPart Load (0.3ms)[0m   [0mSELECT * FROM "parts" WHERE ("parts"."id" = 6) [0m
+Rendered pages/_navbar (1.4ms)
+Completed in 110ms (View: 38, DB: 5) | 200 OK [http://0.0.0.0/components/36]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#show (for 127.0.0.1 at 2012-09-24 05:17:29) [GET]
+  Parameters: {"id"=>"36"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.5ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;36;1mComponent Load (0.5ms)[0m   [0;1mSELECT * FROM "components" WHERE ("components"."id" = 36) [0m
+Rendering template within layouts/application
+Rendering components/show
+  [4;35;1mLocation Load (0.4ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;36;1mAddress Load (0.4ms)[0m   [0;1mSELECT * FROM "addresses" WHERE ("addresses"."id" = 3) [0m
+  [4;35;1mAddress Load (0.3ms)[0m   [0mSELECT * FROM "addresses" WHERE ("addresses"."id" = 4) [0m
+  [4;36;1mComppart Load (0.5ms)[0m   [0;1mSELECT * FROM "compparts" WHERE ("compparts".component_id = 36) [0m
+  [4;35;1mPart Load (0.5ms)[0m   [0mSELECT * FROM "parts" WHERE ("parts"."id" = 4) [0m
+  [4;36;1mPart Load (0.3ms)[0m   [0;1mSELECT * FROM "parts" WHERE ("parts"."id" = 5) [0m
+  [4;35;1mPart Load (0.3ms)[0m   [0mSELECT * FROM "parts" WHERE ("parts"."id" = 6) [0m
+Rendered pages/_navbar (1.3ms)
+Completed in 102ms (View: 76, DB: 5) | 200 OK [http://0.0.0.0/components/36]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#show (for 127.0.0.1 at 2012-09-24 05:17:48) [GET]
+  Parameters: {"id"=>"36"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.5ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;36;1mComponent Load (0.5ms)[0m   [0;1mSELECT * FROM "components" WHERE ("components"."id" = 36) [0m
+Rendering template within layouts/application
+Rendering components/show
+  [4;35;1mLocation Load (0.4ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;36;1mAddress Load (0.4ms)[0m   [0;1mSELECT * FROM "addresses" WHERE ("addresses"."id" = 3) [0m
+  [4;35;1mAddress Load (0.3ms)[0m   [0mSELECT * FROM "addresses" WHERE ("addresses"."id" = 4) [0m
+  [4;36;1mComppart Load (0.6ms)[0m   [0;1mSELECT * FROM "compparts" WHERE ("compparts".component_id = 36) [0m
+  [4;35;1mPart Load (0.5ms)[0m   [0mSELECT * FROM "parts" WHERE ("parts"."id" = 4) [0m
+  [4;36;1mPart Load (0.3ms)[0m   [0;1mSELECT * FROM "parts" WHERE ("parts"."id" = 5) [0m
+  [4;35;1mPart Load (0.3ms)[0m   [0mSELECT * FROM "parts" WHERE ("parts"."id" = 6) [0m
+Rendered pages/_navbar (1.4ms)
+Completed in 113ms (View: 43, DB: 5) | 200 OK [http://0.0.0.0/components/36]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#show (for 127.0.0.1 at 2012-09-24 05:21:21) [GET]
+  Parameters: {"id"=>"36"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.5ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;36;1mComponent Load (0.4ms)[0m   [0;1mSELECT * FROM "components" WHERE ("components"."id" = 36) [0m
+Rendering template within layouts/application
+Rendering components/show
+  [4;35;1mLocation Load (0.3ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;36;1mAddress Load (0.4ms)[0m   [0;1mSELECT * FROM "addresses" WHERE ("addresses"."id" = 3) [0m
+  [4;35;1mAddress Load (0.2ms)[0m   [0mSELECT * FROM "addresses" WHERE ("addresses"."id" = 4) [0m
+  [4;36;1mComppart Load (0.7ms)[0m   [0;1mSELECT * FROM "compparts" WHERE ("compparts".component_id = 36) [0m
+  [4;35;1mPart Load (0.4ms)[0m   [0mSELECT * FROM "parts" WHERE ("parts"."id" = 4) [0m
+  [4;36;1mPart Load (0.3ms)[0m   [0;1mSELECT * FROM "parts" WHERE ("parts"."id" = 5) [0m
+  [4;35;1mPart Load (0.4ms)[0m   [0mSELECT * FROM "parts" WHERE ("parts"."id" = 6) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered pages/_navbar (1.4ms)
+Completed in 105ms (View: 78, DB: 5) | 200 OK [http://0.0.0.0/components/36]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#show (for 127.0.0.1 at 2012-09-24 05:21:35) [GET]
+  Parameters: {"id"=>"36"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.6ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;35;1mComponent Load (0.5ms)[0m   [0mSELECT * FROM "components" WHERE ("components"."id" = 36) [0m
+Rendering template within layouts/application
+Rendering components/show
+  [4;36;1mLocation Load (0.4ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;35;1mAddress Load (0.4ms)[0m   [0mSELECT * FROM "addresses" WHERE ("addresses"."id" = 3) [0m
+  [4;36;1mAddress Load (0.3ms)[0m   [0;1mSELECT * FROM "addresses" WHERE ("addresses"."id" = 4) [0m
+  [4;35;1mComppart Load (1.5ms)[0m   [0mSELECT * FROM "compparts" WHERE ("compparts".component_id = 36) [0m
+  [4;36;1mPart Load (0.6ms)[0m   [0;1mSELECT * FROM "parts" WHERE ("parts"."id" = 4) [0m
+  [4;35;1mPart Load (0.4ms)[0m   [0mSELECT * FROM "parts" WHERE ("parts"."id" = 5) [0m
+  [4;36;1mPart Load (0.3ms)[0m   [0;1mSELECT * FROM "parts" WHERE ("parts"."id" = 6) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered pages/_navbar (1.3ms)
+Completed in 113ms (View: 42, DB: 6) | 200 OK [http://0.0.0.0/components/36]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2012-09-24 05:21:50) [GET]
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered pages/_navbar (1.4ms)
+Completed in 48ms (View: 36, DB: 1) | 200 OK [http://0.0.0.0/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#index (for 127.0.0.1 at 2012-09-24 05:22:31) [GET]
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.6ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;36;1mComponent Load (1.1ms)[0m   [0;1mSELECT * FROM "components" ORDER BY component_code[0m
+Rendering template within layouts/application
+Rendering components/index
+Rendered pages/_navbar (1.3ms)
+Completed in 214ms (View: 146, DB: 3) | 200 OK [http://0.0.0.0/components]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#show (for 127.0.0.1 at 2012-09-24 05:22:34) [GET]
+  Parameters: {"id"=>"36"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.5ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;35;1mComponent Load (0.5ms)[0m   [0mSELECT * FROM "components" WHERE ("components"."id" = 36) [0m
+Rendering template within layouts/application
+Rendering components/show
+  [4;36;1mLocation Load (0.4ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;35;1mAddress Load (0.5ms)[0m   [0mSELECT * FROM "addresses" WHERE ("addresses"."id" = 3) [0m
+  [4;36;1mAddress Load (0.3ms)[0m   [0;1mSELECT * FROM "addresses" WHERE ("addresses"."id" = 4) [0m
+  [4;35;1mComppart Load (0.4ms)[0m   [0mSELECT * FROM "compparts" WHERE ("compparts".component_id = 36) [0m
+  [4;36;1mPart Load (0.5ms)[0m   [0;1mSELECT * FROM "parts" WHERE ("parts"."id" = 4) [0m
+  [4;35;1mPart Load (0.5ms)[0m   [0mSELECT * FROM "parts" WHERE ("parts"."id" = 5) [0m
+  [4;36;1mPart Load (0.3ms)[0m   [0;1mSELECT * FROM "parts" WHERE ("parts"."id" = 6) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered pages/_navbar (1.4ms)
+Completed in 99ms (View: 72, DB: 5) | 200 OK [http://0.0.0.0/components/36]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#show (for 127.0.0.1 at 2012-09-24 05:24:00) [GET]
+  Parameters: {"id"=>"36"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (1.6ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;36;1mComponent Load (0.5ms)[0m   [0;1mSELECT * FROM "components" WHERE ("components"."id" = 36) [0m
+Rendering template within layouts/application
+Rendering components/show
+  [4;35;1mLocation Load (0.4ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;36;1mAddress Load (0.4ms)[0m   [0;1mSELECT * FROM "addresses" WHERE ("addresses"."id" = 3) [0m
+  [4;35;1mAddress Load (0.5ms)[0m   [0mSELECT * FROM "addresses" WHERE ("addresses"."id" = 4) [0m
+  [4;36;1mComppart Load (0.5ms)[0m   [0;1mSELECT * FROM "compparts" WHERE ("compparts".component_id = 36) [0m
+  [4;35;1mPart Load (0.4ms)[0m   [0mSELECT * FROM "parts" WHERE ("parts"."id" = 4) [0m
+  [4;36;1mPart Load (0.3ms)[0m   [0;1mSELECT * FROM "parts" WHERE ("parts"."id" = 5) [0m
+  [4;35;1mPart Load (0.2ms)[0m   [0mSELECT * FROM "parts" WHERE ("parts"."id" = 6) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered pages/_navbar (1.4ms)
+Completed in 119ms (View: 87, DB: 6) | 200 OK [http://0.0.0.0/components/36]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#show (for 127.0.0.1 at 2012-09-24 05:25:26) [GET]
+  Parameters: {"id"=>"36"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.7ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;35;1mComponent Load (0.5ms)[0m   [0mSELECT * FROM "components" WHERE ("components"."id" = 36) [0m
+Rendering template within layouts/application
+Rendering components/show
+
+ActionView::TemplateError (syntax error on line 104, col 4: `    time:') on line #9 of app/views/components/show.html.erb:
+6: 		<legend>Equipment Details</legend>
+7: 		<table>
+8: 			<tr>
+9: 		    <td class="leftcol"><%=t ('component.component_code') %>:</td>
+10: 		    <td><%=h @component.component_code %> - &nbsp;  <%=h @component.name %></td>
+11: 		  </tr>
+12: 			<tr>
+
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/yaml.rb:133:in `load'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/yaml.rb:133:in `load'
+    app/views/components/show.html.erb:9
+    app/controllers/components_controller.rb:20:in `show'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (36.8ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#show (for 127.0.0.1 at 2012-09-24 05:26:10) [GET]
+  Parameters: {"id"=>"36"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.6ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;36;1mComponent Load (0.5ms)[0m   [0;1mSELECT * FROM "components" WHERE ("components"."id" = 36) [0m
+Rendering template within layouts/application
+Rendering components/show
+  [4;35;1mLocation Load (0.4ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;36;1mAddress Load (0.4ms)[0m   [0;1mSELECT * FROM "addresses" WHERE ("addresses"."id" = 3) [0m
+  [4;35;1mAddress Load (0.3ms)[0m   [0mSELECT * FROM "addresses" WHERE ("addresses"."id" = 4) [0m
+  [4;36;1mComppart Load (0.6ms)[0m   [0;1mSELECT * FROM "compparts" WHERE ("compparts".component_id = 36) [0m
+  [4;35;1mPart Load (0.4ms)[0m   [0mSELECT * FROM "parts" WHERE ("parts"."id" = 4) [0m
+  [4;36;1mPart Load (0.3ms)[0m   [0;1mSELECT * FROM "parts" WHERE ("parts"."id" = 5) [0m
+  [4;35;1mPart Load (0.2ms)[0m   [0mSELECT * FROM "parts" WHERE ("parts"."id" = 6) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered pages/_navbar (1.3ms)
+Completed in 63ms (View: 36, DB: 5) | 200 OK [http://0.0.0.0/components/36]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#edit (for 127.0.0.1 at 2012-09-24 05:30:54) [GET]
+  Parameters: {"id"=>"36"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.6ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;35;1mComponent Load (0.4ms)[0m   [0mSELECT * FROM "components" WHERE ("components"."id" = 36) [0m
+Rendering template within layouts/application
+Rendering components/edit
+  [4;36;1mLocation Load (0.9ms)[0m   [0;1mSELECT * FROM "locations" ORDER BY name[0m
+  [4;35;1mAddress Load (0.5ms)[0m   [0mSELECT * FROM "addresses" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "addresses" [0m
+  [4;35;1mComppart Load (0.5ms)[0m   [0mSELECT * FROM "compparts" WHERE ("compparts".component_id = 36) [0m
+  [4;36;1mPart Load (0.9ms)[0m   [0;1mSELECT * FROM "parts" [0m
+Rendered components/_comppart_fields (47.4ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "parts" [0m
+Rendered components/_comppart_fields (3.7ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "parts" [0m
+Rendered components/_comppart_fields (3.4ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "parts" [0m
+Rendered components/_comppart_fields (3.7ms)
+Rendered components/_form (155.3ms)
+Rendered pages/_navbar (1.4ms)
+Completed in 189ms (View: 163, DB: 5) | 200 OK [http://0.0.0.0/components/36/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#update (for 127.0.0.1 at 2012-09-24 05:31:07) [PUT]
+  Parameters: {"id"=>"36", "commit"=>"Update", "authenticity_token"=>"JdwM4zJceNM6gK/HdCBOoydC2q+G4Ia5xgQFS+llfd4=", "component"=>{"installed_on(1i)"=>"2012", "installed_on(2i)"=>"1", "installed_on(3i)"=>"7", "name"=>"Main Propulsion System", "compparts_attributes"=>{"0"=>{"id"=>"2", "_destroy"=>"", "part_id"=>"4", "quantity"=>"1"}, "1"=>{"id"=>"3", "_destroy"=>"", "part_id"=>"5", "quantity"=>"1"}, "2"=>{"id"=>"4", "_destroy"=>"", "part_id"=>"6", "quantity"=>"1"}}, "manufacturer_id"=>"3", "serial_no"=>"ABCD1234", "location_id"=>"1", "supplier_id"=>"4", "parent_id"=>"", "tech_description"=>"Technical Description is here", "type_no"=>"1466", "component_code"=>"1"}}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.6ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;36;1mComponent Load (0.5ms)[0m   [0;1mSELECT * FROM "components" WHERE ("components"."id" = 36) [0m
+  [4;35;1mComppart Load (0.6ms)[0m   [0mSELECT * FROM "compparts" WHERE ("compparts"."id" IN ('2','3','4')) AND ("compparts".component_id = 36) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mComponent Load (0.7ms)[0m   [0mSELECT "components".id FROM "components" WHERE ("components"."component_code" = '1' AND "components".id <> 36) LIMIT 1[0m
+  [4;36;1mComponent Update (0.4ms)[0m   [0;1mUPDATE "components" SET "updated_at" = '2012-09-23 21:31:07.688520', "tech_description" = 'Technical Description is here' WHERE "id" = 36[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/components/36
+Completed in 93ms (DB: 4) | 302 Found [http://0.0.0.0/components/36]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#show (for 127.0.0.1 at 2012-09-24 05:31:07) [GET]
+  Parameters: {"id"=>"36"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.6ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;36;1mComponent Load (0.6ms)[0m   [0;1mSELECT * FROM "components" WHERE ("components"."id" = 36) [0m
+Rendering template within layouts/application
+Rendering components/show
+  [4;35;1mLocation Load (0.4ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;36;1mAddress Load (0.4ms)[0m   [0;1mSELECT * FROM "addresses" WHERE ("addresses"."id" = 3) [0m
+  [4;35;1mAddress Load (0.4ms)[0m   [0mSELECT * FROM "addresses" WHERE ("addresses"."id" = 4) [0m
+  [4;36;1mComppart Load (0.5ms)[0m   [0;1mSELECT * FROM "compparts" WHERE ("compparts".component_id = 36) [0m
+  [4;35;1mPart Load (0.4ms)[0m   [0mSELECT * FROM "parts" WHERE ("parts"."id" = 4) [0m
+  [4;36;1mPart Load (0.4ms)[0m   [0;1mSELECT * FROM "parts" WHERE ("parts"."id" = 5) [0m
+  [4;35;1mPart Load (0.3ms)[0m   [0mSELECT * FROM "parts" WHERE ("parts"."id" = 6) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered pages/_navbar (1.4ms)
+Completed in 106ms (View: 80, DB: 5) | 200 OK [http://0.0.0.0/components/36]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#show (for 127.0.0.1 at 2012-09-24 05:36:40) [GET]
+  Parameters: {"id"=>"36"}
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.6ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;36;1mComponent Load (0.5ms)[0m   [0;1mSELECT * FROM "components" WHERE ("components"."id" = 36) [0m
+Rendering template within layouts/application
+Rendering components/show
+  [4;35;1mLocation Load (0.4ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;36;1mAddress Load (0.5ms)[0m   [0;1mSELECT * FROM "addresses" WHERE ("addresses"."id" = 3) [0m
+  [4;35;1mAddress Load (0.3ms)[0m   [0mSELECT * FROM "addresses" WHERE ("addresses"."id" = 4) [0m
+  [4;36;1mComppart Load (0.5ms)[0m   [0;1mSELECT * FROM "compparts" WHERE ("compparts".component_id = 36) [0m
+  [4;35;1mPart Load (0.4ms)[0m   [0mSELECT * FROM "parts" WHERE ("parts"."id" = 4) [0m
+  [4;36;1mPart Load (0.3ms)[0m   [0;1mSELECT * FROM "parts" WHERE ("parts"."id" = 5) [0m
+  [4;35;1mPart Load (0.3ms)[0m   [0mSELECT * FROM "parts" WHERE ("parts"."id" = 6) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered pages/_navbar (6.2ms)
+Completed in 130ms (View: 56, DB: 5) | 200 OK [http://0.0.0.0/components/36]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to RemoveParentIdFromComponents (20120923202348)
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to RemoveParentIdFromComponents (20120923202348)
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (40.5ms)[0m   [0;1mALTER TABLE "components" ADD COLUMN "parent_id" integer[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20120923202348'[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20110329175439)
+Migrating to CreateRoles (20110415085753)
+Migrating to RoleUserJoin (20110418074151)
+Migrating to CreateComponents (20110420081822)
+Migrating to AddColumnToRoles (20110420090001)
+Migrating to CreateTools (20110421051102)
+Migrating to CreateAddresses (20110421071436)
+Migrating to CreateParts (20110422055211)
+Migrating to CreateDocuments (20110422073955)
+Migrating to AddAttachmentsFileToDocument (20110422074706)
+Migrating to CreateMaintenances (20110425090152)
+Migrating to CreateMaintgroups (20110428034743)
+Migrating to AddAncestryToComponents (20110519060845)
+Migrating to CreateCompparts (20110519152005)
+Migrating to CreateLocations (20110613053335)
+Migrating to CreateOrgcharts (20110615060048)
+Migrating to RenameDepartmentIdToOrgchartIdInLocation (20110615060515)
+Migrating to CreateMaintparts (20120122043314)
+Migrating to CreateMainttools (20120122051032)
+Migrating to CreateMainthours (20120122073847)
+Migrating to CreateJobdescs (20120122102418)
+Migrating to AddColumnToMaintenance (20120122102619)
+Migrating to CreateMaintreports (20120913014958)
+Migrating to RemoveParentIdFromComponents (20120923202348)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mALTER TABLE "components" DROP "parent_id"[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mALTER TABLE "components" ADD COLUMN "edited_by" integer[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20120923202348')[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#show (for 127.0.0.1 at 2012-09-24 05:40:33) [GET]
+  Parameters: {"id"=>"36"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.6ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;35;1mComponent Load (0.5ms)[0m   [0mSELECT * FROM "components" WHERE ("components"."id" = 36) [0m
+Rendering template within layouts/application
+Rendering components/show
+  [4;36;1mLocation Load (0.3ms)[0m   [0;1mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;35;1mAddress Load (0.4ms)[0m   [0mSELECT * FROM "addresses" WHERE ("addresses"."id" = 3) [0m
+  [4;36;1mAddress Load (0.3ms)[0m   [0;1mSELECT * FROM "addresses" WHERE ("addresses"."id" = 4) [0m
+  [4;35;1mComppart Load (0.5ms)[0m   [0mSELECT * FROM "compparts" WHERE ("compparts".component_id = 36) [0m
+  [4;36;1mPart Load (0.4ms)[0m   [0;1mSELECT * FROM "parts" WHERE ("parts"."id" = 4) [0m
+  [4;35;1mPart Load (0.3ms)[0m   [0mSELECT * FROM "parts" WHERE ("parts"."id" = 5) [0m
+  [4;36;1mPart Load (0.2ms)[0m   [0;1mSELECT * FROM "parts" WHERE ("parts"."id" = 6) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered pages/_navbar (1.3ms)
+Completed in 101ms (View: 74, DB: 5) | 200 OK [http://0.0.0.0/components/36]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#show (for 127.0.0.1 at 2012-09-24 05:41:46) [GET]
+  Parameters: {"id"=>"36"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.6ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;36;1mComponent Load (0.5ms)[0m   [0;1mSELECT * FROM "components" WHERE ("components"."id" = 36) [0m
+Rendering template within layouts/application
+Rendering components/show
+  [4;35;1mLocation Load (0.3ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;36;1mAddress Load (0.4ms)[0m   [0;1mSELECT * FROM "addresses" WHERE ("addresses"."id" = 3) [0m
+  [4;35;1mAddress Load (0.4ms)[0m   [0mSELECT * FROM "addresses" WHERE ("addresses"."id" = 4) [0m
+  [4;36;1mComppart Load (0.4ms)[0m   [0;1mSELECT * FROM "compparts" WHERE ("compparts".component_id = 36) [0m
+  [4;35;1mPart Load (0.5ms)[0m   [0mSELECT * FROM "parts" WHERE ("parts"."id" = 4) [0m
+  [4;36;1mPart Load (0.3ms)[0m   [0;1mSELECT * FROM "parts" WHERE ("parts"."id" = 5) [0m
+  [4;35;1mPart Load (0.3ms)[0m   [0mSELECT * FROM "parts" WHERE ("parts"."id" = 6) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered pages/_navbar (1.3ms)
+Completed in 104ms (View: 77, DB: 5) | 200 OK [http://0.0.0.0/components/36]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#edit (for 127.0.0.1 at 2012-09-24 05:42:03) [GET]
+  Parameters: {"id"=>"36"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mRole Load (0.5ms)[0m   [0;1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;35;1mComponent Load (0.5ms)[0m   [0mSELECT * FROM "components" WHERE ("components"."id" = 36) [0m
+Rendering template within layouts/application
+Rendering components/edit
+  [4;36;1mLocation Load (0.8ms)[0m   [0;1mSELECT * FROM "locations" ORDER BY name[0m
+  [4;35;1mAddress Load (0.5ms)[0m   [0mSELECT * FROM "addresses" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "addresses" [0m
+  [4;35;1mComppart Load (0.5ms)[0m   [0mSELECT * FROM "compparts" WHERE ("compparts".component_id = 36) [0m
+  [4;36;1mPart Load (0.8ms)[0m   [0;1mSELECT * FROM "parts" [0m
+Rendered components/_comppart_fields (50.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "parts" [0m
+Rendered components/_comppart_fields (3.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "parts" [0m
+Rendered components/_comppart_fields (3.5ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "parts" [0m
+Rendered components/_comppart_fields (4.2ms)
+Rendered components/_form (124.8ms)
+Rendered pages/_navbar (1.4ms)
+Completed in 207ms (View: 181, DB: 4) | 200 OK [http://0.0.0.0/components/36/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#update (for 127.0.0.1 at 2012-09-24 05:42:11) [PUT]
+  Parameters: {"authenticity_token"=>"JdwM4zJceNM6gK/HdCBOoydC2q+G4Ia5xgQFS+llfd4=", "commit"=>"Update", "id"=>"36", "component"=>{"compparts_attributes"=>{"0"=>{"quantity"=>"1", "_destroy"=>"", "id"=>"2", "part_id"=>"4"}, "1"=>{"quantity"=>"1", "_destroy"=>"", "id"=>"3", "part_id"=>"5"}, "2"=>{"quantity"=>"1", "_destroy"=>"", "id"=>"4", "part_id"=>"6"}}, "supplier_id"=>"4", "component_code"=>"1", "manufacturer_id"=>"3", "location_id"=>"1", "parent_id"=>"", "name"=>"Main Propulsion System", "tech_description"=>"Technical Description is here again", "serial_no"=>"ABCD1234", "installed_on(1i)"=>"2012", "type_no"=>"1466", "installed_on(2i)"=>"1", "installed_on(3i)"=>"7"}}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.5ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;36;1mComponent Load (0.5ms)[0m   [0;1mSELECT * FROM "components" WHERE ("components"."id" = 36) [0m
+  [4;35;1mComppart Load (0.6ms)[0m   [0mSELECT * FROM "compparts" WHERE ("compparts"."id" IN ('2','3','4')) AND ("compparts".component_id = 36) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mComponent Load (0.5ms)[0m   [0mSELECT "components".id FROM "components" WHERE ("components"."component_code" = '1' AND "components".id <> 36) LIMIT 1[0m
+  [4;36;1mComponent Update (0.4ms)[0m   [0;1mUPDATE "components" SET "tech_description" = 'Technical Description is here again', "edited_by" = 1, "updated_at" = '2012-09-23 21:42:11.222999' WHERE "id" = 36[0m
+  [4;35;1mSQL (12.7ms)[0m   [0mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/components/36
+Completed in 103ms (DB: 16) | 302 Found [http://0.0.0.0/components/36]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ComponentsController#show (for 127.0.0.1 at 2012-09-24 05:42:11) [GET]
+  Parameters: {"id"=>"36"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mRole Load (0.5ms)[0m   [0mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 ) [0m
+  [4;36;1mComponent Load (0.6ms)[0m   [0;1mSELECT * FROM "components" WHERE ("components"."id" = 36) [0m
+Rendering template within layouts/application
+Rendering components/show
+  [4;35;1mLocation Load (0.3ms)[0m   [0mSELECT * FROM "locations" WHERE ("locations"."id" = 1) [0m
+  [4;36;1mAddress Load (0.4ms)[0m   [0;1mSELECT * FROM "addresses" WHERE ("addresses"."id" = 3) [0m
+  [4;35;1mAddress Load (0.4ms)[0m   [0mSELECT * FROM "addresses" WHERE ("addresses"."id" = 4) [0m
+  [4;36;1mComppart Load (0.5ms)[0m   [0;1mSELECT * FROM "compparts" WHERE ("compparts".component_id = 36) [0m
+  [4;35;1mPart Load (0.4ms)[0m   [0mSELECT * FROM "parts" WHERE ("parts"."id" = 4) [0m
+  [4;36;1mPart Load (0.3ms)[0m   [0;1mSELECT * FROM "parts" WHERE ("parts"."id" = 5) [0m
+  [4;35;1mPart Load (0.2ms)[0m   [0mSELECT * FROM "parts" WHERE ("parts"."id" = 6) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered pages/_navbar (1.4ms)
+Completed in 108ms (View: 80, DB: 5) | 200 OK [http://0.0.0.0/components/36]

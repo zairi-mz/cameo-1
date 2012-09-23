@@ -1,49 +1,156 @@
+<div class="showform">
+	
+	<H2>Equipment / Components </H2>
+	
+	<fieldset>
+		<legend>Equipment Details</legend>
+		<table>
+			<tr>
+		    <td class="leftcol"><%=t ('component.component_code') %>:</td>
+		    <td><%=h @component.component_code %> - &nbsp;  <%=h @component.name %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol><%=t ('component.parent_id') %>:</td>
+		    <td><%=h @component.parent_id.blank? ? "-" : @component.parent.component_code_and_name %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol><%=t ('component.location_id') %>:</td>
+		    <td><%=h @component.location_details %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol><%=t ('component.type_no') %>:</td>
+		    <td><%=h @component.type_no %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol><%=t ('component.serial_no') %>:</td>
+		    <td><%=h @component.serial_no %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol><%=t ('component.tech_description') %>:</td>
+		    <td><%=h @component.tech_description %></td>
+		  </tr>
+		</table>
+	</fieldset>
+	
+	
+	<fieldset>
+		<legend>Supply & Installation Details</legend>  <!--  Just break into logical groups for easy viewing-->
+		<table>
+			<tr>
+		    <td class=leftcol><%=t ('component.installed_on') %>:</td>
+		    <td><%=h l(@component.installed_on) unless @component.installed_on.blank? %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol><%=t ('component.manufacturer') %>:</td>
+		    <td><%=h @component.manufacturer_id.blank? ? "-" : @component.manufacturedby.company %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol><%=t ('component.supplier_id') %>:</td>
+		    <td><%=h @component.supplier_id.blank? ? "-" : @component.suppliedby.company %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol><%=t ('component.counter') %>:</td>
+		    <td><%=h @component.counter_id.blank? ? "-" : @component.counter_id %></td>
+		  </tr>
+		</table>
+	</fieldset>
+	
+	<fieldset>
+		<legend>Spare Parts</legend>
+		<table>
+			<tr>
+				<th>Part No</th>
+				<th>Part Name</th>
+				<th>Set Quantity</th>
+			</tr>
+			
+			<% for comppart in @component.compparts %>
+			<tr>
+				<td><%=h comppart.part.part_code %></td>
+				<td><%=h comppart.part.name %></td>
+				<td><%=h comppart.quantity %></td>
+			</tr>
+			<% end %>
+		</table>
+	</fieldset>
+	
+	<fieldset>
+		<legend>Record Details</legend>  <!--  Just break into logical groups for easy viewing-->
+		<table>
+			<tr>
+		    <td class=leftcol>Edited By</td>
+		    <td><%=h @component.edited_by.blank? ? "" : @component.editor.name %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol>Last Edit On:</td>
+		    <td><%=h l(@component.updated_at) %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol>Created By:</td>
+		    <td><%=h @component.created_by.blank? ? "blank" : @component.editor.name %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol>Created On:</td>
+		    <td><%=h l(@component.created_at) %></td>
+		  </tr>
+
+		</table>
+	</fieldset>
+	
+	
+</div>
+
+
+
+
+
+<!--  OLD code  # comments out ruby
 <div class='formtable'>
 <table>
 	<th colspan=2>Equipment</th>
 	<tr>
     <td class=leftcol><%=t ('component.component_code') %>:</td>
-    <td><%=h @component.component_code %>  <%=h @component.name %></td>
+    <td><#%=h @component.component_code %>  <%=h @component.name %></td>
   </tr>
 	<tr>
     <td class=leftcol><%=t ('component.parent_id') %>:</td>
-    <td><%=h @component.parent_id.blank? ? "-" : @component.parent.component_code_and_name %></td>
+    <td><#%=h @component.parent_id.blank? ? "-" : @component.parent.component_code_and_name %></td>
   </tr>
 	<tr>
     <td class=leftcol><%=t ('component.location_id') %>:</td>
-    <td><%=h @component.location_id.blank? ? "-" : @component.location_id %></td>
+    <td><#%=h @component.location_id.blank? ? "-" : @component.location_id %></td>
   </tr>
 	<tr>
     <td class=leftcol><%=t ('component.type_no') %>:</td>
-    <td><%=h @component.type_no %></td>
+    <td><#%=h @component.type_no %></td>
   </tr>
 	<tr>
     <td class=leftcol><%=t ('component.serial_no') %>:</td>
-    <td><%=h @component.serial_no %></td>
+    <td><#%=h @component.serial_no %></td>
   </tr>
 	<tr>
     <td class=leftcol><%=t ('component.installed_on') %>:</td>
-    <td><%=h @component.installed_on %></td>
+    <td><#%=h @component.installed_on %></td>
   </tr>
 	<tr>
     <td class=leftcol><%=t ('component.location_id') %>:</td>
-    <td><%=h @component.manufacturer_id.blank? ? "-" : @component.manufacturedby.company %></td>
+    <td><#%=h @component.manufacturer_id.blank? ? "-" : @component.manufacturedby.company %></td>
   </tr>
 	<tr>
     <td class=leftcol><%=t ('component.supplier_id') %>:</td>
-    <td><%=h @component.supplier_id.blank? ? "-" : @component.suppliedby.company %></td>
+    <td><#%=h @component.supplier_id.blank? ? "-" : @component.suppliedby.company %></td>
   </tr>
 	<tr>
     <td class=leftcol><%=t ('component.tech_description') %>:</td>
-    <td><%=h @component.tech_description %></td>
+    <td><#%=h @component.tech_description %></td>
   </tr>
 	<tr>
     <td class=leftcol><%=t ('component.location_id') %>:</td>
-    <td><%=h @component.counter_id.blank? ? "-" : @component.counter_id %></td>
+    <td><#%=h @component.counter_id.blank? ? "-" : @component.counter_id %></td>
   </tr>
 	<tr>
     <td class=leftcol>Last Edited By:</td>
-    <td><%=h @component.created_by.blank? ? "-" : @component.editor.name %> On <%=h @component.updated_at %></td>
+    <td><#%=h @component.created_by.blank? ? "-" : @component.editor.name %> On <#%=h @component.updated_at %></td>
   </tr>
 </table>
 
@@ -51,15 +158,16 @@
 	<tr>
 		<th colspan=3>Parts</th>
 	</tr>
-<% for comppart in @component.compparts %>
+<#% for comppart in @component.compparts %>
 	<tr>
-		<td>|  Part No : <%=h comppart.part.part_code %></td>
-		<td>|  Name :  <%=h comppart.part.name %></td>
-		<td>|  Quantity : <%=h comppart.quantity %></td>
+		<td>|  Part No : <#%=h comppart.part.part_code %></td>
+		<td>|  Name :  <#%=h comppart.part.name %></td>
+		<td>|  Quantity : <#%=h comppart.quantity %></td>
 	</tr>
-<% end %>
+<#% end %>
 </table>
-</div>
+</div>-->
+
 
 <%= link_to 'Edit', edit_component_path(@component) %> |
 <%= link_to 'Back', components_path %>

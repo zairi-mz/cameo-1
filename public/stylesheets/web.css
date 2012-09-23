@@ -192,9 +192,7 @@ ul.dropdown li:hover > ul 	 { visibility: visible; }
 	
 	
 	
-#content {
-	   padding: 20px 10px;
-}
+#content {width:90%; padding: 20px 10px 10px 15px; min-height:440px;}
 	
 #footer {
 	    background-color: #999;
@@ -396,3 +394,44 @@ div.flash.notice {
 #notice a { border: 1px solid #26722D; color: #26722D; }
 #error a { border: 1px solid #900; color: #900; }
 #notice a:hover, #error a:hover { color: #333; border: 1px solid #333; }
+
+
+
+
+/* 2012-09-24 This is new CSS for the view */
+
+
+fieldset { margin: 0 0 22px 0; border: 1px solid #CAE8EA; padding: 12px 17px; background-color: #F5FAFA; }
+legend { 
+	font-size: 1.1em; background-color: #095D92; color: #FFFFFF;  padding: 4px 8px; 
+	font-weight: bold; font-family: "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;; text-align: left; }
+.showform  {
+	border-collapse:collapse; border: 3px white; padding:5px;
+	text-align:left; margin-left: 40px; background-color: #F6F7F8;
+}
+.showform H2{ 
+	background:#4f6b72; color: #FFF; padding: 12px 5px;
+	font-family: "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;; font-size: 12px; font-weight: bold;	
+}
+.showform table {padding: 2px 5px; width: 100%;}
+.showform tr:hover td {background: #C1DAD7;} 
+.showform td {
+	font-family: "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif; vertical-align: top;
+	border-bottom:solid 1px #F0F4FF; padding: 3px 30px 3px 5px;
+}
+.showform .leftcol {
+    font-weight: bold; font-family: "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;; text-align: left; font-style: none;
+	letter-spacing: 1px; width: 220px; vertical-align: top;
+}
+.showform .show-image {height: 22em;}
+.showform .diagram {width: 6in;}
+
+.showform #subtable table {width: 100%; padding: 0; margin: 0;}
+.showform #subtable th {
+	font: bold 11px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif; color: #4f6b72;
+	border-right: 1px solid #C1DAD7; border-bottom: 1px solid #C1DAD7; padding: 6px 6px 6px 12px;
+	text-transform: uppercase; text-align: left;
+	background: #E6E7E8 url(images/bg_header.jpg) no-repeat;
+}
+
+/* End of 2012-09-24 Update for Shows */

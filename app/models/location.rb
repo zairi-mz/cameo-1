@@ -5,6 +5,10 @@ class Location < ActiveRecord::Base
   has_many    :components
   belongs_to  :orgchart
   
+  def location_code_and_name
+    "#{code}    | #{name}"
+  end
+  
   
   def tree_gelas
      if is_root?

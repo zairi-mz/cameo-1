@@ -27,7 +27,11 @@ class Component < ActiveRecord::Base
   
   #Model Variables
   def set_my_variables
-    self.created_by	= User.current_user.id
+    if created_by == nil
+      self.created_by	= User.current_user.id
+    else
+      self.edited_by	= User.current_user.id
+    end
   end
   
   #List construction for drop down lists.
@@ -54,6 +58,14 @@ class Component < ActiveRecord::Base
      end
      gls
   end
-
-
+  
+  #checks for relationship then gets data from location.rb
+  def location_details     #use this name in the show
+    if location.blank?
+      " - "
+    else
+      location.location_code_and_name  #new variable in location
+    end
+  end
+    
 end

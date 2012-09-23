@@ -23,10 +23,10 @@ en:
     type_no: Type No
     serial_no: Serial No
     installed_on: Installed On
-    manufacturer_id: Manufacturer
+    manufacturer: Manufacturer
     supplier_id: Supplier
     tech_description: Technical Description
-    counter_id: Running Hours Counter
+    counter: Running Hours Counter
     
   tools:
     tool: "Tools & Facilities"
@@ -86,9 +86,9 @@ en:
         # Use the strftime parameters for formats.
         # When no format has been given, it uses default.
         # You can provide other formats here if you like!
-        default: "%d-%m-%Y"
+        default: "%d %b %Y"
         short: "%b %d"
-        long: "%B %d, %Y"
+        long: "%B %D, %Y"
 
       day_names: [Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday]
       abbr_day_names: [Sun, Mon, Tue, Wed, Thu, Fri, Sat]
@@ -102,10 +102,10 @@ en:
         - :month
         - :year
         
-  #  time:
-  #    formats:
-  #      default: "%a, %d %b %Y %H:%M:%S %z"
-  #      short: "%d %b %H:%M"
-  #      long: "%B %d, %Y %H:%M"
-  #    am: "am"
-  #    pm: "pm"
+  time:
+      formats:
+        default: "%a, %d %b %Y %H:%M:%S"# %z"
+        short: "%d %b %H:%M"
+        long: "%B %d, %Y %H:%M"
+      am: "am"
+      pm: "pm"
