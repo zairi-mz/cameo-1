@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120122102619) do
+ActiveRecord::Schema.define(:version => 20120913014958) do
 
   create_table "addresses", :force => true do |t|
     t.string   "company"
@@ -66,11 +66,12 @@ ActiveRecord::Schema.define(:version => 20120122102619) do
   end
 
   create_table "jobdescs", :force => true do |t|
-    t.integer  "job_code"
     t.string   "description"
     t.text     "method"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "job_code",    :limit => 20
+    t.text     "safety"
   end
 
   create_table "locations", :force => true do |t|
@@ -121,6 +122,13 @@ ActiveRecord::Schema.define(:version => 20120122102619) do
     t.integer  "part_id"
     t.integer  "quantity"
     t.integer  "updated_by"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "maintreports", :force => true do |t|
+    t.date     "done_date"
+    t.text     "add_notes"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

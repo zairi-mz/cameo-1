@@ -1,0 +1,22 @@
+<h1>Listing maintreports</h1>
+
+<table>
+  <tr>
+    <th>Done date</th>
+    <th>Add notes</th>
+  </tr>
+
+<% @maintreports.each do |maintreport| %>
+  <tr>
+    <td><%=h maintreport.done_date %></td>
+    <td><%=h maintreport.add_notes %></td>
+    <td><%= link_to 'Show', maintreport %></td>
+    <td><%= link_to 'Edit', edit_maintreport_path(maintreport) %></td>
+    <td><%= link_to 'Destroy', maintreport, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New maintreport', new_maintreport_path %>

@@ -6,4 +6,5 @@ class Tool < ActiveRecord::Base
   
   has_many    :mainttools
   has_many    :maintenance, :through => :mainttools
+  
 end

@@ -2,13 +2,13 @@ authorization do
   
   role :administrator do
     has_permission_on :components,  :to => [:manage, :indextree]
-    has_permission_on [:addresses, :components, :documents, :maintenances, :parts, :roles, :tools, :users],  :to => [:manage]
+    has_permission_on [:addresses, :components, :documents, :maintenances, :maintreports, :parts, :roles, :tools, :users],  :to => [:manage]
     has_permission_on :authorization_rules, :to => :read
     
   end
   
   role :viewer do
-    has_permission_on [:addresses, :components, :documents, :maintenances, :parts, :roles, :tools, :users],  :to => :read
+    has_permission_on [:addresses, :components, :documents, :maintenances, :maintreports, :parts, :roles, :tools, :users],  :to => :read
   end
     
   role :equipment_editor do
@@ -16,7 +16,7 @@ authorization do
   end
   
   role :maintenance_editor do
-    has_permission_on :maintenances,  :to => [:index, :show, :new, :create, :edit, :update, :destroy]
+    has_permission_on :maintenances,  :to => [:index, :show, :new, :new_maintreport, :create, :edit, :update, :destroy]
   end
   
   role :parts_editor do

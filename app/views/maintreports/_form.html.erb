@@ -1,0 +1,31 @@
+<div class='webform'>
+	<%= f.hidden_field :maintenance_id, :value => @maintenance.id %>
+
+<table width=80%>
+  <tr>
+    <td class=leftcol><%= f.label t ('maintenance.component_id') %>:</td>
+    <td><%=h @maintenance.component.component_code %>&nbsp; &nbsp;<%=h @maintenance.component.name %></td>
+  </tr>
+ <tr>
+	<td class=leftcol><%= f.label t ('maintenance.description') %>:</td>
+	<td><%=h @maintenance.code %>&nbsp; &nbsp;<%=h @maintenance.description %></td>
+</tr>
+	
+<tr>
+	<td class=leftcol>Last Maintenance On :</td>
+	<td><%= @maintenance.last_date.strftime("%d/%m/%Y") unless @maintenance.last_date.nil? %></td>
+</tr>
+<tr>
+	<td class=leftcol>Next Maintenance On :</td>
+	<td><%= @maintenance.next_date.strftime("%d/%m/%Y") unless @maintenance.next_date.nil? %></td>
+</tr>
+<tr>	
+    <td class=leftcol>Date of Completion :</td>
+    <td><%= f.date_select :done_date, :include_blank => :true %></td>
+</tr>
+<tr>
+  <td class=leftcol>Additional Notes :</td>
+   <td><%= f.text_area :add_notes, :size => "100x10"  %></td>
+ </tr>
+</table>
+</div>
