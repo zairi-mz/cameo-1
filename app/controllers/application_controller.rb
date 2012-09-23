@@ -46,6 +46,5 @@ class ApplicationController < ActionController::Base
         User.current_user = @user
       end
     end
-
-
+    
 end

@@ -1,0 +1,12 @@
+<<h1>Planned Maintenance Report</h1>
+
+<% form_for(@maintreport, @maintenance) do |f| %>
+  <%= f.error_messages %>
+
+<%= render :partial => 'form', :locals => {:f => f}   %>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<BR>

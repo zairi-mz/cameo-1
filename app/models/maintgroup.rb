@@ -3,4 +3,9 @@ class Maintgroup < ActiveRecord::Base
   
   has_many    :mainthours
   has_many    :maintenance, :through => :mainthours
+  
+  def short_name_name
+     "#{short_name}    | #{name}"
+  end
+  
 end

@@ -14,6 +14,8 @@ class Maintenance < ActiveRecord::Base
   has_many    :maintgroups, :through => :mainthours
   accepts_nested_attributes_for :mainthours, :reject_if => lambda { |a| a[:maintgroup_id].blank? }, :allow_destroy => true
   
+  has_many :maintreports
+  
   def isorter
     coid = component_id
     a = Component.find(:all, :order => :component_code, :select => "name", :conditions => {:id => coid}).map(&:name)
