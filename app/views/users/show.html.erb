@@ -1,34 +1,50 @@
-<div class='formtable'>
+<div class="showform">
+	
+	<H2>Users</H2>
+	
+	<fieldset>
+		<legend>Details</legend>
+		<table>
+			<tr>
+		    <td class="leftcol">Name:</td>
+		    <td><%=h @user.name %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol>Login:</td>
+		    <td><%=h @user.login %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol>Email:</td>
+		    <td><%=h @user.email %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol>Password:</td>
+		    <td>[secret]</td>
+		  </tr>
+			<tr>
+		    <td class=leftcol>User Roles:</td>
+		    <td><% for role in @user.roles %><%=h role.name %>, <% end %></td>
+		  </tr>
+		</table>
+	</fieldset>
+	
+	<fieldset>
+		<legend>Record Details</legend>  <!--  Just break into logical groups for easy viewing-->
+		<table>
+			<tr>
+		    <td class=leftcol>Last Edit On:</td>
+		    <td><%=h l(@user.updated_at) %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol>Created On:</td>
+		    <td><%=h l(@user.created_at) %></td>
+		  </tr>
 
-<table>
-	<tr>
-		<th colspan=2>Show User Details</th>
-	</tr>
-	<tr>
-		<td class='leftcol'>Name:</td>
-		<td><%=h @user.name %></td>
-	</tr>
-	<tr>
-		<td class='leftcol'>Login:</td>
-		<td><%=h @user.login %></td>
-	</tr>
-	<tr>
-		<td class='leftcol'>Email:</td>
-		<td><%=h @user.email %></td>
-	</tr>
-	<tr>
-		<td class='leftcol'>Password:</td>
-		<td>[secret]</td>
-	</tr>
-	<tr>
-		<td class='leftcol'>User Roles:</td>
-		<td><% for role in @user.roles %><%=h role.name %>, <% end %></td>
-	</tr>
-</table>
-  <BR>
-
+		</table>
+	</fieldset>
+		
+</div>
 
 	<%= link_to 'Edit', edit_user_path(@user) %> |
 	<%= link_to 'Back', users_path %>
 	
-</div>

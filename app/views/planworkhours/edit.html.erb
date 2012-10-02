@@ -1,0 +1,28 @@
+<h1>Editing planworkhour</h1>
+
+<% form_for(@planworkhour) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :maintreport_id %><br />
+    <%= f.text_field :maintreport_id %>
+  </p>
+  <p>
+    <%= f.label :maintgroup_id %><br />
+    <%= f.text_field :maintgroup_id %>
+  </p>
+  <p>
+    <%= f.label :hours %><br />
+    <%= f.text_field :hours %>
+  </p>
+  <p>
+    <%= f.label :updated_by %><br />
+    <%= f.text_field :updated_by %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @planworkhour %> |
+<%= link_to 'Back', planworkhours_path %>

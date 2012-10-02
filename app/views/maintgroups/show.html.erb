@@ -1,23 +1,45 @@
-<p>
-  <b>Short name:</b>
-  <%=h @maintgroup.short_name %>
-</p>
+<div class="showform">
+	
+	<H2>Action Group</H2>
+	
+	<fieldset>
+		<legend>Group Details</legend>
+		<table>
+			<tr>
+		    <td class="leftcol">Short Name:</td>
+		    <td><%=h @maintgroup.short_name %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol>Name:</td>
+		    <td><%=h @maintgroup.name %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol>Quantity:</td>
+		    <td><%=h @maintgroup.quantity %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol>Rate:</td>
+		    <td><%=h @maintgroup.rate %></td>
+		  </tr>
+		</table>
+	</fieldset>
+	
+	<fieldset>
+		<legend>Record Details</legend>  <!--  Just break into logical groups for easy viewing-->
+		<table>
+			<tr>
+		    <td class=leftcol>Last Edit On:</td>
+		    <td><%=h l(@maintgroup.updated_at) %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol>Created On:</td>
+		    <td><%=h l(@maintgroup.created_at) %></td>
+		  </tr>
 
-<p>
-  <b>Name:</b>
-  <%=h @maintgroup.name %>
-</p>
-
-<p>
-  <b>Quantity:</b>
-  <%=h @maintgroup.quantity %>
-</p>
-
-<p>
-  <b>Rate:</b>
-  <%=h @maintgroup.rate %>
-</p>
-
+		</table>
+	</fieldset>
+		
+</div>
 
 <%= link_to 'Edit', edit_maintgroup_path(@maintgroup) %> |
 <%= link_to 'Back', maintgroups_path %>

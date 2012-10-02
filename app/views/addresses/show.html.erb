@@ -1,38 +1,57 @@
-<p>
-  <b>Company:</b>
-  <%=h @address.company %>
-</p>
+<div class="showform">
+	
+	<H2>Supplier and Manufacturer </H2>
+	
+	<fieldset>
+		<legend>Details</legend>
+		<table>
+			<tr>
+		    <td class="leftcol"><%=t ('addresses.company') %>:</td>
+		    <td><%=h @address.company %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol><%=t ('addresses.phone') %>:</td>
+		    <td><%=h @address.phone %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol><%=t ('addresses.fax') %>:</td>
+		    <td><%=h @address.fax %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol><%=t ('addresses.address') %>:</td>
+		    <td><%=h @address.address %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol><%=t ('addresses.email') %>:</td>
+		    <td><%=h @address.email %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol><%=t ('addresses.web') %>:</td>
+		    <td><%=h @address.web %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol><%=t ('addresses.notes') %>:</td>
+		    <td><%=h @address.notes %></td>
+		  </tr>
+		</table>
+	</fieldset>
+	
+	<fieldset>
+		<legend>Record Details</legend>  <!--  Just break into logical groups for easy viewing-->
+		<table>
+			<tr>
+		    <td class=leftcol>Last Edit On:</td>
+		    <td><%=h l(@address.updated_at) %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol>Created On:</td>
+		    <td><%=h l(@address.created_at) %></td>
+		  </tr>
 
-<p>
-  <b>Web:</b>
-  <%=h @address.web %>
-</p>
-
-<p>
-  <b>Address:</b>
-  <%=h @address.address %>
-</p>
-
-<p>
-  <b>Fax:</b>
-  <%=h @address.fax %>
-</p>
-
-<p>
-  <b>Phone:</b>
-  <%=h @address.phone %>
-</p>
-
-<p>
-  <b>Email:</b>
-  <%=h @address.email %>
-</p>
-
-<p>
-  <b>Notes:</b>
-  <%=h @address.notes %>
-</p>
-
+		</table>
+	</fieldset>
+		
+</div>
 
 <%= link_to 'Edit', edit_address_path(@address) %> |
 <%= link_to 'Back', addresses_path %>

@@ -1,53 +1,142 @@
-<p>
-  <b>Code:</b>
-  <%=h @maintenance.code %>
-</p>
+<div class="showform">
+	
+	<H2>Maintenance / Planned Maintenance </H2>
+	
+	<fieldset>
+		<legend>Maintenance Details</legend>
+		<table>
+			<tr>
+		    <td class="leftcol"><%=t ('maintenance.code') %>:</td>
+		    <td><%=h @maintenance.code %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol><%=t ('maintenance.component_id') %>:</td>
+		    <td><%=h @maintenance.component.component_code %>&nbsp; &nbsp;<%=h @maintenance.component.name %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol><%=t ('maintenance.description') %>:</td>
+		    <td><%=h @maintenance.description %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol><%=t ('jobdesc.job') %>:</td>
+		    <td><%=h @maintenance.jobdesc_id.blank? ? "-" : @maintenance.jobdesc.description %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol><%=t ('maintenance.frequency') %>:</td>
+		    <td><%=h @maintenance.frequency %>&nbsp;<%=h @maintenance.freq_details %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol><%=t ('maintenance.level') %>:</td>
+		    <td><%=h @maintenance.level_disp %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol><%=t ('maintenance.action_group_id') %>:</td>
+		    <td><%=h @maintenance.action_group_details %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol><%=t ('maintenance.first_date') %>:</td>
+		    <td><%=h @maintenance.first_date %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol><%=t ('maintenance.priority') %>:</td>
+		    <td><%=h @maintenance.priority %></td>
+		  </tr>
+		</table>
+	</fieldset>
+	
+	
+	<fieldset>
+		<legend>Planned date / hour</legend>  <!--  Just break into logical groups for easy viewing-->
+		<table>
+			<tr>
+		    <td class=leftcol>Last Maintenance On:</td>
+		    <td><%=h @maintenance.last_date %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol><%=t ('maintenance.next_date') %>:</td>
+		    <td><%=h @maintenance.next_date %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol>Last Hour:</td>
+		    <td><%=h @maintenance.last_hour %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol>Next Hour:</td>
+		    <td><%=h @maintenance.next_hour %></td>
+		  </tr>
+		</table>
+	</fieldset>
+	
+	<fieldset>
+		<legend>Spare Parts</legend>
+		<table>
+			<tr>
+				<th>Part No</th>
+				<th>Part Name</th>
+				<th>Set Quantity</th>
+			</tr>
+			
+			<% for maintpart in @maintenance.maintparts %>
+			<tr>
+				<td><%=h maintpart.part.part_code %></td>
+				<td><%=h maintpart.part.name %></td>
+				<td><%=h maintpart.quantity %></td>
+			</tr>
+			<% end %>
+		</table>
+	</fieldset>
+	
+	<fieldset>
+		<legend>Tools and Facilities</legend>
+		<table>
+			<tr>
+				<th>Name</th>
+			</tr>
+			
+			<% for mainttool in @maintenance.mainttools %>
+			<tr>
+				<td><%=h mainttool.tool.name %></td>
+			</tr>
+			<% end %>
+		</table>
+	</fieldset>
+	
+	<fieldset>
+		<legend>Man Hours</legend>
+		<table>
+			<tr>
+				<th>Group ID</th>
+				<th>Group Name</th>
+				<th>Hours</th>
+			</tr>
+			
+			<% for mainthour in @maintenance.mainthours %>
+			<tr>
+				<td><%=h mainthour.maintgroup.short_name %></td>
+				<td><%=h mainthour.maintgroup.name %></td>
+				<td><%=h mainthour.hours %></td>
+			</tr>
+			<% end %>
+		</table>
+	</fieldset>
 
-<p>
-  <b>Component:</b>
-  <%=h @maintenance.component_id %>
-</p>
+	<fieldset>
+		<legend>Record Details</legend>  <!--  Just break into logical groups for easy viewing-->
+		<table>
+			<tr>
+		    <td class=leftcol>Last Edit On:</td>
+		    <td><%=h l(@maintenance.updated_at) %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol>Created On:</td>
+		    <td><%=h l(@maintenance.created_at) %></td>
+		  </tr>
 
-<p>
-  <b>Description:</b>
-  <%=h @maintenance.description %>
-</p>
-
-<p>
-  <b>Frequency:</b>
-  <%=h @maintenance.frequency %>
-</p>
-
-<p>
-  <b>Frequency unit:</b>
-  <%=h @maintenance.frequency_unit %>
-</p>
-
-<p>
-  <b>Level:</b>
-  <%=h @maintenance.level %>
-</p>
-
-<p>
-  <b>Action group:</b>
-  <%=h @maintenance.action_group_id %>
-</p>
-
-<p>
-  <b>First date:</b>
-  <%=h @maintenance.first_date %>
-</p>
-<p>
-  <b>Next date:</b>
-  <%=h @maintenance.next_date %>
-</p>
-
-<p>
-  <b>Priority:</b>
-  <%=h @maintenance.priority %>
-</p>
+		</table>
+	</fieldset>
+		
+</div>
 
 
 <%= link_to 'Edit', edit_maintenance_path(@maintenance) %> |
-<%= link_to "PDF", maintenance_path(@maintenance, :format => 'pdf')%> |
 <%= link_to 'Back', maintenances_path %>

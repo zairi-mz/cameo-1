@@ -1,8 +1,9 @@
 class MaintreportsController < ApplicationController
   # GET /maintreports
   # GET /maintreports.xml
-  def index
-    @maintreports = Maintreport.all
+  def index   
+    @m = params[:maintenance_id]
+    @maintreports = Maintreport.find(:all, :conditions => ["maintenance_id=?", @m])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -18,6 +19,7 @@ class MaintreportsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @maintreport }
+      format.pdf { render :layout => false }
     end
   end
 
@@ -43,11 +45,12 @@ class MaintreportsController < ApplicationController
   def create
     @maintreport = Maintreport.new(params[:maintreport])
     @maintenance = Maintenance.find(params[:maintreport][:maintenance_id])
-
+    
     respond_to do |format|
       if @maintreport.save
         @maintenance.update_attribute(:last_date, @maintreport.done_date)
         @maintenance.update_attribute(:next_date, get_nextdate)
+        update_partqty
         format.html { redirect_to(@maintreport, :notice => 'Maintreport was successfully created.') }
         format.xml  { render :xml => @maintreport, :status => :created, :location => @maintreport }
       else
@@ -75,6 +78,19 @@ class MaintreportsController < ApplicationController
     end
   end
   helper_method :get_nextdate
+  
+  def update_partqty
+  	for parts in @maintreport.parts
+  		@m = @maintreport.id
+  		@p = parts.id
+  		@q = parts.quantity
+  		@pwpart = Planworkpart.find(:all, :conditions => ["maintreport_id=? and part_id=?", @m, @p])
+  		pwpart = @pwpart [0]
+  		@pq = @q - pwpart.quantity
+  		parts.update_attribute(:quantity, @pq)
+  	end
+  end
+  helper_method :update_partqty
    
   # PUT /maintreports/1
   # PUT /maintreports/1.xml

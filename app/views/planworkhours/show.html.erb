@@ -1,0 +1,23 @@
+<p>
+  <b>Maintreport:</b>
+  <%=h @planworkhour.maintreport_id %>
+</p>
+
+<p>
+  <b>Maintgroup:</b>
+  <%=h @planworkhour.maintgroup_id %>
+</p>
+
+<p>
+  <b>Hours:</b>
+  <%=h @planworkhour.hours %>
+</p>
+
+<p>
+  <b>Updated by:</b>
+  <%=h @planworkhour.updated_by %>
+</p>
+
+
+<%= link_to 'Edit', edit_planworkhour_path(@planworkhour) %> |
+<%= link_to 'Back', planworkhours_path %>

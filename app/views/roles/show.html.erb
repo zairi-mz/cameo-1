@@ -1,7 +1,33 @@
-<p>
-  <b>Name:</b>
-  <%=h @role.name %>
-</p>
+<div class="showform">
+	
+	<H2>Role</H2>
+	
+	<fieldset>
+		<legend>Details</legend>
+		<table>
+			<tr>
+		    <td class="leftcol">Name:</td>
+		    <td><%=h @role.name %></td>
+		  </tr>
+		</table>
+	</fieldset>
+	
+	<fieldset>
+		<legend>Record Details</legend>  <!--  Just break into logical groups for easy viewing-->
+		<table>
+			<tr>
+		    <td class=leftcol>Last Edit On:</td>
+		    <td><%=h l(@role.updated_at) %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol>Created On:</td>
+		    <td><%=h l(@role.created_at) %></td>
+		  </tr>
+
+		</table>
+	</fieldset>
+		
+</div>
 
 
 <%= link_to 'Edit', edit_role_path(@role) %> |

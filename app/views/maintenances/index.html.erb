@@ -15,7 +15,8 @@
     <th>Frequency</th>
     <th>Level</th>
     <th>Action group</th>
-    <th>First date</th>
+    <th>Last date</th>
+    <th>Next date</th>
     <th>Priority</th>
     <th colspan=4>Control</th>
   </tr>
@@ -30,11 +31,13 @@
     <td><%=h maintenance.frequency %> <%=h maintenance.periodicity %></td>
     <td><%=h maintenance.maint_team %></td>
     <td><%=h maintenance.action_group_id %></td>
-    <td><%=h maintenance.first_date %></td>
+    <td><%=h maintenance.last_date %></td>
+	<td><%=h maintenance.next_date %></td>
     <td><%=h maintenance.priority %></td>
 	<td width=10px><%= link_to image_tag("document.png", :border => 0, :title => 'Show'), :action => 'show', :id => maintenance %></td>
 	<td width=10px><%= link_to image_tag("pdf.png", :border => 0, :title => 'MIC'), :action => 'show', :format => 'pdf', :id => maintenance %></td>
-	<td width=10px><%= link_to 'Report', :controller => "maintreports", :action => "new", :id => maintenance %></td>
+	<td width=10px><%= link_to image_tag("pw.png", :border => 0, :title => 'Planned Work Report'), :controller => "maintreports", :action => "new", :id => maintenance %></td>
+	<td width=10px><%= link_to image_tag("ph.png", :border => 0, :title => 'Planned Work History'), :controller => "maintreports", :action => "index", :maintenance_id => maintenance %></td>
     <td width=10px><%= link_to image_tag("edit.png", :border => 0, :title => 'Edit'), :action => 'edit', :id => maintenance %></td>
     <td width=10px><%= link_to image_tag("delete.png", :border => 0, :title => 'Delete'), maintenance, :confirm => 'Are you sure?', :method => :delete %>
   </tr>

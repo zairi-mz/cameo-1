@@ -1,11 +1,32 @@
+<div class="showform">
+	
+	<H2>Location</H2>
+	
+	<fieldset>
+		<legend>Details</legend>
+		<table>
+			<tr>
+		    <td class="leftcol">Name:</td>
+		    <td><%=h @location.name %></td>
+		  </tr>
+		</table>
+	</fieldset>
+	
+	<fieldset>
+		<legend>Record Details</legend>  <!--  Just break into logical groups for easy viewing-->
+		<table>
+			<tr>
+		    <td class=leftcol>Last Edit On:</td>
+		    <td><%=h l(@location.updated_at) %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol>Created On:</td>
+		    <td><%=h l(@location.created_at) %></td>
+		  </tr>
 
-
-<p>
-  <b>Name:</b>
-  <%=h @location.name %>
-</p>
-
-
-
+		</table>
+	</fieldset>
+		
+</div>
 <%= link_to 'Edit', edit_location_path(@location) %> |
 <%= link_to 'Back', locations_path %>

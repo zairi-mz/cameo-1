@@ -1,21 +1,45 @@
-<p>
-  <b>Job code:</b>
-  <%=h @jobdesc.job_code %>
-</p>
+<div class="showform">
+	
+	<H2>Work Procedure</H2>
+	
+	<fieldset>
+		<legend>Work Details</legend>
+		<table>
+			<tr>
+		    <td class="leftcol"><%=t ('jobdesc.job_code') %>:</td>
+		    <td><%=h @jobdesc.job_code %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol><%=t ('jobdesc.description') %>:</td>
+		    <td><%=h @jobdesc.description %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol>Safety Precautions:</td>
+		    <td><%=h @jobdesc.safety %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol><%=t ('jobdesc.method') %>:</td>
+		    <td><%=h @jobdesc.method %></td>
+		  </tr>
+		</table>
+	</fieldset>
+	
+	<fieldset>
+		<legend>Record Details</legend>  <!--  Just break into logical groups for easy viewing-->
+		<table>
+			<tr>
+		    <td class=leftcol>Last Edit On:</td>
+		    <td><%=h l(@jobdesc.updated_at) %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol>Created On:</td>
+		    <td><%=h l(@jobdesc.created_at) %></td>
+		  </tr>
 
-<p>
-  <b>Description:</b>
-  <%=h @jobdesc.description %>
-</p>
-<p>
-  <b>Safety Precautions:</b>
-  <%=h @jobdesc.safety %>
-</p>
-<p>
-  <b>Method:</b>
-  <%=h @jobdesc.method %>
-</p>
-
+		</table>
+	</fieldset>
+		
+</div>
 
 <%= link_to 'Edit', edit_jobdesc_path(@jobdesc) %> |
 <%= link_to 'Back', jobdescs_path %>

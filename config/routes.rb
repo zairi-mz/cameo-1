@@ -1,4 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :planworkhours
+
+  map.resources :planworktools
+
   map.resources :maintreports
 
   map.resources :jobdescs

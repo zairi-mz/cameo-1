@@ -1,18 +1,45 @@
-<p>
-  <b>Doc code:</b>
-  <%=h @document.doc_code %>
-</p>
+<div class="showform">
+	
+	<H2>Documents</H2>
+	
+	<fieldset>
+		<legend>Details</legend>
+		<table>
+			<tr>
+		    <td class="leftcol"><%= t ('documents.doc_code') %>:</td>
+		    <td><%=h @document.doc_code %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol><%= t ('documents.title') %>:</td>
+		    <td><%=h @document.title %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol><%= t ('documents.publisher') %>:</td>
+		    <td><%=h @document.publisher %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol><%= t ('documents.file') %>:</td>
+		    <td><%=h @document.file %></td>
+		  </tr>
+		</table>
+	</fieldset>
+	
+	<fieldset>
+		<legend>Record Details</legend>  <!--  Just break into logical groups for easy viewing-->
+		<table>
+			<tr>
+		    <td class=leftcol>Last Edit On:</td>
+		    <td><%=h l(@document.updated_at) %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol>Created On:</td>
+		    <td><%=h l(@document.created_at) %></td>
+		  </tr>
 
-<p>
-  <b>Title:</b>
-  <%=h @document.title %>
-</p>
-
-<p>
-  <b>Publisher:</b>
-  <%=h @document.publisher %>
-</p>
-
+		</table>
+	</fieldset>
+		
+</div>
 
 <%= link_to 'Edit', edit_document_path(@document) %> |
 <%= link_to 'Back', documents_path %>

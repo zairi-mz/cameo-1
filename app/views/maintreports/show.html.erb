@@ -1,13 +1,87 @@
-<p>
-  <b>Done date:</b>
-  <%=h @maintreport.done_date %>
-</p>
+<div class="showform">
+	
+	<H2>Planned Maintenance Report</H2>
+	
+	<fieldset>
+		<legend>Work Details</legend>
+		<table>
+			<tr>
+		    <td class=leftcol>Date of Completion:</td>
+		    <td><%=h @maintreport.done_date %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol>Additional Notes:</td>
+		    <td><%=h @maintreport.add_notes %></td>
+		  </tr>
+		</table>
+	</fieldset>
+	
+	<fieldset>
+		<legend>Spare Parts</legend>
+		<table>
+			<tr>
+				<th>Part No</th>
+				<th>Part Name</th>
+				<th>Set Quantity</th>
+			</tr>
+			
+			<% for planworkpart in @maintreport.planworkparts %>
+			<tr>
+				<td><%=h planworkpart.part.part_code %></td>
+				<td><%=h planworkpart.part.name %></td>
+				<td><%=h planworkpart.quantity %></td>
+			</tr>
+			<% end %>
+		</table>
+	</fieldset>
+	
+	<fieldset>
+		<legend>Tools and Facilities</legend>
+		<table>
+			<tr>
+				<th>Name</th>
+			</tr>
+			
+			<% for planworktool in @maintreport.planworktools %>
+			<tr>
+				<td><%=h planworktool.tool.name %></td>
+			</tr>
+			<% end %>
+		</table>
+	</fieldset>
+	
+	<fieldset>
+		<legend>Man Hours</legend>
+		<table>
+			<tr>
+				<th>Group ID</th>
+				<th>Group Name</th>
+				<th>Hours</th>
+			</tr>
+			
+			<% for planworkhour in @maintreport.planworkhours %>
+			<tr>
+				<td><%=h planworkhour.maintgroup.short_name %></td>
+				<td><%=h planworkhour.maintgroup.name %></td>
+				<td><%=h planworkhour.hours %></td>
+			</tr>
+			<% end %>
+		</table>
+	</fieldset>
 
-<p>
-  <b>Add notes:</b>
-  <%=h @maintreport.add_notes %>
-</p>
+	<fieldset>
+		<legend>Record Details</legend>  <!--  Just break into logical groups for easy viewing-->
+		<table>
+			<tr>
+		    <td class=leftcol>Last Edit On:</td>
+		    <td><%=h l(@maintreport.updated_at) %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol>Created On:</td>
+		    <td><%=h l(@maintreport.created_at) %></td>
+		  </tr>
 
-
-<%= link_to 'Edit', edit_maintreport_path(@maintreport) %> |
-<%= link_to 'Back', maintreports_path %>
+		</table>
+	</fieldset>
+		
+</div>

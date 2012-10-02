@@ -1,0 +1,26 @@
+<h1>Listing planworkhours</h1>
+
+<table>
+  <tr>
+    <th>Maintreport</th>
+    <th>Maintgroup</th>
+    <th>Hours</th>
+    <th>Updated by</th>
+  </tr>
+
+<% @planworkhours.each do |planworkhour| %>
+  <tr>
+    <td><%=h planworkhour.maintreport_id %></td>
+    <td><%=h planworkhour.maintgroup_id %></td>
+    <td><%=h planworkhour.hours %></td>
+    <td><%=h planworkhour.updated_by %></td>
+    <td><%= link_to 'Show', planworkhour %></td>
+    <td><%= link_to 'Edit', edit_planworkhour_path(planworkhour) %></td>
+    <td><%= link_to 'Destroy', planworkhour, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New planworkhour', new_planworkhour_path %>

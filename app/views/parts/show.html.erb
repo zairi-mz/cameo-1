@@ -1,42 +1,61 @@
-<p>
-  <b>Tool code:</b>
-  <%=h @part.part_code %>
-</p>
+<div class="showform">
+	
+	<H2>Stores and Spares </H2>
+	
+	<fieldset>
+		<legend>Parts Details</legend>
+		<table>
+			<tr>
+		    <td class="leftcol"><%=t ('parts.part_code') %>:</td>
+		    <td><%=h @part.part_code %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol><%=t ('parts.name') %>:</td>
+		    <td><%=h @part.name %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol><%=t ('parts.part_no') %>:</td>
+		    <td><%=h @part.part_no %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol><%=t ('supplier') %>:</td>
+		    <td><%=h @part.supplier_name(@part.supplier_id) %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol><%=t ('manufacturer') %>:</td>
+		    <td><%=h @part.supplier_name(@part.manufacturer_id) %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol><%=t ('price') %>:</td>
+		    <td><%=h @part.price %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol><%=t ('parts.location_id') %>:</td>
+		    <td><%=h @part.location_details %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol><%=t ('parts.notes') %>:</td>
+		    <td><%=h @part.notes %></td>
+		  </tr>
+		</table>
+	</fieldset>
+	
+	<fieldset>
+		<legend>Record Details</legend>  <!--  Just break into logical groups for easy viewing-->
+		<table>
+			<tr>
+		    <td class=leftcol>Last Edit On:</td>
+		    <td><%=h l(@part.updated_at) %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol>Created On:</td>
+		    <td><%=h l(@part.created_at) %></td>
+		  </tr>
 
-<p>
-  <b>Name:</b>
-  <%=h @part.name %>
-</p>
-
-<p>
-  <b>Tool no:</b>
-  <%=h @part.part_no %>
-</p>
-
-<p>
-  <b>Supplier:</b>
-  <%=h @part.supplier_id %>
-</p>
-
-<p>
-  <b>Manufacturer:</b>
-  <%=h @part.manufacturer_id %>
-</p>
-
-<p>
-  <b>Price:</b>
-  <%=h @part.price %>
-</p>
-
-<p>
-  <b>Location:</b>
-  <%=h @part.location_id %>
-</p>
-
-<p>
-  <b>Notes:</b>
-  <%=h @part.notes %>
-</p>
+		</table>
+	</fieldset>
+		
+</div>
 
 
 <%= link_to 'Edit', edit_part_path(@part) %> |

@@ -1,0 +1,6 @@
+<div class="fields">
+	<p>|	Part ID  :  <%= f.collection_select :part_id, Part.find(:all, :order => :name, :conditions => ["quantity IS NOT NULL"]), :id, :part_code_name, :include_blank => true %>
+		|  Quantity :   <%= f.text_field :quantity, :size => '3' %>  
+			<%= f.hidden_field :_destroy %>  
+		| 	<%= link_to_function image_tag("delete.png", :border => 0, :title => 'Remove'), "remove_fields(this)"%></p>
+</div>

@@ -17,4 +17,9 @@ module ApplicationHelper
     link_to_function(name, h("add_fields(this, \"#{association}\", \"#{escape_javascript(fields)}\")"))
   end
   
+  ActionView::Base.field_error_proc = Proc.new do |html_tag, instance|
+    errors = Array(instance.error_message).join(',')
+    %(#{html_tag}<span class="validation-error">&nbsp;#{errors}</span>).html_safe
+  end
+  
 end

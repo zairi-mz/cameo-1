@@ -14,7 +14,7 @@ class Maintenance < ActiveRecord::Base
   has_many    :maintgroups, :through => :mainthours
   accepts_nested_attributes_for :mainthours, :reject_if => lambda { |a| a[:maintgroup_id].blank? }, :allow_destroy => true
   
-  has_many :maintreports
+  has_many :maintreports, :dependent => :destroy
   
   def isorter
     coid = component_id
@@ -45,4 +45,48 @@ class Maintenance < ActiveRecord::Base
        [ "ILM", 2 ],
        [ "DLM", 3 ]
       ]
+  
+    def freq_details     #use this name in the show
+      if frequency_unit.blank?
+           " - "
+      else
+        case frequency_unit
+           when 1
+             freq_details = "Days"
+           when 7
+             freq_details = "Weeks"
+           when 30
+              freq_details = "Months"   
+           when 365
+             freq_details = "Years"
+        end
+      end
+    end
+    
+    def level_disp     #use this name in the show
+      if level.blank?
+           " - "
+      else
+        case level
+           when 1
+             level_disp = "OLM"
+           when 2
+             level_disp = "ILM"
+           when 3
+              level_disp = "DLM"   
+        end
+      end
+    end
+    
+    def action_group_details     #use this name in the show
+      if action_group_id.blank?
+           " - "
+      else
+        @a = action_group_id
+        @ag = Maintgroup.find(:all, :conditions => ["id=?", @a])
+        ag = @ag [0]
+    		action_group_details = ag.short_name
+    	end
+    end
 end
+
