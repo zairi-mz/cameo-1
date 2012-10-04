@@ -31,7 +31,7 @@
     <td> <%= f.date_select :installed_on, :include_blank => :true %></td>
   </tr>
   <tr>
-    <td class=leftcol><%= f.label t ('component.manufacturer_id') %>:</td>
+    <td class=leftcol>Manufacturer:</td>
     <td><%= f.collection_select :manufacturer_id, Address.find(:all), :id, :company, :include_blank => true %></td>
   </tr>
   <tr>
@@ -43,7 +43,7 @@
     <td><%= f.text_area :tech_description, :size => '35x6'  %></td>
   </tr>
   <tr>
-    <td class=leftcol><%= f.label t ('component.counter_id') %>:</td>
+    <td class=leftcol>Counter:</td>
     <td><% f.text_field :counter_id %></td>
   </tr>
 </table>

@@ -1,7 +1,7 @@
 <div class='webform'>
 	<%= f.hidden_field :component_id %>
 <H2>Edit <%= t ('maintenance.maint') %></H2>
-<table width=80%>
+<table width=60%>
   <tr>
     <td class=leftcol><%= f.label t ('maintenance.component_id') %>:</td>
     <td><%=h @maintenance.component.component_code %>&nbsp; &nbsp;<%=h @maintenance.component.name %></td>
@@ -16,7 +16,7 @@
   </tr>
   <tr>
     <td class=leftcol><%= f.label t ('maintenance.frequency') %>:</td>
-    <td><%= f.select :frequency, options_for_select([1,2,3,4,5,6,7,8,9,10,11,12], @maintenance.frequency) %>
+    <td><%= f.text_field :frequency, :size => 5 %>
 				<%= f.select :frequency_unit, 
 				                 Maintenance::FREQ_UNIT,
 				                 :prompt => "Select"  %></td>
@@ -29,21 +29,33 @@
   </tr>
   <tr>
     <td class=leftcol><%= f.label t ('maintenance.action_group_id') %>:</td>
-		<td><%= f.collection_select :action_group_id, Maintgroup.find(:all), :id, :short_name %></td>
+		<td><%= f.collection_select :action_group_id, Maintgroup.find(:all), :id, :short_name, :prompt => "Select", :include_blank => :true %></td>
   </tr>
   <tr>
     <td class=leftcol><%= f.label t ('maintenance.first_date') %>:</td>
     <td><%= f.date_select :first_date, :include_blank => :true %></td>
   </tr>
   <tr>
-    <td class=leftcol>Last Maintenance On:</td>
+    <td class=leftcol>Last Maintenance Date:</td>
     <td><%= @maintenance.last_date.strftime("%d/%m/%Y") unless @maintenance.last_date.nil? %></td>
   </tr>
   <tr>
     <td class=leftcol><%= f.label t ('maintenance.next_date') %>:</td>
     <td><%= f.date_select :next_date, :include_blank => :true %></td>
   </tr>
-  <tr>
+<tr>
+    <td class=leftcol>Total Running Hours:</td>
+    <td><%= @maintenance.current_hours(@maintenance.component_id) %></td>
+  </tr> 
+<tr>
+    <td class=leftcol>Last Maintenance Hours:</td>
+    <td><%= @maintenance.last_hour %></td>
+  </tr> 
+<tr>
+    <td class=leftcol>Next Maintenance Hours:</td>
+    <td><%= f.text_field :next_hour, :size => 5 %></td>
+  </tr>
+	<tr>
     <td class=leftcol><%= f.label t ('maintenance.priority') %>:</td>
     <td><%= f.select :priority, options_for_select([1,2,3,4,5], @maintenance.priority) %></td>
   </tr>

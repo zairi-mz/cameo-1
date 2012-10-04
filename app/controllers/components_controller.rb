@@ -28,7 +28,6 @@ class ComponentsController < ApplicationController
   # GET /components/new.xml
   def new
     @component = Component.new(:parent_id => params[:parent_id])
-    3.times { @component.compparts.build }
 
     respond_to do |format|
       format.html # new.html.erb

@@ -1,0 +1,37 @@
+<div class="showform">
+	
+	<H2>Equipment Counter</H2>
+	
+	<fieldset>
+		<legend>Details</legend>
+		<table>
+			<tr>
+		    <td class=leftcol>Date Run:</td>
+		    <td><%=h @counter.date_run %></td>
+		  </tr>
+		    <td class=leftcol>Total Running Hours:</td>
+		    <td><%=h @counter.run_hours %></td>
+		  </tr>		
+			<tr>
+		    <td class=leftcol>Notes:</td>
+		    <td><%=h @counter.notes %></td>
+		  </tr>
+		</table>
+	</fieldset>
+
+	<fieldset>
+		<legend>Record Details</legend>  <!--  Just break into logical groups for easy viewing-->
+		<table>
+			<tr>
+		    <td class=leftcol>Last Edit On:</td>
+		    <td><%=h l(@counter.updated_at) %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol>Created On:</td>
+		    <td><%=h l(@counter.created_at) %></td>
+		  </tr>
+
+		</table>
+	</fieldset>
+
+</div>

@@ -10,6 +10,7 @@
 <table>
   <tr>
 	<th>Done Date</th>
+	<th>Last Counter Hours</th>
     <th>Additional Notes</th>
     <th colspan=4>Control</th>
   </tr>
@@ -17,6 +18,7 @@
 <% @maintreports.each do |maintreport| %>
   <tr>
     <td><%=h maintreport.done_date %></td>
+    <td><%=h maintreport.last_maintenance_hour %></td>
     <td><%=h maintreport.add_notes %></td>
 	<td width=10px><%= link_to image_tag("document.png", :border => 0, :title => 'Show'), :action => 'show', :id => maintreport %></td>
   </tr>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  component_id: 1
+  date_run: 2012-10-03
+  run_hours: 9.99
+  notes: MyText
+
+two:
+  component_id: 1
+  date_run: 2012-10-03
+  run_hours: 9.99
+  notes: MyText

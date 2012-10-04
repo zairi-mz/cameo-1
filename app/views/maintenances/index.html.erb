@@ -17,8 +17,9 @@
     <th>Action group</th>
     <th>Last date</th>
     <th>Next date</th>
+    <th>Next hour</th>
     <th>Priority</th>
-    <th colspan=4>Control</th>
+    <th colspan=7>Control</th>
   </tr>
 
 <% @maintenance_equipment.keys.sort.each do |isorter, maintenances| %>
@@ -33,6 +34,7 @@
     <td><%=h maintenance.action_group_id %></td>
     <td><%=h maintenance.last_date %></td>
 	<td><%=h maintenance.next_date %></td>
+	<td><%=h maintenance.next_hour %></td>
     <td><%=h maintenance.priority %></td>
 	<td width=10px><%= link_to image_tag("document.png", :border => 0, :title => 'Show'), :action => 'show', :id => maintenance %></td>
 	<td width=10px><%= link_to image_tag("pdf.png", :border => 0, :title => 'MIC'), :action => 'show', :format => 'pdf', :id => maintenance %></td>

@@ -1,0 +1,26 @@
+<div class="box">
+	<div class="box-head">
+		<h2 class="left">Equipment Counter History</h2>
+		<div class="right">
+		</div>
+	</div>
+</div>
+
+<div class="indexlist">
+<table>
+  <tr>
+	<th>Run Date</th>
+	<th>Total Running Hours</th>
+    <th>Additional Notes</th>
+    <th colspan=4>Control</th>
+  </tr>
+
+<% @counters.each do |counter| %>
+  <tr>
+    <td><%=h counter.date_run %></td>
+    <td><%=h counter.run_hours %></td>
+    <td><%=h counter.notes %></td>
+	<td width=10px><%= link_to image_tag("document.png", :border => 0, :title => 'Show'), :action => 'show', :id => counter %></td>
+  </tr>
+<% end %>
+</table>

@@ -1,0 +1,23 @@
+<div class='webform'>
+	<%= f.hidden_field :component_id %>
+<H2>Add Running Hour</H2>
+<table width=80%>
+ <tr>
+    <td class=leftcol>Component:</td>
+    <td><%=h @counter.component.component_code %>&nbsp; &nbsp;<%=h @counter.component.name %></td>
+  </tr>
+  <tr>
+    <td class=leftcol>Run Date:</td>
+    <td><%= f.date_select :date_run, :include_blank => :true %></td>
+  </tr>
+  <tr>
+    <td class=leftcol>Running Hours:</td>
+    <td><%= f.text_field :run_hours, :size => 10  %></td>
+  </tr>
+  <tr>
+    <td class=leftcol>Notes:</td>
+    <td><%= f.text_area :notes, :size => '50x6'  %></td>
+  </tr>
+</table>
+</div>
+

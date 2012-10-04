@@ -60,7 +60,7 @@ en:
     level: Maintenance Level
     action_group_id: Action Group
     first_date: Initial Maintenance Date
-    next_date: Next Maintenance On
+    next_date: Next Maintenance Date
     priority: Priority
     
   jobdesc:

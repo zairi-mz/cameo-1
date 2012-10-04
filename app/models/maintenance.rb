@@ -15,7 +15,7 @@ class Maintenance < ActiveRecord::Base
   accepts_nested_attributes_for :mainthours, :reject_if => lambda { |a| a[:maintgroup_id].blank? }, :allow_destroy => true
   
   has_many :maintreports, :dependent => :destroy
-  
+ 
   def isorter
     coid = component_id
     a = Component.find(:all, :order => :component_code, :select => "name", :conditions => {:id => coid}).map(&:name)
@@ -36,7 +36,8 @@ class Maintenance < ActiveRecord::Base
        [ "Days",    1  ],
        [ "Weeks",   7  ],
        [ "Months",  30 ],
-       [ "Years",   365]
+       [ "Years",   365],
+       [ "Hours",   2]
       ]
       
   MAINT_LEVEL = [
@@ -46,47 +47,24 @@ class Maintenance < ActiveRecord::Base
        [ "DLM", 3 ]
       ]
   
-    def freq_details     #use this name in the show
-      if frequency_unit.blank?
-           " - "
-      else
-        case frequency_unit
-           when 1
-             freq_details = "Days"
-           when 7
-             freq_details = "Weeks"
-           when 30
-              freq_details = "Months"   
-           when 365
-             freq_details = "Years"
-        end
-      end
-    end
-    
-    def level_disp     #use this name in the show
-      if level.blank?
-           " - "
-      else
-        case level
-           when 1
-             level_disp = "OLM"
-           when 2
-             level_disp = "ILM"
-           when 3
-              level_disp = "DLM"   
-        end
-      end
-    end
-    
-    def action_group_details     #use this name in the show
+    def action_group_details
       if action_group_id.blank?
-           " - "
+        "-"
       else
-        @a = action_group_id
-        @ag = Maintgroup.find(:all, :conditions => ["id=?", @a])
-        ag = @ag [0]
-    		action_group_details = ag.short_name
-    	end
+       @ag = Maintgroup.find(:all, :conditions => ["id=?", action_group_id])
+       ag = @ag[0]
+    	 action_group_details = "#{ag.short_name} | #{ag.name}"
+      end
     end
+
+    def current_hours(cid)
+       @t = 0
+        @c = Counter.find(:all, :conditions => ["component_id=?", cid])
+        for c in @c
+          @t = @t + c.run_hours
+        end
+      current_hours = @t
+     end
+     
 end
 

@@ -349,7 +349,7 @@ div.flash.notice {
 }
 
 .webform table {
-	width:80%; border: 0; cellpadding: 0; cellspacing: 0;
+	width:100%; border: 0; cellpadding: 0; cellspacing: 0;
 }
 
 .webform tr:hover td{ 
@@ -382,7 +382,7 @@ div.flash.notice {
     font-family: tahoma, sans-serif;
     font-style: bold;
     width: 150px;
-		vertical-align: top;
+	vertical-align: top;
 }
 
 

@@ -1,6 +1,6 @@
 <div class='webform'>
 	<%= f.hidden_field :maintenance_id, :value => @maintenance.id %>
-
+	<%= f.hidden_field :last_maintenance_hour, :value => @maintenance.current_hours(@maintenance.component_id) %>
 <table width=80%>
   <tr>
     <td class=leftcol><%= f.label t ('maintenance.component_id') %>:</td>
@@ -10,13 +10,24 @@
 	<td class=leftcol><%= f.label t ('maintenance.description') %>:</td>
 	<td><%=h @maintenance.code %>&nbsp; &nbsp;<%=h @maintenance.description %></td>
 </tr>
-	
 <tr>
-	<td class=leftcol>Last Maintenance On:</td>
+  <td class=leftcol>Equipment Counter:</td>
+  <td><%= @maintenance.current_hours(@maintenance.component_id) %>  Hours</td>
+</tr>
+<tr>
+	<td class=leftcol>Last Maintenance Hour:</td>
+	<td><%= @maintenance.last_hour %></td>
+</tr>
+<tr>
+	<td class=leftcol>Next Maintenance Hour:</td>
+	<td><%= @maintenance.next_hour %></td>
+</tr>	
+<tr>
+	<td class=leftcol>Last Maintenance Date:</td>
 	<td><%= @maintenance.last_date.strftime("%d/%m/%Y") unless @maintenance.last_date.nil? %></td>
 </tr>
 <tr>
-	<td class=leftcol>Next Maintenance On:</td>
+	<td class=leftcol>Next Maintenance Date:</td>
 	<td><%= @maintenance.next_date.strftime("%d/%m/%Y") unless @maintenance.next_date.nil? %></td>
 </tr>
 <tr>	

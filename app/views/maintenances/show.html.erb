@@ -23,11 +23,11 @@
 		  </tr>
 			<tr>
 		    <td class=leftcol><%=t ('maintenance.frequency') %>:</td>
-		    <td><%=h @maintenance.frequency %>&nbsp;<%=h @maintenance.freq_details %></td>
+		    <td><%=h @maintenance.frequency %>&nbsp;<%=h @maintenance.periodicity %></td>
 		  </tr>
 			<tr>
 		    <td class=leftcol><%=t ('maintenance.level') %>:</td>
-		    <td><%=h @maintenance.level_disp %></td>
+		    <td><%=h @maintenance.maint_team %></td>
 		  </tr>
 			<tr>
 		    <td class=leftcol><%=t ('maintenance.action_group_id') %>:</td>
@@ -55,6 +55,10 @@
 			<tr>
 		    <td class=leftcol><%=t ('maintenance.next_date') %>:</td>
 		    <td><%=h @maintenance.next_date %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol>Total Running Hours:</td>
+		    <td><%=h @maintenance.current_hours(@maintenance.component_id) %></td>
 		  </tr>
 			<tr>
 		    <td class=leftcol>Last Hour:</td>

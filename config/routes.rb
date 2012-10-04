@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :counters
+
   map.resources :planworkhours
 
   map.resources :planworktools

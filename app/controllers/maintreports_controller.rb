@@ -49,7 +49,8 @@ class MaintreportsController < ApplicationController
     respond_to do |format|
       if @maintreport.save
         @maintenance.update_attribute(:last_date, @maintreport.done_date)
-        @maintenance.update_attribute(:next_date, get_nextdate)
+        @maintenance.update_attribute(:last_hour, @maintreport.last_maintenance_hour)
+        update_next_date_hour
         update_partqty
         format.html { redirect_to(@maintreport, :notice => 'Maintreport was successfully created.') }
         format.xml  { render :xml => @maintreport, :status => :created, :location => @maintreport }
@@ -60,24 +61,24 @@ class MaintreportsController < ApplicationController
     end
   end
 
-  def get_nextdate
+  def update_next_date_hour
     @maintenance = Maintenance.find(params[:maintreport][:maintenance_id])
-    unless @maintenance.last_date.nil?
-      @freq = @maintenance.frequency
-      @frequnit =  @maintenance.frequency_unit
-      case @frequnit
-         when 1
-           @nextdate = @maintenance.last_date + @freq.day
-         when 7
-           @nextdate = @maintenance.last_date + @freq.week
-         when 30
-            @nextdate = @maintenance.last_date + @freq.month   
-         when 365
-           @nextdate = @maintenance.last_date + @freq.year
-      end
+    @freq = @maintenance.frequency
+    @frequnit =  @maintenance.frequency_unit
+    case @frequnit
+      when 1
+        @maintenance.update_attribute(:next_date, @maintenance.last_date + @freq.day)
+      when 2
+        @maintenance.update_attribute(:next_hour, @maintenance.last_hour + @freq)
+      when 7
+        @maintenance.update_attribute(:next_date, @maintenance.last_date + @freq.week)
+      when 30
+        @maintenance.update_attribute(:next_date, @maintenance.last_date + @freq.month)   
+      when 365
+        @maintenance.update_attribute(:next_date, @maintenance.last_date + @freq.year)
     end
   end
-  helper_method :get_nextdate
+  helper_method :update_next_date_hour
   
   def update_partqty
   	for parts in @maintreport.parts

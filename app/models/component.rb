@@ -15,11 +15,10 @@ class Component < ActiveRecord::Base
   has_many    :maintenances
   belongs_to  :editor,          :class_name => 'User',     :foreign_key => 'created_by'
   has_many    :compparts
+  has_many    :counters
   
   has_many    :parts, :through => :compparts
   accepts_nested_attributes_for :compparts, :reject_if => lambda { |a| a[:part_id].blank? }, :allow_destroy => true 
-  
-  
   
   #Validations
   validates_uniqueness_of :component_code
@@ -67,5 +66,14 @@ class Component < ActiveRecord::Base
       location.location_code_and_name  #new variable in location
     end
   end
-    
+ 
+ def counter_total
+   @t = 0
+    @c = Counter.find(:all, :conditions => ["component_id=?", id])
+    for c in @c
+      @t = @t + c.run_hours
+    end
+  counter_total = @t
+ end
+  
 end
