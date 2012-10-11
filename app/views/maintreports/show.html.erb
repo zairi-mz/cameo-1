@@ -6,6 +6,10 @@
 		<legend>Work Details</legend>
 		<table>
 			<tr>
+		    <td class=leftcol>Date Start:</td>
+		    <td><%=h @maintreport.start_date %></td>
+		  </tr>
+			<tr>
 		    <td class=leftcol>Date of Completion:</td>
 		    <td><%=h @maintreport.done_date %></td>
 		  </tr>
@@ -88,3 +92,6 @@
 	</fieldset>
 		
 </div>
+<% if @maintreport.done_date.blank? %>
+	<%= link_to 'Edit' , :action => 'edit', :id => @maintreport.id, :maintenance_id => @maintreport.maintenance_id %>
+<% end %>

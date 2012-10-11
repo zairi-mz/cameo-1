@@ -1,0 +1,9 @@
+
+<% form_for(@maintreport) do |f| %>
+  <%= f.error_messages %>
+<%= f.hidden_field :maintenance_id, :value => @maintreport.maintenance_id %>
+<%= render :partial => 'form_up', :locals => {:f => f}   %>
+  <p>
+    <%= f.submit 'Update', :name => 'unplan' %>
+  </p>
+<% end %>

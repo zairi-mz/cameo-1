@@ -3,6 +3,8 @@ class Maintenance < ActiveRecord::Base
   
   has_many    :maintparts, :dependent => :destroy
   belongs_to  :jobdesc
+  belongs_to  :user,     :foreign_key => 'reported_by'
+  
   has_many    :parts, :through => :maintparts
   accepts_nested_attributes_for :maintparts, :reject_if => lambda { |a| a[:part_id].blank? }, :allow_destroy => true 
   
@@ -22,7 +24,18 @@ class Maintenance < ActiveRecord::Base
     b = Component.find(:all, :order => :component_code, :select => "component_code", :conditions => {:id => coid}).map(&:component_code)
      "#{b}    | #{a}"
   end
-  
+ 
+  def self.search(search,type)
+    if search
+      case search
+        when "Overdue Work"
+          find(:all, :conditions => ['next_date>? and work_type=?', Time.now, type])
+        when "All"
+          find(:all, :conditions => ["work_type=?", type])
+      end
+    end
+  end
+   
   def periodicity
     (Maintenance::FREQ_UNIT.find_all{|disp, value| value == frequency_unit }).map {|disp, value| disp}
   end
@@ -48,15 +61,25 @@ class Maintenance < ActiveRecord::Base
       ]
   
     def action_group_details
-      if action_group_id.blank?
+      @ag = Maintgroup.find(:all, :conditions => ["id=?", action_group_id])
+      if @ag.empty?
         "-"
       else
-       @ag = Maintgroup.find(:all, :conditions => ["id=?", action_group_id])
        ag = @ag[0]
-    	 action_group_details = "#{ag.short_name} | #{ag.name}"
+    	 action_group_details = "#{ag.short_name}"
       end
     end
 
+    def user_name
+      if reported_by.blank?
+        "-"
+      else
+       @r = User.find(:all, :conditions => ["id=?", reported_by])
+       r = @r[0]
+    	 user_name = "#{r.name}"
+      end
+    end
+    
     def current_hours(cid)
        @t = 0
         @c = Counter.find(:all, :conditions => ["component_id=?", cid])
@@ -64,7 +87,30 @@ class Maintenance < ActiveRecord::Base
           @t = @t + c.run_hours
         end
       current_hours = @t
-     end
-     
+    end
+    
+    def maintreport_status(mr)
+       @m = Maintreport.find(:all, :conditions => ["maintenance_id=?", mr])
+        if @m.empty?
+           "-"
+        else
+           m = @m[0]
+           case m.work_status
+           when 1
+             maintreport_status = "Completed"
+           when 2
+             maintreport_status = "Work in Progress"
+           when 3
+            maintreport_status = "Waiting for Parts"
+           when 4
+             maintreport_status = "Sent for Repair"
+           end
+        end
+    end
+
+    def find_report(pid)
+      @m = Maintreport.find(:all, :conditions => ["maintenance_id=?", pid])
+    end        
+  
 end
 

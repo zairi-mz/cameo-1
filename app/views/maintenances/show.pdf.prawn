@@ -242,3 +242,20 @@ pdf.repeat :all do
        pdf.text "RESTRICTED - TERHAD", :align => :center, :style => :bold
    end
  end
+
+<td>	
+	<%=	link_to_if(@maintreport.nil?, "Login", { :controller => "maintreports", :action => "new_up", :id => maintenance }) do
+	     link_to(@maintreport, { :controller => "maintreports", :action => "edit_up", :id => maintenance })
+	   end %>
+</td>
+
+	<td width=10px><%= link_to image_tag("table_gear.png", :border => 0, :title => 'Unplanned Work Report'), :controller => "maintreports", :action => :render_report, :maintenance_id => maintenance %></td>
+	
+	
+	<% if maintenance.find_report(h maintenance.id).empty? %>
+	  	<td width=10px><%= link_to image_tag("pw.png", :border => 0, :title => 'Unplanned Work Report'), :controller => "maintreports", :action => "new_up", :id => maintenance %></td>
+	<% else %>
+		  <td width=10px><%= link_to image_tag("table_gear.png", :border => 0, :title => 'Show Work Report'), :controller => "maintreports", :action => "show_up", :id => maintenance %></td>
+	<% end %>
+	
+	

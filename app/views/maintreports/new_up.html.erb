@@ -1,0 +1,12 @@
+<h1>Unplanned Maintenance Report</h1>
+
+<% form_for(@maintreport, @maintenance) do |f| %>
+  <%= f.error_messages %>
+<%= f.hidden_field :maintenance_id, :value => @maintenance.id %>
+<%= render :partial => 'form_up', :locals => {:f => f}   %>
+  <p>
+    <%= f.submit 'Create', :name => 'unplan' %>
+  </p>
+<% end %>
+
+<BR>

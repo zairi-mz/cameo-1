@@ -1,0 +1,10 @@
+<H1>New Unplanned Maintenance</H1>
+
+<% form_for(@maintenance) do |f| %>
+  <%= f.error_messages %>
+
+<%= render :partial => 'form_up', :locals => {:f => f}   %>
+  <p>
+    <%= f.submit 'Create', :name => 'unplan' %>
+  </p>
+<% end %>

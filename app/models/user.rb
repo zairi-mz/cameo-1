@@ -30,6 +30,7 @@ class User < ActiveRecord::Base
 
   #edit here
   has_many  :editors,   :class_name => 'Components',     :foreign_key => 'created_by'
+  has_many  :maintenance, :foreign_key => 'reported_by'
   
   def role_symbols
     roles.map do |role|

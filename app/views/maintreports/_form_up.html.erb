@@ -1,0 +1,64 @@
+<div class='webform'>
+
+	<!--   f.hidden_field :maintenance_id, :value => @maintenance.id -->
+<table width=80%>
+  <tr>
+    <td class=leftcol><%= f.label t ('maintenance.component_id') %>:</td>
+    <td><%=h @maintenance.component.component_code %>&nbsp; &nbsp;<%=h @maintenance.component.name %></td>
+  </tr>
+ <tr>
+	<td class=leftcol><%= f.label t ('maintenance.description') %>:</td>
+	<td><%=h @maintenance.code %>&nbsp; &nbsp;<%=h @maintenance.description %></td>
+</tr>
+
+<tr>
+	<td class=leftcol>To Start Date:</td>
+	<td><%= @maintenance.date_to_start.strftime("%d/%m/%Y") unless @maintenance.date_to_start.nil? %></td>
+</tr>
+<tr>
+	<td class=leftcol>To Finish Date:</td>
+	<td><%= @maintenance.date_to_finish.strftime("%d/%m/%Y") unless @maintenance.date_to_finish.nil? %></td>
+</tr>
+<tr>	
+    <td class=leftcol>Start Date:</td>
+    <td><%= f.date_select :start_date, :include_blank => :true %></td>
+</tr>
+<tr>	
+    <td class=leftcol>Completed Date:</td>
+    <td><%= f.date_select :done_date, :include_blank => :true %></td>
+</tr>
+<tr>
+  <td class=leftcol>Sent to:</td>
+  <td><%= f.collection_select :supplier_id, Address.find(:all), :id, :company, :include_blank => true %></td>
+</tr>
+<tr>
+  <td class=leftcol>Additional Notes:</td>
+   <td><%= f.text_area :add_notes, :size => "100x10"  %></td>
+ </tr>
+ <tr>
+   <td class=leftcol>Status:</td>
+   <td><%= f.select :work_status, 
+		                 Maintreport::STATUS,
+		                 :prompt => "Select"  %></td>
+ </tr>
+</table>
+
+<H3>Parts  </H3>
+		<% f.fields_for :planworkparts do |builder| %>
+			<%= render 'planworkpart_fields', :f => builder %>
+		<% end %>
+		<p><%= link_to_add_fields image_tag("add.png", :border => 0, :title => 'Add Parts'), f, :planworkparts %></p>
+		
+<H3>Tools  </H3>
+		<% f.fields_for :planworktools do |builder| %>
+			<%= render 'planworktool_fields', :f => builder %>
+		<% end %>
+		<p><%= link_to_add_fields image_tag("add.png", :border => 0, :title => 'Add Tools'), f, :planworktools %></p>		
+
+<H3>Manhours  </H3>
+		<% f.fields_for :planworkhours do |builder| %>
+			<%= render 'planworkhour_fields', :f => builder %>
+		<% end %>
+		<p><%= link_to_add_fields image_tag("add.png", :border => 0, :title => 'Add Manhours'), f, :planworkhours %></p>
+
+</div>

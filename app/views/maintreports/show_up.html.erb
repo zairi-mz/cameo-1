@@ -1,0 +1,100 @@
+<div class="showform">
+	
+	<H2>Unplanned Maintenance Report</H2>
+	
+	<fieldset>
+		<legend>Work Details</legend>
+		<table>
+			<tr>
+		    <td class=leftcol>Work Status:</td>
+		    <td><%=h @maintreport.work_status.blank? ? "-" : @maintreport.maint_status %></td>
+		  </tr>
+		<tr>
+		    <td class=leftcol>Date Start:</td>
+		    <td><%=h @maintreport.start_date.strftime("%d/%m/%Y") unless @maintreport.start_date.nil? %></td>
+		  </tr>
+		    <td class=leftcol>Date Completed:</td>
+		    <td><%=h @maintreport.done_date.strftime("%d/%m/%Y") unless @maintreport.done_date.nil? %></td>
+		  </tr>		
+			<tr>
+		    <td class=leftcol>Supplier:</td>
+		    <td><%=h @maintreport.supplier_id.blank? ? "-" : @maintreport.suppliedby.company %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol>Notes:</td>
+		    <td><%=h @maintreport.add_notes %></td>
+		  </tr>
+		</table>
+	</fieldset>
+	
+	<fieldset>
+		<legend>Spare Parts</legend>
+		<table>
+			<tr>
+				<th>Part No</th>
+				<th>Part Name</th>
+				<th>Set Quantity</th>
+			</tr>
+			
+			<% for planworkpart in @maintreport.planworkparts %>
+			<tr>
+				<td><%=h planworkpart.part.part_code %></td>
+				<td><%=h planworkpart.part.name %></td>
+				<td><%=h planworkpart.quantity %></td>
+			</tr>
+			<% end %>
+		</table>
+	</fieldset>
+	
+	<fieldset>
+		<legend>Tools and Facilities</legend>
+		<table>
+			<tr>
+				<th>Name</th>
+			</tr>
+			
+			<% for planworktool in @maintreport.planworktools %>
+			<tr>
+				<td><%=h planworktool.tool.name %></td>
+			</tr>
+			<% end %>
+		</table>
+	</fieldset>
+	
+	<fieldset>
+		<legend>Man Hours</legend>
+		<table>
+			<tr>
+				<th>Group ID</th>
+				<th>Group Name</th>
+				<th>Hours</th>
+			</tr>
+			
+			<% for planworkhour in @maintreport.planworkhours %>
+			<tr>
+				<td><%=h planworkhour.maintgroup.short_name %></td>
+				<td><%=h planworkhour.maintgroup.name %></td>
+				<td><%=h planworkhour.hours %></td>
+			</tr>
+			<% end %>
+		</table>
+	</fieldset>
+
+	<fieldset>
+		<legend>Record Details</legend>  <!--  Just break into logical groups for easy viewing-->
+		<table>
+			<tr>
+		    <td class=leftcol>Last Edit On:</td>
+		    <td><%=h l(@maintreport.updated_at) %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol>Created On:</td>
+		    <td><%=h l(@maintreport.created_at) %></td>
+		  </tr>
+
+		</table>
+	</fieldset>		
+</div>
+<% if @maintreport.done_date.blank? %>
+	<%= link_to 'Edit' , :action => 'edit_up', :id => @maintreport.id, :maintenance_id => @maintreport.maintenance_id %>
+<% end %>

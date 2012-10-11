@@ -9,6 +9,7 @@
 <div class="indexlist">
 <table>
   <tr>
+	<th>Start Date</th>
 	<th>Done Date</th>
 	<th>Last Counter Hours</th>
     <th>Additional Notes</th>
@@ -17,6 +18,7 @@
 
 <% @maintreports.each do |maintreport| %>
   <tr>
+	<td><%=h maintreport.start_date %></td>
     <td><%=h maintreport.done_date %></td>
     <td><%=h maintreport.last_maintenance_hour %></td>
     <td><%=h maintreport.add_notes %></td>

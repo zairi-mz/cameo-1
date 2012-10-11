@@ -1,20 +1,9 @@
-<h1>Editing maintreport</h1>
-
 <% form_for(@maintreport) do |f| %>
   <%= f.error_messages %>
-
+<%= f.hidden_field :maintenance_id, :value => @maintreport.maintenance_id %>
+<%= f.hidden_field :last_maintenance_hour, :value => @maintenance.current_hours(@maintreport.maintenance.component_id) %>
+<%= render :partial => 'form', :locals => {:f => f}   %>
   <p>
-    <%= f.label :done_date %><br />
-    <%= f.date_select :done_date %>
-  </p>
-  <p>
-    <%= f.label :add_notes %><br />
-    <%= f.text_area :add_notes %>
-  </p>
-  <p>
-    <%= f.submit 'Update' %>
+    <%= f.submit 'Update', :name => 'plan' %>
   </p>
 <% end %>
-
-<%= link_to 'Show', @maintreport %> |
-<%= link_to 'Back', maintreports_path %>

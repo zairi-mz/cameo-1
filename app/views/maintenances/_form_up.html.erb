@@ -1,0 +1,47 @@
+<div class='webform'>
+	<%= f.hidden_field :component_id %>
+	<%= f.hidden_field :work_type, :value => 2 %>
+
+<table width=60%>
+  <tr>
+    <td class=leftcol><%= f.label t ('maintenance.component_id') %>:</td>
+    <td><%=h @maintenance.component.component_code %>&nbsp; &nbsp;<%=h @maintenance.component.name %></td>
+  </tr>
+  <tr>
+    <td class=leftcol><%= f.label t ('maintenance.code') %>:</td>
+    <td><%= f.text_field :code, :size => 15 %></td>
+  </tr>
+  <tr>
+    <td class=leftcol><%= f.label t ('maintenance.description') %>:</td>
+    <td><%= f.text_field :description, :size => 100  %></td>
+  </tr>
+  <tr>
+    <td class=leftcol><%= f.label t ('maintenance.action_group_id') %>:</td>
+		<td><%= f.collection_select :action_group_id, Maintgroup.find(:all), :id, :short_name, :prompt => "Select", :include_blank => :true %></td>
+  </tr>
+<tr>
+    <td class=leftcol>Equipment Running Hours:</td>
+    <td><%= @maintenance.current_hours(@maintenance.component_id) %> Hours</td>
+  </tr> 
+	<tr>
+    <td class=leftcol><%= f.label t ('maintenance.priority') %>:</td>
+    <td><%= f.select :priority, options_for_select([1,2,3,4,5], @maintenance.priority) %></td>
+  </tr>
+  <tr>
+    <td class=leftcol>Reported by:</td>
+    <td><%= f.collection_select :reported_by, User.find(:all), :id, :name, :prompt => "Select", :include_blank => :true %></td>
+  </tr>
+  <tr>
+    <td class=leftcol>Reported On:</td>
+    <td><%= f.date_select :date_report, :include_blank => :true %></td>
+  </tr>
+  <tr>
+    <td class=leftcol>To Start Work On:</td>
+    <td><%= f.date_select :date_to_start, :include_blank => :true %></td>
+  </tr>
+  <tr>
+    <td class=leftcol>To Finish Work On:</td>
+    <td><%= f.date_select :date_to_finish, :include_blank => :true %></td>
+  </tr>
+</table>
+</div>

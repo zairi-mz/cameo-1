@@ -1,0 +1,55 @@
+<div class="box">
+	<div class="box-head">
+		<h2 class="left">Unplanned Maintenance</h2>
+		<div class="right">
+		</div>
+	</div>
+</div>
+
+<div class="indexlist">
+<% link_to 'Create New role', new_maintenance_path %>
+<table>
+  <tr>
+	<th>Maint Code</th>
+    <th>Description</th>
+    <th>Action group</th>
+    <th>Reported By</th>
+    <th>Reported date</th>
+    <th>To Start Date</th>
+    <th>To Finish Date</th>
+    <th>Completed Date</th>
+    <th>Priority</th>
+    <th>Status</th>
+    <th colspan=5>Control</th>
+  </tr>
+
+<% @maintenance_equipment.keys.sort.each do |isorter, maintenances| %>
+<tr><td colspan=11><BR><b><%= isorter %></b></td></tr>
+<% for maintenance in @maintenance_equipment[isorter] %>
+
+  <tr>
+    <td><%=h maintenance.code %></td>
+    <td><%=h maintenance.description %></td>
+    <td><%=h maintenance.action_group_details %></td>
+    <td><%=h maintenance.user_name %></td>
+    <td><%=h maintenance.date_report %></td>
+	<td><%=h maintenance.date_to_start %></td>
+	<td><%=h maintenance.date_to_finish %></td>
+	<td><%=h maintenance.last_date %></td>	
+    <td><%=h maintenance.priority %></td>
+    <td><%=h maintenance.maintreport_status(h maintenance.id) %></td>
+	<td width=10px><%= link_to image_tag("document.png", :border => 0, :title => 'Show'), :action => 'show_up', :id => maintenance %></td>
+	<% if maintenance.find_report(h maintenance.id).empty? %>
+	  	<td width=10px><%= link_to image_tag("table_gear.png", :border => 0, :title => 'Unplanned Work Report'), :controller => "maintreports", :action => "new_up", :id => maintenance %></td>
+	<% else %>
+		  <td width=10px><%= link_to image_tag("page.png", :border => 0, :title => 'Show Work Report'), :controller => "maintreports", :action => "show_up", :id => maintenance %></td>
+	<% end %>
+    <td width=10px><%= link_to image_tag("edit.png", :border => 0, :title => 'Edit'), :action => 'edit_up', :id => maintenance %></td>
+    <td width=10px><%= link_to image_tag("delete.png", :border => 0, :title => 'Delete'), maintenance, :confirm => 'Are you sure?', :method => :delete %>
+  </tr>
+<% end %>
+<% end %>
+</table>
+
+<br />
+</div>

@@ -1,0 +1,15 @@
+<BR>
+<h1>Edit Unplanned Maintenance</h1>
+
+<% form_for @maintenance do |f| %>
+
+  <%= f.error_messages %>
+
+<%= render :partial => 'form_up', :locals => {:f => f}   %>
+  <p>
+    <%= f.submit 'Update', :name => 'unplan' %>
+  </p>
+<% end %>
+<BR>
+<%= link_to 'Show', :action => 'show_up', :id => @maintenance.id %> |
+<%= link_to 'Back', :action => 'index_up' %>

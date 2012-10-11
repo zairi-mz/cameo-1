@@ -5,6 +5,8 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :planworktools
 
+  map.connect '/maintreports/new_up', :controller => 'maintreports', :action => 'new_up'
+  map.connect '/maintreports/show_up', :controller => 'maintreports', :action => 'show_up'
   map.resources :maintreports
 
   map.resources :jobdescs
@@ -15,6 +17,12 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :maintgroups
 
+  # match '/maintenances/show_up' => 'maintenances#update_up'
+  map.connect '/maintenances/show_up', :controller => 'maintenances', :action => 'show_up'
+  map.connect '/maintenances/edit_up', :controller => 'maintenances', :action => 'edit_up'
+  map.connect '/maintenances/newunplan', :controller => 'maintenances', :action => 'newunplan'
+  map.connect '/maintenances/index_up', :controller => 'maintenances', :action => 'index_up'
+  map.resources :maintenances, :member => { :show_up => [:get, :post, :put] }
   map.resources :maintenances
 
   map.resources :documents

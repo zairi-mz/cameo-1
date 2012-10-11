@@ -1,11 +1,12 @@
-<<h1>Planned Maintenance Report</h1>
+<h1>Planned Maintenance Report</h1>
 
 <% form_for(@maintreport, @maintenance) do |f| %>
   <%= f.error_messages %>
-
+<%= f.hidden_field :maintenance_id, :value => @maintenance.id %>
+<%= f.hidden_field :last_maintenance_hour, :value => @maintenance.current_hours(@maintenance.component_id) %>
 <%= render :partial => 'form', :locals => {:f => f}   %>
   <p>
-    <%= f.submit 'Create' %>
+    <%= f.submit 'Create', :name => 'plan' %>
   </p>
 <% end %>
 

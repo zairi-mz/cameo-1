@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121004061547) do
+ActiveRecord::Schema.define(:version => 20121005011542) do
 
   create_table "addresses", :force => true do |t|
     t.string   "company"
@@ -109,6 +109,11 @@ ActiveRecord::Schema.define(:version => 20121004061547) do
     t.date     "last_date"
     t.integer  "last_hour"
     t.integer  "next_hour"
+    t.integer  "work_type"
+    t.date     "date_report"
+    t.date     "date_to_start"
+    t.date     "date_to_finish"
+    t.integer  "reported_by"
   end
 
   create_table "maintgroups", :force => true do |t|
@@ -145,6 +150,9 @@ ActiveRecord::Schema.define(:version => 20121004061547) do
     t.datetime "updated_at"
     t.integer  "maintenance_id"
     t.decimal  "last_maintenance_hour"
+    t.date     "start_date"
+    t.integer  "supplier_id"
+    t.integer  "work_status"
   end
 
   create_table "mainttools", :force => true do |t|

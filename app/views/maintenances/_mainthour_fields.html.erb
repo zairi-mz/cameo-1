@@ -1,5 +1,5 @@
 <div class="fields">
-	<p>| Group  :  <%= f.collection_select :maintgroup_id, Maintgroup.find(:all, :order => :short_name), :id, :short_name_name %>
+	<p>| Group  :  <%= f.collection_select :maintgroup_id, Maintgroup.find(:all, :order => :short_name), :id, :short_name_name, :include_blank => true %>
 		|  Man-hours :   <%= f.text_field :hours, :size => '5' %>
 			<%= f.hidden_field :_destroy %>  
 		| 	<%= link_to_function image_tag("delete.png", :border => 0, :title => 'Remove'), "remove_fields(this)"%></p>

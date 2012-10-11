@@ -1,0 +1,71 @@
+<div class="showform">
+	
+	<H2>Maintenance / Unplanned Maintenance </H2>
+	
+	<fieldset>
+		<legend>Maintenance Details</legend>
+		<table>
+			<tr>
+		    <td class="leftcol">Status of Work:</td>
+		    <td><%=h @maintenance.maintreport_status(@maintenance.id) %></td>
+		  </tr>
+			<tr>
+		    <td class="leftcol"><%=t ('maintenance.code') %>:</td>
+		    <td><%=h @maintenance.code %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol><%=t ('maintenance.component_id') %>:</td>
+		    <td><%=h @maintenance.component.component_code %>&nbsp; &nbsp;<%=h @maintenance.component.name %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol><%=t ('maintenance.description') %>:</td>
+		    <td><%=h @maintenance.description %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol><%=t ('maintenance.action_group_id') %>:</td>
+		    <td><%=h @maintenance.action_group_id.blank? ? "-" : @maintenance.action_group_details %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol><%=t ('maintenance.priority') %>:</td>
+		    <td><%=h @maintenance.priority %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol>Reported By:</td>
+		    <td><%=h @maintenance.reported_by.blank? ? "-" : @maintenance.user.name %></td>
+		  </tr>
+
+		</table>
+	</fieldset>	
+	
+	<fieldset>
+		<legend>Planned date</legend>  <!--  Just break into logical groups for easy viewing-->
+		<table>
+			<tr>
+		    <td class=leftcol>To Start On:</td>
+		    <td><%=h @maintenance.date_to_start %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol>To Finish On:</td>
+		    <td><%=h @maintenance.date_to_finish %></td>
+		  </tr>
+		</table>
+	</fieldset>
+
+	<fieldset>
+		<legend>Record Details</legend>  <!--  Just break into logical groups for easy viewing-->
+		<table>
+			<tr>
+		    <td class=leftcol>Last Edit On:</td>
+		    <td><%=h l(@maintenance.updated_at) %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol>Created On:</td>
+		    <td><%=h l(@maintenance.created_at) %></td>
+		  </tr>
+
+		</table>
+	</fieldset>
+		
+</div>
+
+<%= link_to 'Edit' , :action => 'edit_up', :id => @maintenance.id %>
