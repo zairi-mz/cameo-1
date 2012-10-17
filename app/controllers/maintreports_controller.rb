@@ -3,7 +3,7 @@ class MaintreportsController < ApplicationController
   # GET /maintreports.xml
   def index   
     @m = params[:maintenance_id]
-    @maintreports = Maintreport.find(:all, :conditions => ["maintenance_id=?", @m])
+    @maintreports = Maintreport.find(:all, :conditions => ["maintenance_id=?", @m], :order => "start_date DESC")
 
     respond_to do |format|
       format.html # index.html.erb

@@ -25,17 +25,6 @@ class Maintenance < ActiveRecord::Base
      "#{b}    | #{a}"
   end
  
-  def self.search(search,type)
-    if search
-      case search
-        when "Overdue Work"
-          find(:all, :conditions => ['next_date>? and work_type=?', Time.now, type])
-        when "All"
-          find(:all, :conditions => ["work_type=?", type])
-      end
-    end
-  end
-   
   def periodicity
     (Maintenance::FREQ_UNIT.find_all{|disp, value| value == frequency_unit }).map {|disp, value| disp}
   end
@@ -61,12 +50,11 @@ class Maintenance < ActiveRecord::Base
       ]
   
     def action_group_details
-      @ag = Maintgroup.find(:all, :conditions => ["id=?", action_group_id])
-      if @ag.empty?
+      @ag = Maintgroup.find(:first, :conditions => ["id=?", action_group_id])
+      if @ag.nil?
         "-"
       else
-       ag = @ag[0]
-    	 action_group_details = "#{ag.short_name}"
+    	 "#{@ag.short_name}"
       end
     end
 
@@ -74,9 +62,8 @@ class Maintenance < ActiveRecord::Base
       if reported_by.blank?
         "-"
       else
-       @r = User.find(:all, :conditions => ["id=?", reported_by])
-       r = @r[0]
-    	 user_name = "#{r.name}"
+       @r = User.find(:first, :conditions => ["id=?", reported_by])
+    	 "#{@r.name}"
       end
     end
     

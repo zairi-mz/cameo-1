@@ -2,10 +2,13 @@
 	<div class="box-head">
 		<h2 class="left">Unplanned Maintenance</h2>
 		<div class="right">
+			<% form_tag '', :method => 'get' do %>
+			<%= select_tag :search, options_for_select([['All', 1], ['Overdue Work', 2], ['Completed', 3], ['Work in Progress', 4], ['Waiting For Parts', 5], ['Sent For Repair', 6] ]) %>
+			<%= submit_tag "Search", :name => nil %>
+			<% end %>
 		</div>
 	</div>
 </div>
-
 <div class="indexlist">
 <% link_to 'Create New role', new_maintenance_path %>
 <table>

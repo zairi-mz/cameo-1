@@ -6,8 +6,8 @@ class MaintenancesController < ApplicationController
   # GET /maintenances
   # GET /maintenances.xml
   def index
-    @maintenances = Maintenance.find(:all, :conditions => ["work_type=?", 1])
-    @maintenance_equipment = @maintenances.group_by { |t| t.isorter }
+    search_maint(params[:search])
+    @maintenance_equipment = $maintfound.group_by { |t| t.isorter }
 
     respond_to do |format|
       format.html # index.html.erb
@@ -16,11 +16,11 @@ class MaintenancesController < ApplicationController
   end
 
   def index_up
-    @maintenances = Maintenance.find(:all, :conditions => ["work_type=?", 2])
-    @maintenance_equipment = @maintenances.group_by { |t| t.isorter }
+    search_unplan(params[:search])
+    @maintenance_equipment = $upmaintfound.group_by { |t| t.isorter }  
 
     respond_to do |format|
-      format.html # index_up.html.erb
+      format.html { render :action => "index_up" }
       format.xml  { render :xml => @maintenances }
     end
   end
@@ -140,6 +140,84 @@ class MaintenancesController < ApplicationController
       format.html { redirect_to(maintenances_url) }
       format.xml  { head :ok }
     end
+  end
+  
+  def eqpt_hours(cid)
+     @t = 0
+      @c = Counter.find(:all, :conditions => ["component_id=?", cid])
+      for c in @c
+        @t = @t + c.run_hours
+      end
+    eqpt_hours = @t
+  end
+ 
+  def search_maint(search)
+    $maintfound = []
+    @maintdatedue =[]
+    if search
+      case search
+        when "1"
+          $maintfound = Maintenance.find(:all, :conditions => ["work_type=?", 1])
+        when "2"
+            @maintdatedue = Maintenance.find(:all, :conditions => ['next_date<? and work_type=?', Time.now, 1])
+            @mainthourdue = []
+            @maint = []
+            @maint = Maintenance.find(:all, :conditions => ["frequency_unit=?", 2])
+              for maint in @maint
+          	    @mainthourdue += Maintenance.find(:all, :conditions => ["id=? and next_hour<?", maint.id, eqpt_hours(maint.component_id)])
+              end
+            $maintfound = @maintdatedue + @mainthourdue
+        when "3"
+            @maint = []
+            @maintrpt =[]
+            @maint = Maintenance.find(:all, :conditions => ["work_type=?", 1])
+            for maint in @maint
+            	@maintrpt = Maintreport.find(:all, :conditions => ["maintenance_id=? and done_date IS NULL", maint.id])
+            	for maintrpt in @maintrpt
+                if !maintrpt.nil?
+                  $maintfound += Maintenance.find(:all, :conditions => ["id=?", maintrpt.maintenance_id])
+                end
+              end
+            end            
+      end
+    else
+      $maintfound = Maintenance.find(:all, :conditions => ["work_type=?", 1])
+    end
+  end
+  
+  def search_unplan(search)
+    $upmaintfound = []
+    if search
+      case search
+        when "1"
+          $upmaintfound = Maintenance.find(:all, :conditions => ["work_type=?", 2])         
+        when "2"
+          $upmaintfound = Maintenance.find(:all, :conditions => ["date_to_finish<? and last_date IS NULL", Time.now])
+        when "3"
+          search_by_status(1)
+        when "4"
+          search_by_status(2)
+        when "5"
+          search_by_status(3)
+        when "6"
+          search_by_status(4)
+      end
+    else
+      $upmaintfound = Maintenance.find(:all, :conditions => ["work_type=?", 2])
+    end
+  end
+  
+  def search_by_status(stat)
+    @maint = []
+    @maint = Maintenance.find(:all, :conditions => ["work_type=?", 2])
+      for maint in @maint
+        @maintrpt = Maintreport.find(:all, :conditions => ["maintenance_id=? and work_status=?", maint.id,stat])
+        for maintrpt in @maintrpt
+          if !maintrpt.nil?
+            $upmaintfound += Maintenance.find(:all, :conditions => ["id=?", maintrpt.maintenance_id])
+          end
+        end
+      end
   end
   
 end

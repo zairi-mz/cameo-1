@@ -23,6 +23,7 @@ ActionController::Routing::Routes.draw do |map|
   map.connect '/maintenances/newunplan', :controller => 'maintenances', :action => 'newunplan'
   map.connect '/maintenances/index_up', :controller => 'maintenances', :action => 'index_up'
   map.resources :maintenances, :member => { :show_up => [:get, :post, :put] }
+  map.resources :maintenances, :member => { :index_up => [:get] }
   map.resources :maintenances
 
   map.resources :documents

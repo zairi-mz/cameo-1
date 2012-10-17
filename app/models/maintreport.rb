@@ -16,6 +16,8 @@ class Maintreport < ActiveRecord::Base
   accepts_nested_attributes_for :planworkhours, :reject_if => lambda { |a| a[:maintgroup_id].blank? }, :allow_destroy => true
   
   belongs_to  :suppliedby,      :class_name => 'Address', :foreign_key => 'supplier_id'
+  
+  validates_presence_of :start_date
 
   def maint_status
     (Maintreport::STATUS.find_all{|disp, value| value == work_status }).map {|disp, value| disp}
