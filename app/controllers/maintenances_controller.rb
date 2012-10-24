@@ -1,7 +1,10 @@
 class MaintenancesController < ApplicationController
   
   filter_resource_access
-  filter_access_to :newunplan, :index_up, :show_up, :attribute_check => false
+  filter_access_to :newunplan, :index_up, :show_up, :planner, :planner_prt, :attribute_check => false
+  require 'cgi'
+  require 'uri'
+  require 'date'
    
   # GET /maintenances
   # GET /maintenances.xml
@@ -25,6 +28,58 @@ class MaintenancesController < ApplicationController
     end
   end
   
+  def planner
+    date1 = params[:search_from]
+    $frdate = nil
+    $todate = nil
+    $fdate = nil
+    $tdate = nil
+    if date1.nil?  
+      $maintplan = Maintenance.find(:all, :conditions => ["work_type=? and next_date IS NOT NULL", 1], :order => "component_id DESC")
+    else
+      params = CGI::parse( URI::parse(request.url).query )
+      params.inspect 
+      df = params['search_from[params(3i)]'][0]
+      mf = params['search_from[params(2i)]'][0]
+      yf = params['search_from[params(1i)]'][0]
+      if df.empty? or mf.empty? or yf.empty?
+        $frdate = "1111/11/11"
+        $fdate = " "
+      else    
+        $frdate = yf + "/" + mf + "/" + df
+        $fdate = df + "/" + mf + "/" + yf
+        begin
+           Date.parse($frdate)
+        rescue
+           $frdate = "1111/11/11"
+           $fdate = " "
+        end     
+      end           
+      dt = params['search_to[params(3i)]'][0]
+      mt = params['search_to[params(2i)]'][0]
+      yt = params['search_to[params(1i)]'][0]
+      if dt.empty? or mt.empty? or yt.empty?
+        $todate = "1111/11/11"
+        $tdate = " "
+      else
+        $todate = yt + "/" + mt + "/" + dt
+        $tdate = dt + "/" + mt + "/" + yt
+        begin
+           Date.parse($todate)
+        rescue
+           $todate = "1111/11/11"
+           $tdate = " "
+        end
+      end
+      $maintplan = Maintenance.find(:all, :conditions => ["next_date>=? AND next_date<=?", $frdate, $todate], :order => "component_id DESC")
+    end
+    
+    respond_to do |format|
+      format.html { render :action => "planner" }
+      format.xml  { render :xml => @maintenances }
+    end
+  end
+  
   # GET /maintenances/1
   # GET /maintenances/1.xml
   def show
@@ -43,10 +98,25 @@ class MaintenancesController < ApplicationController
      respond_to do |format|
        format.html # show.html.erb
        format.xml  { render :xml => @maintenance }
-       format.pdf { render :layout => false }
+       format.pdf { render :action => "show_up" }
      end
    end
 
+   def planner_prt
+    if $frdate.nil? or $todate.nil?
+      $maintplan = Maintenance.find(:all, :conditions => ["work_type=? and next_date IS NOT NULL", 1], :order => "component_id DESC")
+    else
+      $maintplan = Maintenance.find(:all, :conditions => ["next_date>=? AND next_date<=?", $frdate, $todate], :order => "component_id DESC")
+    end
+    
+     respond_to do |format|
+       format.html # show.html.erb
+       format.xml  { render :xml => @maintenance }
+       format.pdf { prawnto :prawn => {:page_layout => :landscape}, :inline => true, :margins => [0,0,0,0]
+                    render :action => "planner_prt"}     
+     end
+   end
+   
   # GET /maintenances/new
   # GET /maintenances/new.xml
   def new

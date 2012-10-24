@@ -134,30 +134,6 @@ pdf.bounding_box([15,360], :width => 520, :height => 300) do
   	pdf.text "#{@maintenance.jobdesc.safety}", :align => :left unless @maintenance.jobdesc_id.nil?
 end
 
-### test overdue work
-pdf.bounding_box([15,370], :width => 300) do
-	pdf.font_size 14
-  	pdf.text "Overdue hours", :align => :left, :style => :bold
-end
-pdf.bounding_box([15,350], :width => 500) do
-	@maint = []
-	@maint = Maintenance.find(:all, :conditions => ["work_type=? and frequency_unit=?", 1,2])
-	for maint in @maint
-		mc = maint.component_id
-		@t = 0
-        @c = Counter.find(:all, :conditions => ["component_id=?", mc])
-        for c in @c
-          @t = @t + c.run_hours
-        end
-		@mt = []
-		@mt = Maintenance.find(:all, :conditions => ["next_hour<?", @t])
-		for mt in @mt
-			pdf.text "#{mt.id}  #{mt.code}  #{mt.description}"
-		end
-	end
-end
-####
-
 pdf.start_new_page
 pdf.bounding_box([15,690], :width => 300) do
 	pdf.font_size 14
@@ -266,3 +242,118 @@ pdf.repeat :all do
        pdf.text "RESTRICTED - TERHAD", :align => :center, :style => :bold
    end
  end
+
+## planner pdf
+
+pdf.bounding_box([15,510], :width => 680) do
+	pdf.font_size 10
+  	pdf.text "Component", :align => :left, :style => :bold
+end
+pdf.bounding_box([15,490], :width => 55, :height => 450) do
+	for maint in @maintenances
+		pdf.text "#{maint.component.comp_code}"
+	end
+end
+pdf.bounding_box([70,490], :width => 300, :height => 450) do
+	for maint in @maintenances
+		pdf.text "#{maint.component.comp_name}"
+	end
+end
+
+@t = 1
+@maint = Maintenance.find_by_sql(["SELECT component_id,code,description FROM maintenances WHERE work_type=?","#{@t}"])
+maint = @maint
+maintinfo = [["Component", "#{maint.component_id}"], ["Maint Code", "#{maint.code}"], ["Description", "#{maint.description}"]]
+
+pdf.move_down 30
+
+pdf.table maintinfo do
+	style (row(0), :background_color => 'ff00ff')
+	style (row(0), :align => :center )
+	style (row(2), :background_color => 'ff00ff')
+	style (column(0), :width => 100)
+	style (column(1), :width => 250)
+end
+
+##float
+pdf.float do
+	pdf.bounding_box([5,490], :width => 180, :height => 450) do
+		for maint in @maintenances
+			pdf.text "#{maint.component.comp_code}  #{maint.component.comp_name}"
+#			pdf.formatted_text_box([{ :text => "#{maint.id} #{maint.component.comp_code}  #{maint.component.comp_name}" }])
+		end
+	end
+end
+
+pdf.float do	
+	pdf.bounding_box([190,490], :width => 30, :height => 450) do
+		for maint in @maintenances
+			pdf.text "#{maint.code}"
+		end
+	end
+end
+
+pdf.float do	
+	pdf.bounding_box([230,490], :width => 460, :height => 450, :overflow => :ellipses) do
+		for maint in @maintenances
+			pdf.text "#{maint.description}"
+		end
+	end
+end
+
+pdf.float do	
+	pdf.bounding_box([690,490], :width => 450, :height => 450) do
+		for maint in @maintenances
+			pdf.text "#{maint.next_date}"
+		end
+	end
+end
+## end float
+
+
+pdf.repeat :all do
+   # header
+	pdf.bounding_box([0,550], :width => 735, :height => 30) do
+  		pdf.stroke_bounds
+	end
+   pdf.bounding_box [pdf.bounds.left, pdf.bounds.top], :width  => pdf.bounds.width do
+       pdf.font "Helvetica"
+		pdf.font_size 12
+       pdf.text "Planned Work List", :align => :center, :style => :bold
+   end
+
+	pdf.bounding_box([5,510], :width => 60) do
+		pdf.font_size 7
+  		pdf.text "Component", :align => :left, :style => :bold
+	end
+
+	pdf.bounding_box([190,510], :width => 30) do
+		pdf.font_size 7
+  		pdf.text "Code", :align => :left, :style => :bold
+	end
+
+	pdf.bounding_box([230,510], :width => 60) do
+		pdf.font_size 7
+  		pdf.text "Job Description", :align => :left, :style => :bold
+	end
+
+	pdf.bounding_box([690,510], :width => 60) do
+		pdf.font_size 7
+  		pdf.text "Next Date", :align => :left, :style => :bold
+	end
+
+	# border
+	pdf.bounding_box([0,550], :width => 735, :height => 530) do
+  		pdf.stroke_bounds
+	end	
+end
+## End border
+
+## table
+pdftable.table([["Name","Login","Email"]],
+:column_widths => {0 => 80, 1 => 80, 2 => 80, 3 => 80}, :row_colors => ["d5d5d5"])
+
+ @users.each do|u|
+ pdftable.table([["#{u.name}","#{u.login}","#{u.email}"]],
+ :column_widths => {0 => 80, 1 => 80, 2 => 80, 3 => 80 }, :row_colors => ["ffffff"])
+## end table

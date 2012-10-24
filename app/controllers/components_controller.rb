@@ -24,6 +24,15 @@ class ComponentsController < ApplicationController
     end
   end
 
+  def prt_eqpt_list
+    @complist = Component.find(:all, :order => "component_code ASC")
+
+    respond_to do |format|
+      format.pdf { prawnto :prawn => {:page_layout => :landscape}, :inline => true, :margins => [0,0,0,0] 
+                  render :action => "prt_eqpt_list" }
+    end
+  end
+  
   # GET /components/new
   # GET /components/new.xml
   def new

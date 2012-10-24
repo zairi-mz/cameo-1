@@ -1,9 +1,9 @@
 authorization do
   
   role :administrator do
-    has_permission_on :components,  :to => [:manage, :indextree]
+    has_permission_on :components,  :to => [:manage, :indextree, :prt_eqpt_list]
     has_permission_on [:addresses, :components, :documents, :maintenances, :maintreports, :parts, :roles, :tools, :users],  :to => [:manage]
-    has_permission_on :maintenances,  :to => [:newunplan, :index_up, :edit_up, :show_up, :update_up]
+    has_permission_on :maintenances,  :to => [:newunplan, :index_up, :edit_up, :show_up, :update_up, :planner, :planner_prt]
     has_permission_on :authorization_rules, :to => :read
     
   end

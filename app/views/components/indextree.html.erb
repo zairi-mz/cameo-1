@@ -35,8 +35,9 @@
 	    <td><%=h component.type_no %></td>
 	    <td><%=h component.serial_no %></td>
 	    <td><%=h component.installed_on %></td>
-			<td width=10px><%= link_to image_tag("brick_add.png", :border => 0, :title => 'Add Subcomponent'), new_component_path(:parent_id => component) %></td>
+			<td width=10px><%= link_to image_tag("brick_add.png", :border => 0, :title => 'Add Component'), new_component_path(:parent_id => component) %></td>
 	  	<td width=10px><%= link_to image_tag("page_white_wrench.png", :border => 0, :title => 'Add Maintenance'), new_maintenance_path(:component_id => component)%></td>
+		<td width=10px><%= link_to image_tag("wrench_orange.png", :border => 0, :title => 'Add Unplanned Maintenance'), :controller => "maintenances", :action => "newunplan", :component_id => component %></td>
 			<td width=10px><%= link_to image_tag("document.png", :border => 0, :title => 'Show'), :action => 'show', :id => component %></td>
     	<td width=10px><%= link_to image_tag("edit.png", :border => 0, :title => 'Edit'), :action => 'edit', :id => component %></td>
     	<td width=10px><%= link_to image_tag("delete.png", :border => 0, :title => 'Delete'), component, :confirm => 'Are you sure?', :method => :delete %>

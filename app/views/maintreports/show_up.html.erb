@@ -98,3 +98,4 @@
 <% if @maintreport.done_date.blank? %>
 	<%= link_to 'Edit' , :action => 'edit_up', :id => @maintreport.id, :maintenance_id => @maintreport.maintenance_id %>
 <% end %>
+ | <%= link_to 'Print Preview', :action => 'show_up', :format => 'pdf', :id => @maintreport.id, :maintenance_id => @maintreport.maintenance_id %>

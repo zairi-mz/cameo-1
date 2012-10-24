@@ -30,7 +30,7 @@ class MaintreportsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @maintreport }
-      format.pdf { render :layout => false }
+      format.pdf { render :action => "show_up" }
     end
   end
   
@@ -79,13 +79,14 @@ class MaintreportsController < ApplicationController
     
     respond_to do |format|
       if @maintreport.save
-        update_partqty
         if params[:plan]
             update_next_date_hour
+            update_partqty
             format.html { render :action => "show" }
             format.xml  { render :xml => @maintreport, :status => :created, :location => @maintreport }
           elsif params[:unplan]
             update_work_status
+            update_partqty
             format.html { render :action => "show_up" }
             format.xml  { render :xml => @maintreport, :status => :created, :location => @maintreport }
           end
@@ -146,13 +147,14 @@ class MaintreportsController < ApplicationController
     @maintenance = Maintenance.find(params[:maintreport][:maintenance_id])
     respond_to do |format|
       if @maintreport.update_attributes(params[:maintreport])
-        update_partqty
           if params[:plan]
+              update_partqty
               update_next_date_hour
               format.html { render :action => "show", :notice => 'Maintreport was successfully updated.' }
               format.xml  { render :xml => @maintreport, :status => :created, :location => @maintreport }
             elsif params[:unplan]
               update_work_status
+              update_partqty
               format.html { render :action => "show_up", :notice => 'Maintreport was successfully updated.' }
               format.xml  { render :xml => @maintreport, :status => :created, :location => @maintreport }
           end
@@ -171,8 +173,9 @@ class MaintreportsController < ApplicationController
   def update_work_status
     if !@maintreport.done_date.nil?
   	  @maintreport.update_attribute(:work_status, 1)
-  	end
-  	if @maintreport.work_status == 1
+  	  @maintenance = Maintenance.find(params[:maintreport][:maintenance_id])
+      @maintenance.update_attribute(:last_date, @maintreport.done_date)
+  	elsif @maintreport.work_status == 1
   	  @maintreport.update_attribute(:done_date, Time.now)
   	  @maintenance = Maintenance.find(params[:maintreport][:maintenance_id])
       @maintenance.update_attribute(:last_date, @maintreport.done_date)

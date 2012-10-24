@@ -23,6 +23,7 @@
     <td><%=h maintreport.last_maintenance_hour %></td>
     <td><%=h maintreport.add_notes %></td>
 	<td width=10px><%= link_to image_tag("document.png", :border => 0, :title => 'Show'), :action => 'show', :id => maintreport %></td>
+	<td width=10px><%= link_to image_tag("pdf.png", :border => 0, :title => 'Print Work Report'), :action => 'show', :format => 'pdf', :id => maintreport %></td>
   </tr>
 <% end %>
 </table>

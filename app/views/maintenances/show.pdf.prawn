@@ -1,245 +1,228 @@
+pdf.repeat :all do
+   # header
+	pdf.bounding_box([10,720], :width => 530, :height => 40) do
+  		pdf.stroke_bounds
+	end
+	pdf.bounding_box ([pdf.bounds.left, 710], :width  => pdf.bounds.width, :height => 40) do
+       pdf.font "Helvetica"
+		pdf.font_size 12
+       pdf.text "Planned Maintenance", :align => :center, :style => :bold
+		pdf.text "Work Order", :align => :center, :style => :bold
+   end
+  
+	# border
+	pdf.bounding_box([10,680], :width => 530, :height => 690) do
+  		pdf.stroke_bounds
+	end
+ end
 
+pdf.font_size 9
 
-pdf.bounding_box([10,700], :width => 100, :height => 80) do
-  pdf.stroke_bounds
+pdf.bounding_box([15,670], :width => 60) do
+  	pdf.text "Job Code :", :align => :left, :style => :bold
 end
-pdf.bounding_box([10,690], :width => 100) do
-	pdf.font_size 14
-  	pdf.text "Ship's Class", :align => :center, :style => :bold
-end
-pdf.bounding_box([10,660], :width => 100) do
-	pdf.font_size 14
-  	pdf.text "Kasturi", :align => :center
-end
-
-pdf.bounding_box([110,700], :width => 350, :height => 80) do
-  pdf.stroke_bounds
-end
-pdf.bounding_box([110,680], :width => 100) do
-	pdf.font_size 20
-  	pdf.text "PMS", :align => :center, :style => :bold
-	pdf.text "OLM", :align => :center, :style => :bold
-end
-pdf.bounding_box([210,680], :width => 250) do
-	pdf.font_size 18
-  	pdf.text "MAINTENANCE", :align => :center, :style => :bold
-	pdf.text "INSTRUCTION CARD", :align => :center, :style => :bold
-end
-
-pdf.bounding_box([460,700], :width => 80, :height => 80) do
-  pdf.stroke_bounds
-end
-logopath = "#{RAILS_ROOT}/public/images/rmn.jpg"
-pdf.bounding_box([470,698], :width => 75) do
-	pdf.image logopath, :width => 60, :height => 75
-end
-
-pdf.bounding_box([10,620], :width => 310, :height => 70) do
-  pdf.stroke_bounds
-end
-pdf.bounding_box([15,610], :width => 100) do
-	pdf.font_size 14
-  	pdf.text "System", :align => :left, :style => :bold
-end
-@t = @maintenance.component.component_code
-@t = @t[0,1]
-@compname = Component.find_by_sql(["SELECT name FROM components WHERE component_code=?","#{@t}"])
-pdf.bounding_box([15,580], :width => 300) do
-	compname = @compname [0]
-	pdf.font_size 14
-  	pdf.text compname.name, :align => :left
-end
-
-pdf.bounding_box([320,620], :width => 110, :height => 70) do
-  pdf.stroke_bounds
-end
-pdf.bounding_box([325,610], :width => 100) do
-	pdf.font_size 14
-  	pdf.text "System No.", :align => :left, :style => :bold
-end
-pdf.bounding_box([325,580], :width => 100) do
-	pdf.font_size 14
-  	pdf.text "#{@maintenance.component.component_code}", :align => :left
-end
-
-pdf.bounding_box([430,620], :width => 110, :height => 70) do
-  pdf.stroke_bounds
-end
-pdf.bounding_box([435,610], :width => 100) do
-	pdf.font_size 14
-  	pdf.text "MIC - Code", :align => :left, :style => :bold
-end
-pdf.bounding_box([435,580], :width => 100) do
-	pdf.font_size 14
+pdf.bounding_box([80,670], :width => 60) do
   	pdf.text "#{@maintenance.code}", :align => :left
 end
 
-pdf.bounding_box([10,550], :width => 310, :height => 70) do
-  pdf.stroke_bounds
+pdf.bounding_box([150,670], :width => 70) do
+  	pdf.text "Description :", :align => :left, :style => :bold
 end
-pdf.bounding_box([15,540], :width => 100) do
-	pdf.font_size 14
-  	pdf.text "Equipment", :align => :left, :style => :bold
-end
-pdf.bounding_box([15,510], :width => 300) do
-	pdf.font_size 14
-  	pdf.text "#{@maintenance.component.name}", :align => :left
+pdf.bounding_box([220,670], :width => 300) do
+  	pdf.text "#{@maintenance.description}", :align => :left
 end
 
-pdf.bounding_box([320,550], :width => 110, :height => 70) do
-  pdf.stroke_bounds
+pdf.bounding_box([15,640], :width => 60) do
+  	pdf.text "Comp No :", :align => :left, :style => :bold
 end
-pdf.bounding_box([325,540], :width => 100) do
-	pdf.font_size 14
-  	pdf.text "Related MIC", :align => :left, :style => :bold
-end
-pdf.bounding_box([325,510], :width => 100) do
-	pdf.font_size 14
-  	pdf.text "Nil", :align => :left
+pdf.bounding_box([80,640], :width => 60) do
+  	pdf.text "#{@maintenance.component.comp_code}", :align => :left
 end
 
-pdf.bounding_box([430,550], :width => 110, :height => 70) do
-  pdf.stroke_bounds
+pdf.bounding_box([150,640], :width => 70) do
+  	pdf.text "Comp Name :", :align => :left, :style => :bold
 end
-pdf.bounding_box([435,540], :width => 100) do
-	pdf.font_size 14
-  	pdf.text "Time(h)", :align => :left, :style => :bold
-end
-@h = 0
-for mainthours in @maintenance.mainthours
-	@h = @h + mainthours.hours	
-end
-pdf.bounding_box([435,510], :width => 100) do
-	pdf.font_size 14
-  	pdf.text "#{@h}", :align => :left
+pdf.bounding_box([220,640], :width => 330) do
+  	pdf.text "#{@maintenance.component.comp_name}", :align => :left
 end
 
-pdf.bounding_box([10,480], :width => 530, :height => 80) do
-  pdf.stroke_bounds
+pdf.bounding_box([15,620], :width => 60) do
+  	pdf.text "Frequency :", :align => :left, :style => :bold
 end
-pdf.bounding_box([15,470], :width => 200) do
-	pdf.font_size 14
-  	pdf.text "Maintenance Activity", :align => :left, :style => :bold
-end
-pdf.bounding_box([15,440], :width => 520) do
-	pdf.font_size 14
-	pdf.text "#{@maintenance.jobdesc.description}", :align => :left unless @maintenance.jobdesc_id.nil?
+pdf.bounding_box([80,620], :width => 60) do
+  	pdf.text "#{@maintenance.frequency} #{@maintenance.periodicity}", :align => :left
 end
 
-pdf.bounding_box([15,390], :width => 200) do
-	pdf.font_size 14
-  	pdf.text "Safety Precautions", :align => :left, :style => :bold
+pdf.bounding_box([150,620], :width => 70) do
+  	pdf.text "Priority :", :align => :left, :style => :bold
 end
-pdf.bounding_box([15,360], :width => 520, :height => 300) do
-	pdf.font_size 14
-  	pdf.text "#{@maintenance.jobdesc.safety}", :align => :left unless @maintenance.jobdesc_id.nil?
+pdf.bounding_box([220,620], :width => 330) do
+  	pdf.text "#{@maintenance.priority}", :align => :left
 end
 
-pdf.start_new_page
-pdf.bounding_box([15,690], :width => 300) do
-	pdf.font_size 14
-  	pdf.text "Tools, Test Equipment and Facilities", :align => :left, :style => :bold
+pdf.bounding_box([15,600], :width => 65) do
+  	pdf.text "Maint Level :", :align => :left, :style => :bold
 end
-pdf.bounding_box([15,660], :width => 300) do
-	@i = 1
-	for tools in @maintenance.tools
-		pdf.text "#{@i}. #{tools.name}"
-		@i = @i + 1
-	end
+pdf.bounding_box([80,600], :width => 60) do
+  	pdf.text "#{@maintenance.level}", :align => :left
 end
 
-pdf.bounding_box([15,500], :width => 300) do
-	pdf.font_size 14
-  	pdf.text "Parts", :align => :left, :style => :bold
+pdf.bounding_box([150,600], :width => 70) do
+  	pdf.text "Action Group :", :align => :left, :style => :bold
 end
-pdf.bounding_box([15,470], :width => 500) do
-	@i = 1
-	for parts in @maintenance.parts
-		pdf.text "#{@i}. #{parts.name}"
-		@i = @i + 1
-	end
+pdf.bounding_box([225,600], :width => 330) do
+  	pdf.text "#{@maintenance.action_group_details}", :align => :left
 end
 
-pdf.start_new_page
-pdf.bounding_box([15,690], :width => 500) do
-	pdf.font_size 14
-  	pdf.text "Procedure", :align => :left, :style => :bold
+pdf.bounding_box([15,580], :width => 60) do
+  	pdf.text "Next Date :", :align => :left, :style => :bold
 end
-pdf.bounding_box([15,660], :width => 500, :height => 600) do
-	pdf.text "#{@maintenance.jobdesc.method}", :align => :left unless @maintenance.jobdesc_id.nil?
+pdf.bounding_box([80,580], :width => 60) do
+  	pdf.text "#{@maintenance.next_date}", :align => :left
 end
 
-pdf.bounding_box([420,45], :width => 30) do
-	pdf.font_size 14
-	pdf.page_count.times do |i|
-	   pdf.go_to_page(i+1)
-	   pdf.text "#{i + 1}"
-	end
-end	
-pdf.bounding_box([480,45], :width => 30) do
-	pdf.font_size 14
-	pdf.page_count.times do |i|
-	   pdf.go_to_page(i+1)
-	   pdf.text "#{pdf.page_count}"
-	end
-end	
+pdf.bounding_box([150,580], :width => 70) do
+  	pdf.text "Next Hour :", :align => :left, :style => :bold
+end
+pdf.bounding_box([220,580], :width => 330) do
+  	pdf.text "#{@maintenance.next_hour}", :align => :left
+end
 
+pdf.bounding_box([15,560], :width => 60) do
+  	pdf.text "Proc Code :", :align => :left, :style => :bold
+end
+pdf.bounding_box([80,560], :width => 60) do
+  	pdf.text "#{@maintenance.jobdesc.job_code}", :align => :left
+end
 
-pdf.repeat :all do
-   # header
-   pdf.bounding_box [pdf.bounds.left, pdf.bounds.top], :width  => pdf.bounds.width do
-       pdf.font "Helvetica"
-		pdf.font_size 12
-       pdf.text "RESTRICTED - TERHAD", :align => :center, :style => :bold
-   end
+pdf.bounding_box([150,560], :width => 70) do
+  	pdf.text "Procedure :", :align => :left, :style => :bold
+end
+pdf.bounding_box([220,560], :width => 330) do
+  	pdf.text "#{@maintenance.jobdesc.description}", :align => :left
+end
 
-	# border
-	pdf.bounding_box([10,700], :width => 530, :height => 670) do
-  		pdf.stroke_bounds
-	end
+pdf.bounding_box([10,540], :width => 530, :height => 20) do
+	pdf.stroke_bounds
+end
+pdf.bounding_box ([pdf.bounds.left, 535], :width  => pdf.bounds.width, :height => 10) do
+    pdf.text "Parts", :align => :center, :style => :bold
+end
 
-   # footer
-	pdf.bounding_box([10,50], :width => 180, :height => 20) do
- 		pdf.stroke_bounds
+pdf.bounding_box([30,515], :width => 70) do
+  	pdf.text "Part No", :align => :left, :style => :bold
+end
+pdf.bounding_box([120,515], :width => 70) do
+  	pdf.text "Part Name", :align => :left, :style => :bold
+end
+pdf.bounding_box([450,515], :width => 70) do
+  	pdf.text "Quantity", :align => :center, :style => :bold
+end
+
+@mp = Maintpart.find(:all, :conditions => ["maintenance_id=?", @maintenance.id], :order => "part_id ASC")
+
+pdf.float do	
+	pdf.bounding_box([15,500], :width => 100, :height => 150) do
+		@i = 1
+		for parts in @mp
+			@pt = parts.part_id
+			@c = Part.find(:first, :conditions => ["id=?", @pt])
+			pdf.text "#{@i}.   #{@c.part_code}"
+			@i = @i + 1
+		end
 	end
-	pdf.bounding_box([15,45], :width => 80) do
-		pdf.font_size 14
-	  	pdf.text "MIC- Code:", :align => :left, :style => :bold
+end
+pdf.float do	
+	pdf.bounding_box([120,500], :width => 300, :height => 150) do
+		for pn in @mp
+			@p = pn.part_id
+			@n = Part.find(:first, :conditions => ["id=?", @p])
+			pdf.text "#{@n.name}"
+		end
 	end
-	pdf.bounding_box([100,45], :width => 80) do
-		pdf.font_size 14
-	  	pdf.text "#{@maintenance.code}", :align => :left
+end
+pdf.float do	
+	pdf.bounding_box([450,500], :width => 70, :height => 150) do
+		for mq in @mp
+			pdf.text "#{mq.quantity}", :align => :center
+		end
 	end
-	
-	pdf.bounding_box([190,50], :width => 180, :height => 20) do
- 		pdf.stroke_bounds
+end
+
+pdf.bounding_box([10,345], :width => 530, :height => 20) do
+	pdf.stroke_bounds
+end
+pdf.bounding_box ([pdf.bounds.left, 340], :width  => pdf.bounds.width, :height => 10) do
+    pdf.text "Tools & Facilities", :align => :center, :style => :bold
+end
+
+pdf.bounding_box([30,320], :width => 70) do
+  	pdf.text "Code", :align => :left, :style => :bold
+end
+pdf.bounding_box([120,320], :width => 70) do
+  	pdf.text "Name", :align => :left, :style => :bold
+end
+
+pdf.float do	
+	pdf.bounding_box([15,305], :width => 100, :height => 150) do
+		@i = 1
+		for tools in @maintenance.tools
+			pdf.text "#{@i}.   #{tools.tool_code}"
+			@i = @i + 1
+		end
 	end
-	pdf.bounding_box([195,45], :width => 60) do
-		pdf.font_size 14
-	  	pdf.text "Date:", :align => :left, :style => :bold
+end
+pdf.float do	
+	pdf.bounding_box([120,305], :width => 300, :height => 150) do
+		for tools in @maintenance.tools
+			pdf.text "#{tools.name}"
+		end
 	end
-	creation_date = Time.now.strftime('%m.%Y')
-	pdf.bounding_box([250,45], :width => 120) do
-		pdf.font_size 14
-	  	pdf.text "" + creation_date
+end
+
+pdf.bounding_box([10,145], :width => 530, :height => 20) do
+	pdf.stroke_bounds
+end
+pdf.bounding_box ([pdf.bounds.left, 140], :width  => pdf.bounds.width, :height => 10) do
+    pdf.text "Man Hour Types & Group", :align => :center, :style => :bold
+end
+
+pdf.bounding_box([30,120], :width => 70) do
+  	pdf.text "Code", :align => :left, :style => :bold
+end
+pdf.bounding_box([120,120], :width => 70) do
+  	pdf.text "Group Name", :align => :left, :style => :bold
+end
+pdf.bounding_box([450,120], :width => 70) do
+  	pdf.text "Man-hours", :align => :center, :style => :bold
+end
+
+@mh = Mainthour.find(:all, :conditions => ["maintenance_id=?", @maintenance.id], :order => "maintgroup_id ASC")
+
+pdf.float do	
+	pdf.bounding_box([15,105], :width => 100, :height => 100) do
+		@i = 1
+		for hc in @mh
+			@hd = hc.maintgroup_id
+			@cd = Maintgroup.find(:first, :conditions => ["id=?", @hd])
+			pdf.text "#{@i}.   #{@cd.short_name}"
+			@i = @i + 1
+		end
 	end
-	
-	pdf.bounding_box([370,50], :width => 170, :height => 20) do
- 		pdf.stroke_bounds
+end
+pdf.float do	
+	pdf.bounding_box([120,105], :width => 300, :height => 100) do
+		for hn in @mh
+			@hid = hn.maintgroup_id
+			@gn = Maintgroup.find(:first, :conditions => ["id=?", @hid])
+			pdf.text "#{@gn.name}"
+		end
 	end
-	pdf.bounding_box([375,45], :width => 40) do
-		pdf.font_size 14
-	  	pdf.text "Page", :align => :left, :style => :bold
+end
+pdf.float do	
+	pdf.bounding_box([450,105], :width => 70, :height => 100) do
+		for hq in @mh
+			pdf.text "#{hq.hours}",:align => :center
+		end
 	end
-	pdf.bounding_box([450,45], :width => 30) do
-		pdf.font_size 14
-	  	pdf.text "of", :align => :left, :style => :bold
-	end
-	
-   pdf.bounding_box [pdf.bounds.left, pdf.bounds.bottom + 25], :width  => pdf.bounds.width do
-       pdf.font_size 12
-	   pdf.font "Helvetica"
-       pdf.move_down(5)
-       pdf.text "RESTRICTED - TERHAD", :align => :center, :style => :bold
-   end
- end
+end

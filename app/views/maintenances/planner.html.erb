@@ -1,0 +1,43 @@
+<div class="box">
+	<div class="box-head">
+		<h2 class="left">Maintenance Planning</h2>
+		<div class="right">
+			<% form_tag '', :method => 'get' do %>
+			From: <%= date_select :search_from, :params, :include_blank => :true %>
+			&nbsp; &nbsp;To: <%= date_select :search_to, :params, :include_blank => :true %>
+			<%= submit_tag "Search", :name => nil %>
+			<% end %>
+		</div>
+		<br><br>
+		<div class="right">
+			<p><%= link_to 'Print Preview', :action => 'planner_prt', :format => 'pdf' %></p>
+		</div>	
+	</div>
+</div>
+
+<div class="indexlist">
+<table>
+  <tr>
+	<th>Component No</th>
+    <th>Component Name</th>
+    <th>Maint Code</th>
+    <th>Description</th>
+    <th>Priority</th>
+    <th>Next date</th>
+    <th colspan=7>Control</th>
+  </tr>
+
+<% $maintplan.each do |maintenance| %>
+  <tr>
+    <td><%=h maintenance.component.comp_code %></td>
+    <td><%=h maintenance.component.comp_name %></td>
+    <td><%=h maintenance.code %></td>
+    <td><%=h maintenance.description %></td>
+    <td><%=h maintenance.priority %></td>
+	<td><%=h maintenance.next_date %></td>
+<% end %>
+</table>
+
+<br />
+</div>
+

@@ -42,6 +42,7 @@
     <td><%=h maintenance.priority %></td>
     <td><%=h maintenance.maintreport_status(h maintenance.id) %></td>
 	<td width=10px><%= link_to image_tag("document.png", :border => 0, :title => 'Show'), :action => 'show_up', :id => maintenance %></td>
+	<td width=10px><%= link_to image_tag("pdf.png", :border => 0, :title => 'Print Work Order'), :action => 'show_up', :format => 'pdf', :id => maintenance %></td>
 	<% if maintenance.find_report(h maintenance.id).empty? %>
 	  	<td width=10px><%= link_to image_tag("table_gear.png", :border => 0, :title => 'Unplanned Work Report'), :controller => "maintreports", :action => "new_up", :id => maintenance %></td>
 	<% else %>

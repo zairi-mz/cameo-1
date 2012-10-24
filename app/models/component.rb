@@ -21,6 +21,7 @@ class Component < ActiveRecord::Base
   accepts_nested_attributes_for :compparts, :reject_if => lambda { |a| a[:part_id].blank? }, :allow_destroy => true 
   
   #Validations
+  validates_presence_of :component_code, :name
   validates_uniqueness_of :component_code
   
   
@@ -38,7 +39,14 @@ class Component < ActiveRecord::Base
     "#{component_code}    | #{name}"
   end
 
-
+  def comp_code
+    "#{component_code}"
+  end
+  
+  def comp_name
+    "#{name}"
+  end
+  
   #Search Box on Index Page
   def self.search(search)
     if search
@@ -47,8 +55,7 @@ class Component < ActiveRecord::Base
       find(:all, :order => :component_code)
     end
   end
-  
-  
+   
   def tree_gelas
      if is_root?
        gls = ""

@@ -40,7 +40,7 @@
 	<td><%=h maintenance.next_hour %></td>
     <td><%=h maintenance.priority %></td>
 	<td width=10px><%= link_to image_tag("document.png", :border => 0, :title => 'Show'), :action => 'show', :id => maintenance %></td>
-	<td width=10px><%= link_to image_tag("pdf.png", :border => 0, :title => 'MIC'), :action => 'show', :format => 'pdf', :id => maintenance %></td>
+	<td width=10px><%= link_to image_tag("pdf.png", :border => 0, :title => 'Print Work Order'), :action => 'show', :format => 'pdf', :id => maintenance %></td>
 	<td width=10px><%= link_to image_tag("pw.png", :border => 0, :title => 'Planned Work Report'), :controller => "maintreports", :action => "new", :id => maintenance %></td>
 	<td width=10px><%= link_to image_tag("hourglass.png", :border => 0, :title => 'Planned Work History'), :controller => "maintreports", :action => "index", :maintenance_id => maintenance %></td>
     <td width=10px><%= link_to image_tag("edit.png", :border => 0, :title => 'Edit'), :action => 'edit', :id => maintenance %></td>

@@ -26,11 +26,11 @@
 	  <tr>
 	    <td><%=h component.component_code %>  </td>
 	    <td><%=h component.name %></td>
-	    <td><%=h component.location_id %></td>
+	    <td><%=h component.location_details %></td>
 	    <td><%=h component.type_no %></td>
 	    <td><%=h component.serial_no %></td>
 	    <td><%=h component.installed_on %></td>
-		  <td width=10px><%= link_to image_tag("brick_add.png", :border => 0, :title => 'Add Subcomponent'), new_component_path(:parent_id => component) %></td>
+		  <td width=10px><%= link_to image_tag("brick_add.png", :border => 0, :title => 'Add Component'), new_component_path(:parent_id => component) %></td>
 		  <td width=10px><%= link_to image_tag("page_white_wrench.png", :border => 0, :title => 'Add Planned Maintenance'), new_maintenance_path(:component_id => component)%></td>
 		  <td width=10px><%= link_to image_tag("wrench_orange.png", :border => 0, :title => 'Add Unplanned Maintenance'), :controller => "maintenances", :action => "newunplan", :component_id => component %></td>
 		<td width=10px><%= link_to image_tag("counter.png", :border => 0, :title => 'Add Running Hour'), new_counter_path(:component_id => component)%></td>
@@ -46,7 +46,8 @@
 
 <%= link_to "See Tree View", indextree_components_path %> | 
 <% permitted_to? :manage, :components do %>
-<%= link_to 'New Root Component', new_component_path %>
+<%= link_to 'New Root Component', new_component_path %>  | 
+<%= link_to 'Print Equipment List', :action => 'prt_eqpt_list', :format => 'pdf' %>
 <% end %>
 <br>
 </div>

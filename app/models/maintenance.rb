@@ -17,6 +17,9 @@ class Maintenance < ActiveRecord::Base
   accepts_nested_attributes_for :mainthours, :reject_if => lambda { |a| a[:maintgroup_id].blank? }, :allow_destroy => true
   
   has_many :maintreports, :dependent => :destroy
+  
+  validates_presence_of :code, :description
+  validates_numericality_of :frequency, :only_integer => true, :allow_blank => true
  
   def isorter
     coid = component_id
@@ -58,6 +61,15 @@ class Maintenance < ActiveRecord::Base
       end
     end
 
+    def action_group_name
+      @ag = Maintgroup.find(:first, :conditions => ["id=?", action_group_id])
+      if @ag.nil?
+        "-"
+      else
+    	 "#{@ag.short_name}  #{@ag.name}"
+      end
+    end
+    
     def user_name
       if reported_by.blank?
         "-"

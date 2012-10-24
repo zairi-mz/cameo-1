@@ -17,13 +17,15 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :maintgroups
 
-  # match '/maintenances/show_up' => 'maintenances#update_up'
   map.connect '/maintenances/show_up', :controller => 'maintenances', :action => 'show_up'
   map.connect '/maintenances/edit_up', :controller => 'maintenances', :action => 'edit_up'
   map.connect '/maintenances/newunplan', :controller => 'maintenances', :action => 'newunplan'
   map.connect '/maintenances/index_up', :controller => 'maintenances', :action => 'index_up'
+  map.connect '/maintenances/planner', :controller => 'maintenances', :action => 'planner'
+  map.connect '/maintenances/planner_prt', :controller => 'maintenances', :action => 'planner_prt'
   map.resources :maintenances, :member => { :show_up => [:get, :post, :put] }
   map.resources :maintenances, :member => { :index_up => [:get] }
+  map.resources :maintenances, :member => { :planner => [:get] }
   map.resources :maintenances
 
   map.resources :documents
@@ -33,7 +35,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :addresses
 
   map.resources :tools
-
+  
+  map.connect '/components/prt_eqpt_list', :controller => 'components', :action => 'prt_eqpt_list'
   map.resources :components, :collection => { :indextree => :get }
 
   map.resources :roles
