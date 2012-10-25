@@ -4,6 +4,10 @@ authorization do
     has_permission_on :components,  :to => [:manage, :indextree, :prt_eqpt_list]
     has_permission_on [:addresses, :components, :documents, :maintenances, :maintreports, :parts, :roles, :tools, :users],  :to => [:manage]
     has_permission_on :maintenances,  :to => [:newunplan, :index_up, :edit_up, :show_up, :update_up, :planner, :planner_prt]
+    has_permission_on :parts,  :to => [:prt_parts_list]
+    has_permission_on :addresses,  :to => [:prt_add_list]
+    has_permission_on :tools,  :to => [:prt_tools_list]
+    has_permission_on :maintgroups,  :to => [:prt_group_list]
     has_permission_on :authorization_rules, :to => :read
     
   end

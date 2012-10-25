@@ -34,16 +34,14 @@ class MaintreportsController < ApplicationController
     end
   end
   
-  # GET /maintreports/new
-  # GET /maintreports/new.xml
   def new
-    @maintreport = Maintreport.new
-    @maintenance = Maintenance.find(params[:id])
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @maintreport }
-    end
+      @maintreport = Maintreport.new
+      @maintenance = Maintenance.find(params[:id])  
+  
+      respond_to do |format|
+        format.html # new.html.erb
+        format.xml  { render :xml => @maintreport }
+      end
   end
 
   def new_up

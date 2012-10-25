@@ -3,6 +3,7 @@ class Tool < ActiveRecord::Base
   belongs_to :suppliedby,     :class_name => 'Addresses', :foreign_key => 'supplier_id'
   belongs_to  :location
   
+  validates_presence_of :tool_code, :name
   validates_uniqueness_of :tool_code, :tool_no
   
   has_many    :mainttools

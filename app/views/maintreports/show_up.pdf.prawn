@@ -84,7 +84,9 @@ pdf.bounding_box([15,600], :width => 60) do
   	pdf.text "Supplier :", :align => :left, :style => :bold
 end
 pdf.bounding_box([80,600], :width => 60) do
-  	pdf.text "#{@maintrpt.suppliedby.company}", :align => :left
+	if !@maintrpt.supplier_id.nil?
+  		pdf.text "#{@maintrpt.suppliedby.company}", :align => :left
+	end
 end
 
 pdf.bounding_box([15,580], :width => 150) do

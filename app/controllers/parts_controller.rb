@@ -1,6 +1,8 @@
 class PartsController < ApplicationController
   
   filter_resource_access
+  filter_access_to :prt_parts_list, :attribute_check => false
+  
   # GET /parts
   # GET /parts.xml
   def index
@@ -20,9 +22,19 @@ class PartsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @part }
+      format.pdf { render :layout => false }
     end
   end
 
+  def prt_parts_list
+    @partlist = Part.find(:all, :order => "name ASC")
+
+    respond_to do |format|
+      format.pdf { prawnto :prawn => {:page_layout => :landscape}, :inline => true, :margins => [0,0,0,0] 
+                  render :action => "prt_parts_list" }
+    end
+  end
+  
   # GET /parts/new
   # GET /parts/new.xml
   def new

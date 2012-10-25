@@ -1,60 +1,13 @@
-<div class='formtable'>
 
 	<% form_for(@user) do |f| %>
 	<%= f.error_messages %>
 
-<table>
-	<tr>
-		<th colspan=2>Show User Details</th>
-	</tr>
-	<tr>
-		<td class='leftcol'>Name:</td>
-		<td><%= f.text_field :name %></td>
-	</tr>
-	<tr>
-		<td class='leftcol'>Login:</td>
-		<td><%= f.text_field :login %></td>
-	</tr>
-	<tr>
-		<td class='leftcol'>Email:</td>
-		<td><%= f.text_field :email %></td>
-	</tr>
-	<tr>
-		<td class='leftcol'>Password:</td>
-		<td><%= f.password_field :password %></td>
-	</tr>
-	<tr>
-		<td class='leftcol'>Confirm Password:</td>
-		<td><%= f.password_field :password_confirmation %></td>
-	</tr>
-</table>
+	  <%= render :partial => 'form', :locals => {:f => f}   %>
 
-
-<table>
-	<tr>
-		<th>User Roles</th>
-	</tr>
-</table>
-<table>
-	<tr>
-	<% for role in Role.find(:all) %>
-		<td width=25px ALIGN="center"><%= role.name %></td>
+	  <p>
+	    <%= f.submit 'Update' %>
+	  </p>
 	<% end %>
-	  <td></td>
-	</tr>
-	<tr>
-	<% for role in Role.find(:all) %>
-		<td ALIGN="center"><%= check_box_tag "user[role_ids][]", role.id, @user.roles.include?(role) %></td>
-	<% end %>
-	  <td></td>
-	</tr>
-	
-</table>
 
-
-  <BR>
-
-	<%= submit_tag 'Update' %>
-	<% end -%>
-	
-</div>
+	<%= link_to 'Show', @user %> |
+	<%= link_to 'Back', users_path %>

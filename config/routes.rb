@@ -15,6 +15,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :locations
 
+  map.connect '/maintgroups/prt_group_list', :controller => 'maintgroups', :action => 'prt_group_list'
   map.resources :maintgroups
 
   map.connect '/maintenances/show_up', :controller => 'maintenances', :action => 'show_up'
@@ -29,11 +30,14 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :maintenances
 
   map.resources :documents
-
+  
+  map.connect '/parts/prt_parts_list', :controller => 'parts', :action => 'prt_parts_list'
   map.resources :parts
 
+  map.connect '/addresses/prt_group_list', :controller => 'addresses', :action => 'prt_add_list'
   map.resources :addresses
 
+  map.connect '/tools/prt_tools_list', :controller => 'tools', :action => 'prt_tools_list'
   map.resources :tools
   
   map.connect '/components/prt_eqpt_list', :controller => 'components', :action => 'prt_eqpt_list'

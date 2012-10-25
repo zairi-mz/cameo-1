@@ -36,6 +36,7 @@
 		<td width=10px><%= link_to image_tag("counter.png", :border => 0, :title => 'Add Running Hour'), new_counter_path(:component_id => component)%></td>
 		<td width=10px><%= link_to image_tag("hourglass.png", :border => 0, :title => 'Counter History'), :controller => "counters", :action => "index", :component_id => component %></td>
 			<td width=10px><%= link_to image_tag("document.png", :border => 0, :title => 'Show'), :action => 'show', :id => component %></td>
+		<td width=10px><%= link_to image_tag("pdf.png", :border => 0, :title => 'Print Preview'), :action => 'show', :format => 'pdf', :id => component %></td>
 	    <td width=10px><%= link_to image_tag("edit.png", :border => 0, :title => 'Edit'), :action => 'edit', :id => component %></td>
 	    <td width=10px><%= link_to image_tag("delete.png", :border => 0, :title => 'Delete'), component, :confirm => 'Are you sure?', :method => :delete %>
 	  </tr>

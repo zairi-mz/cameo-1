@@ -1,6 +1,7 @@
 class ToolsController < ApplicationController
   
   filter_resource_access
+  filter_access_to :prt_tools_list, :attribute_check => false
   # GET /tools
   # GET /tools.xml
   
@@ -22,9 +23,19 @@ class ToolsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @tool }
+      format.pdf { render :layout => false }
     end
   end
 
+  def prt_tools_list
+    @toollist = Tool.find(:all, :order => "name ASC")
+
+    respond_to do |format|
+      format.pdf { prawnto :prawn => {:page_layout => :landscape}, :inline => true, :margins => [0,0,0,0] 
+                  render :action => "prt_tools_list" }
+    end
+  end
+  
   # GET /tools/new
   # GET /tools/new.xml
   def new

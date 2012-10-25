@@ -1,7 +1,7 @@
-<div class='formtable'>
+<div class='webform'>
 <table>
 	<tr>
-		<th colspan=2>Edit <%= t ('parts.part') %></th>
+		<th colspan=2>Add / Edit <%= t ('parts.part') %></th>
 	</tr>
 	<tr>
     <td class=leftcol><%= f.label t ('parts.part_code') %>:</td>
@@ -28,12 +28,20 @@
     <td><%= f.text_field :price %></td>
   </tr>
 	<tr>
+    <td class=leftcol>Min Quantity:</td>
+    <td><%= f.text_field :minlevel, :style=>'width: 50px;' %></td>
+  </tr>
+	<tr>
+    <td class=leftcol>Max Quantity:</td>
+    <td><%= f.text_field :maxlevel, :style=>'width: 50px;' %></td>
+  </tr>
+	<tr>
     <td class=leftcol><%= f.label t ('parts.location_id') %>:</td>
     <td><%= f.collection_select :location_id, Location.find(:all, :order => :name), :id, :name, :include_blank => true %></td>
   </tr>
 	<tr>
     <td class=leftcol><%= f.label t ('parts.notes') %>:</td>
-    <td><%= f.text_area :notes, :size => '35x6' %></td>
+    <td><%= f.text_area :notes, :size => '50x6' %></td>
   </tr>
 
 

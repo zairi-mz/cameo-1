@@ -23,6 +23,7 @@
 	    <td><%=h address.phone %><BR><%=h address.fax %><BR></td>
 	    <td><%=h address.email %><BR><%=h address.web %></td>
 		<td width=10px><%= link_to image_tag("document.png", :border => 0, :title => 'Show'), :action => 'show', :id => address %></td>
+		<td width=10px><%= link_to image_tag("pdf.png", :border => 0, :title => 'Print Preview'), :action => 'show', :format => 'pdf', :id => address %></td>
     <td width=10px><%= link_to image_tag("edit.png", :border => 0, :title => 'Edit'), :action => 'edit', :id => address %></td>
     <td width=10px><%= link_to image_tag("delete.png", :border => 0, :title => 'Delete'), address, :confirm => 'Are you sure?', :method => :delete %>
   </tr>
@@ -30,5 +31,6 @@
 </table>
 </div>
 
-<%= link_to 'New address', new_address_path %>
+<%= link_to 'New address', new_address_path %>  | 
+<%= link_to 'Print Address List', :action => 'prt_add_list', :format => 'pdf' %>
 

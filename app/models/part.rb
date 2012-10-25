@@ -12,6 +12,10 @@ class Part < ActiveRecord::Base
   has_many    :planworkparts
   has_many    :maintreport, :through => :planworkparts
   
+  validates_presence_of :part_code, :name
+  validates_uniqueness_of :part_code
+  validates_numericality_of :minlevel, :maxlevel, :only_integer => true, :allow_blank => true
+  
   def part_code_name
      "#{part_code}    | #{name}                   | #{quantity}"
   end

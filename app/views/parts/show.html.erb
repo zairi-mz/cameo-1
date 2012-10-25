@@ -29,6 +29,19 @@
 		    <td class=leftcol><%=t ('price') %>:</td>
 		    <td><%=h @part.price %></td>
 		  </tr>
+		</tr>
+			<tr>
+		    <td class=leftcol>Min Quantity:</td>
+		    <td><%=h @part.minlevel %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol>Max Quantity:</td>
+		    <td><%=h @part.maxlevel %></td>
+		  </tr>
+			<tr>
+		    <td class=leftcol>Quantity:</td>
+		    <td><%=h @part.quantity %></td>
+		  </tr>
 			<tr>
 		    <td class=leftcol><%=t ('parts.location_id') %>:</td>
 		    <td><%=h @part.location_details %></td>

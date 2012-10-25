@@ -18,8 +18,19 @@ class AddressesController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @address }
+      format.pdf { render :layout => false }
     end
   end
+  
+  def prt_add_list
+    @addlist = Address.find(:all, :order => "company ASC")
+
+    respond_to do |format|
+      format.pdf { prawnto :prawn => {:page_layout => :landscape}, :inline => true, :margins => [0,0,0,0] 
+                  render :action => "prt_add_list" }
+    end
+  end
+  
 
   # GET /addresses/new
   # GET /addresses/new.xml

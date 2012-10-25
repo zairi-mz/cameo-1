@@ -18,8 +18,9 @@
   <tr>
     <td><%=h jobdesc.job_code %></td>
     <td><%=h jobdesc.description %></td>
-		<td width=10px><%= link_to image_tag("document.png", :border => 0, :title => 'Show'), :action => 'show', :id => jobdesc %></td>
-    <td width=10px><%= link_to image_tag("edit.png", :border => 0, :title => 'Edit'), :action => 'edit', :id => jobdesc %></td>
+	<td width=10px><%= link_to image_tag("document.png", :border => 0, :title => 'Show'), :action => 'show', :id => jobdesc %></td>
+    <td width=10px><%= link_to image_tag("pdf.png", :border => 0, :title => 'Print Job Procedure'), :action => 'show', :format => 'pdf', :id => jobdesc %></td>
+	<td width=10px><%= link_to image_tag("edit.png", :border => 0, :title => 'Edit'), :action => 'edit', :id => jobdesc %></td>
     <td width=10px><%= link_to image_tag("delete.png", :border => 0, :title => 'Delete'), jobdesc, :confirm => 'Are you sure?', :method => :delete %>
   </tr>
 <% end %>

@@ -92,14 +92,18 @@ pdf.bounding_box([15,560], :width => 60) do
   	pdf.text "Proc Code :", :align => :left, :style => :bold
 end
 pdf.bounding_box([80,560], :width => 60) do
-  	pdf.text "#{@maintenance.jobdesc.job_code}", :align => :left
+	if !@maintenance.jobdesc_id.nil?
+  		pdf.text "#{@maintenance.jobdesc.job_code}", :align => :left
+	end
 end
 
 pdf.bounding_box([150,560], :width => 70) do
   	pdf.text "Procedure :", :align => :left, :style => :bold
 end
 pdf.bounding_box([220,560], :width => 330) do
-  	pdf.text "#{@maintenance.jobdesc.description}", :align => :left
+	if !@maintenance.jobdesc_id.nil?
+  		pdf.text "#{@maintenance.jobdesc.description}", :align => :left
+	end
 end
 
 pdf.bounding_box([10,540], :width => 530, :height => 20) do

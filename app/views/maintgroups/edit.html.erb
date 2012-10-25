@@ -1,24 +1,8 @@
-<h1>Editing maintgroup</h1>
-
 <% form_for(@maintgroup) do |f| %>
   <%= f.error_messages %>
 
-  <p>
-    <%= f.label :short_name %><br />
-    <%= f.text_field :short_name %>
-  </p>
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :quantity %><br />
-    <%= f.text_field :quantity %>
-  </p>
-  <p>
-    <%= f.label :rate %><br />
-    <%= f.text_field :rate %>
-  </p>
+  <%= render :partial => 'form', :locals => {:f => f}   %>
+
   <p>
     <%= f.submit 'Update' %>
   </p>

@@ -1,4 +1,5 @@
 class MaintgroupsController < ApplicationController
+ 
   # GET /maintgroups
   # GET /maintgroups.xml
   def index
@@ -21,6 +22,15 @@ class MaintgroupsController < ApplicationController
     end
   end
 
+  def prt_group_list
+    @grouplist = Maintgroup.find(:all, :order => "short_name ASC")
+
+    respond_to do |format|
+      format.pdf { prawnto :prawn => {:page_layout => :portrait}, :inline => true, :margins => [0,0,0,0] 
+                  render :action => "prt_group_list" }
+    end
+  end
+  
   # GET /maintgroups/new
   # GET /maintgroups/new.xml
   def new

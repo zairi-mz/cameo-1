@@ -110,6 +110,10 @@ class Maintenance < ActiveRecord::Base
     def find_report(pid)
       @m = Maintreport.find(:all, :conditions => ["maintenance_id=?", pid])
     end        
-  
+    
+    def chk_report(pid)
+      @r = Maintreport.find(:all, :conditions => ["maintenance_id=? and done_date IS NOT NULL", pid])
+    end
+
 end
 
